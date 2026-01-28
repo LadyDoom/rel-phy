@@ -1,0 +1,11 @@
+---
+title: "Comment utiliser ce site"
+---
+
+# Étudiants
+
+Suivez les instructions et explorez les simulations.
+
+# Enseignants
+
+Vous pouvez copier l'ensemble du projet dans votre GitHub personnel et le modifier selon vos besoins.

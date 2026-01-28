@@ -1,0 +1,24 @@
+project:
+  type: website
+
+website:
+  title: "REL-Physique"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Accueil
+      - about.qmd
+      - minkowski.qmd
+      - michelsonmorley.qmd
+      - projectile.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

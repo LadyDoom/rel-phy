@@ -1,0 +1,1702 @@
+---
+title: "Diagramme de Minkowski"
+execute:
+  enabled: false
+# Choix du style de coloration (optionnel)
+format:
+  html:
+    highlight-style: github
+---
+
+# Contexte
+Cette activité permet de ...
+
+```{=html}
+<div id="glowscript" class="glowscript" style="display:block; width:100%; margin-bottom:2em;">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet" />
+<link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/glow.3.2.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.2.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+;(function() {;
+var ρσ_modules = {};
+var acheck, rcheck, bcheck, cMagenta, sObjet, txtVitesseObjet, x_label, xInput, ct_label, ctInput, x2_label, ct2_label, x2Input, ct2Input, tempTag, ajoutBouton, bouton_supprimer, modeEntree, boutonSegment, objVitesse, tempVitesse, pointeurSouris, vslider, min_x, max_x, hauteur, écart, profondeur, counter, modeAjout, debutLigne, clicEnCours;
+ρσ_modules.pythonize = {};
+
+(function(){
+    function strings() {
+        var string_funcs, exclude, name;
+        string_funcs = set("capitalize strip lstrip rstrip islower isupper isspace lower upper swapcase center count endswith startswith find rfind index rindex format join ljust rjust partition rpartition replace split rsplit splitlines zfill".split(" "));
+        if (!arguments.length) {
+            exclude = (function(){
+                var s = ρσ_set();
+                s.jsset.add("split");
+                s.jsset.add("replace");
+                return s;
+            })();
+        } else if (arguments[0]) {
+            exclude = Array.prototype.slice.call(arguments);
+        } else {
+            exclude = null;
+        }
+        if (exclude) {
+            string_funcs = string_funcs.difference(set(exclude));
+        }
+        var ρσ_Iter0 = string_funcs;
+        ρσ_Iter0 = ((typeof ρσ_Iter0[Symbol.iterator] === "function") ? (ρσ_Iter0 instanceof Map ? ρσ_Iter0.keys() : ρσ_Iter0) : Object.keys(ρσ_Iter0));
+        for (var ρσ_Index0 of ρσ_Iter0) {
+            name = ρσ_Index0;
+            (ρσ_expr_temp = String.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name] = (ρσ_expr_temp = ρσ_str.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name];
+        }
+    };
+    if (!strings.__module__) Object.defineProperties(strings, {
+        __module__ : {value: "pythonize"}
+    });
+
+    ρσ_modules.pythonize.strings = strings;
+})();
+async function __main__() {
+"use strict";
+    var display = canvas;
+    var scene = canvas();
+
+    function round(num, n=0) {return Number(num.toFixed(n))}
+
+    function input(arg) {
+    	arg = arg || {}
+    	if (arg.prompt !== undefined && arg.prompt != '') return prompt(arg.prompt)
+    	else if (typeof arg === 'string') return prompt(arg)
+    	else return prompt()
+    }
+
+    var version, print, arange, __name__, type, ρσ_ls, counter, tempVitesse, objVitesse, min_x, max_x, hauteur, profondeur, écart, modeAjout, debutLigne, clicEnCours, pointeurSouris, tempDel, tempDelBase, objetsMagenta, obj, tempTitre, min_label, minInput, max_label, maxInput, h_label, hInput, p_label, pInput, e_label, eInput, tempTag, v_label, sVitesse, txtVitesse, start_button, fleche_x, fleche_y, fleche_xobv, fleche_yobv;
+    version = ρσ_list_decorate([ "3.2", "glowscript" ]);
+    Array.prototype['+'] = function(r) {return this.concat(r)}
+    Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
+    window.__GSlang = "vpython";
+    print = GSprint;
+    arange = range;
+    __name__ = "__main__";
+    type = pytype;
+    var strings = ρσ_modules.pythonize.strings;
+
+    strings();
+    "4";
+    counter = 0;
+    "5";
+    tempVitesse = .5;
+    "6";
+    objVitesse = tempVitesse;
+    "7";
+    min_x = 0;
+    "8";
+    max_x = 0;
+    "9";
+    hauteur = 0;
+    "10";
+    profondeur = 0;
+    "11";
+    écart = 0;
+    "12";
+    modeAjout = true;
+    "14";
+    debutLigne = null;
+    "15";
+    clicEnCours = false;
+    "17";
+    scene.visible = false;
+    "19";
+    scene.background = color.black;
+    "20";
+    scene.align = "left";
+    "21";
+    pointeurSouris = null;
+    "23";
+    tempDel = ρσ_list_decorate([]);
+    "24";
+    tempDelBase = ρσ_list_decorate([]);
+    "25";
+    objetsMagenta = ρσ_list_decorate([]);
+    "27";
+    var ρσ_Iter1 = scene.objects;
+    ρσ_Iter1 = ((typeof ρσ_Iter1[Symbol.iterator] === "function") ? (ρσ_Iter1 instanceof Map ? ρσ_Iter1.keys() : ρσ_Iter1) : Object.keys(ρσ_Iter1));
+    for (var ρσ_Index1 of ρσ_Iter1) {
+        obj = ρσ_Index1;
+        "28";
+        if ((await hasattr(obj, "shininess"))) {
+            "29";
+            obj.shininess = 0;
+        }
+    }
+    "32";
+    scene.caption = "";
+    "35";
+    tempTitre = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Paramètres<\/b><br>", pos: scene.title_anchor})]);
+    "39";
+    min_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " Min x: ", pos: scene.title_anchor})]);
+    (await sleep(.1));
+    "40";
+    minInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, text: "0", type: "numeric", pos: scene.title_anchor})]);
+    "43";
+    max_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " Max x: ", pos: scene.title_anchor})]);
+    (await sleep(.1));
+    "44";
+    maxInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, text: "20", type: "numeric", pos: scene.title_anchor})]);
+    "47";
+    h_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " Max y: ", pos: scene.title_anchor})]);
+    (await sleep(.1));
+    "48";
+    hInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, text: "20", type: "numeric", pos: scene.title_anchor})]);
+    "51";
+    p_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " Min y: ", pos: scene.title_anchor})]);
+    (await sleep(.1));
+    "52";
+    pInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, text: "0", type: "numeric", pos: scene.title_anchor})]);
+    "56";
+    e_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " Écart: ", pos: scene.title_anchor})]);
+    (await sleep(.1));
+    "57";
+    eInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, text: "2", type: "numeric", pos: scene.title_anchor})]);
+    "59";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.title_anchor})]);
+    "63";
+    tempTag = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b></b><br>", pos: scene.title_anchor})]);
+    "65";
+    v_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "Vitesse de l'observateur : ", pos: scene.title_anchor})]);
+    "66";
+    sVitesse = ρσ_interpolate_kwargs.call(this, slider, [ρσ_desugar_kwargs({min: 1["-u"]()["*"](.99), max: .99, value: .5, step: .01, length: 200, bind: majVitesseSlider, pos: scene.title_anchor})]);
+    "67";
+    txtVitesse = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " (v = 0.5 c)", pos: scene.title_anchor})]);
+    "69";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.title_anchor})]);
+    "74";
+    start_button = ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({bind: lancer_diagramme, text: "Créer le diagramme", pos: scene.title_anchor})]);
+    "75";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.title_anchor})]);
+    "79";
+    async function br() {
+        "80";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+    };
+    if (!br.__module__) Object.defineProperties(br, {
+        __module__ : {value: null}
+    });
+
+    "81";
+    async function creer_ui_secondaire() {
+        "82";
+        "83";
+        "84";
+        "85";
+        "86";
+        "89";
+        tempTag.text = "<b>Vitesse de l'observateur</b><br>";
+        "91";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Affichages</b>", pos: scene.title_anchor})]);
+        "92";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "94";
+        acheck = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: ajoutCheck, text: "Ajouter des objets", checked: true, pos: scene.title_anchor})]);
+        "95";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "97";
+        rcheck = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: cacherRef, text: "Afficher le référentiel en mouvement", checked: true, pos: scene.title_anchor})]);
+        "98";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "100";
+        bcheck = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: cacherRefBase, text: "Afficher le référentiel stationnaire", checked: true, pos: scene.title_anchor})]);
+        "101";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "103";
+        cMagenta = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: retirerObjet, text: "Afficher les objets", checked: true, pos: scene.title_anchor})]);
+        "104";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "105";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "107";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Vitesse de l'objet</b>", pos: scene.caption_anchor})]);
+        "108";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "111";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "113";
+        sObjet = ρσ_interpolate_kwargs.call(this, slider, [ρσ_desugar_kwargs({min: 1["-u"]()["*"](1), max: 1, value: .5, length: 200, bind: majObjVitesse, pos: scene.caption_anchor})]);
+        "114";
+        txtVitesseObjet = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " (v = 0.5 c)", pos: scene.caption_anchor})]);
+        "115";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "116";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "118";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b> Ajouter un point par coordonnées</b>", pos: scene.caption_anchor})]);
+        "119";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "121";
+        x_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " x :    ", pos: scene.caption_anchor})]);
+        (await sleep(.1));
+        "122";
+        xInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, type: "numeric", pos: scene.caption_anchor})]);
+        "123";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "125";
+        ct_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " ct :   ", pos: scene.caption_anchor})]);
+        (await sleep(.1));
+        "126";
+        ctInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, type: "numeric", pos: scene.caption_anchor})]);
+        "127";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "128";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "130";
+        x2_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " x2 :  ", pos: scene.caption_anchor})]);
+        (await sleep(.1));
+        "131";
+        x2Input = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, type: "numeric", pos: scene.caption_anchor})]);
+        "132";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "134";
+        ct2_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " ct2 : ", pos: scene.caption_anchor})]);
+        (await sleep(.1));
+        "135";
+        ct2Input = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, type: "numeric", pos: scene.caption_anchor})]);
+        "136";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "137";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "139";
+        ajoutBouton = ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({text: "Ajouter le point", bind: ajouter_point_manuellement, pos: scene.caption_anchor})]);
+        "141";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "142";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "144";
+        boutonSegment = ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({text: "Tracer segment", bind: ajouter_segment_manuellement, pos: scene.caption_anchor})]);
+        "146";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "147";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "150";
+        bouton_supprimer = ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({text: "Supprimer le dernier élément", bind: supprimer_dernier_objet, pos: scene.caption_anchor})]);
+        "151";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "152";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "154";
+        modeEntree = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: changer_mode_entree, text: "Entrée dans le référentiel en mouvement (x', ct')", checked: false, pos: scene.caption_anchor})]);
+        "158";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+    };
+    if (!creer_ui_secondaire.__module__) Object.defineProperties(creer_ui_secondaire, {
+        __module__ : {value: null}
+    });
+
+    "161";
+    async function supprimer_dernier_objet(b) {
+        "162";
+        if (len(objetsMagenta)[">="](2)) {
+            "163";
+            ρσ_getitem(objetsMagenta, 1["-u"]()["*"](1)).visible = false;
+            "164";
+            ρσ_getitem(objetsMagenta, 1["-u"]()["*"](2)).visible = false;
+            "165";
+            objetsMagenta.pypop();
+            "166";
+            objetsMagenta.pypop();
+        }
+    };
+    if (!supprimer_dernier_objet.__argnames__) Object.defineProperties(supprimer_dernier_objet, {
+        __argnames__ : {value: ["b"]},
+        __module__ : {value: null}
+    });
+
+    "168";
+    async function changer_mode_entree(ev) {
+        "169";
+        "170";
+        if (ev.checked) {
+            "171";
+            x_label.text = " x' :    ";
+            "172";
+            ct_label.text = " ct' :   ";
+            "173";
+            x2_label.text = " x2' :  ";
+            "174";
+            ct2_label.text = " ct2' : ";
+            "175";
+        } else {
+            "176";
+            x_label.text = " x :    ";
+            "177";
+            ct_label.text = " ct :   ";
+            "178";
+            x2_label.text = " x2 :  ";
+            "179";
+            ct2_label.text = " ct2 : ";
+        }
+    };
+    if (!changer_mode_entree.__argnames__) Object.defineProperties(changer_mode_entree, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "181";
+    async function ajouter_segment_manuellementt(b) {
+        var ρσ_ls, x1, ct1, x2, ct2, p1, p2;
+        "182";
+        "184";
+        try {
+            "186";
+            x1 = float(xInput.text);
+            "187";
+            ct1 = float(ctInput.text);
+            "188";
+            x2 = float(x2Input.text);
+            "189";
+            ct2 = float(ct2Input.text);
+            "190";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            if (ρσ_Exception instanceof ValueError) {
+                "191";
+                print("Entrées invalides.");
+                "192";
+                return;
+            } else {
+                throw ρσ_Exception;
+            }
+        }
+        "194";
+        p1 = (await coord_vers_vec(x1, ct1));
+        "195";
+        p2 = (await coord_vers_vec(x2, ct2));
+    };
+    if (!ajouter_segment_manuellementt.__argnames__) Object.defineProperties(ajouter_segment_manuellementt, {
+        __argnames__ : {value: ["b"]},
+        __module__ : {value: null}
+    });
+
+    "197";
+    async function ajouter_segment_manuellement(b) {
+        var ρσ_ls, x1, ct1, x2, ct2, p1, p2, seg, n, direction, t, point, cyl, i, ligne;
+        "198";
+        try {
+            "199";
+            x1 = float(xInput.text);
+            "200";
+            ct1 = float(ctInput.text);
+            "201";
+            x2 = float(x2Input.text);
+            "202";
+            ct2 = float(ct2Input.text);
+            "203";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            {
+                "204";
+                print("Entrées invalides.");
+                "205";
+                return;
+            } 
+        }
+        "207";
+        p1 = (await coord_vers_vec(x1, ct1));
+        "208";
+        p2 = (await coord_vers_vec(x2, ct2));
+        "211";
+        seg = ρσ_interpolate_kwargs.call(this, curve, [ρσ_desugar_kwargs({pos: ρσ_list_decorate([ p1, p2 ]), radius: .06, color: color.magenta})]);
+        "212";
+        objetsMagenta.append(seg);
+        "215";
+        n = 5;
+        "216";
+        direction = norm(vec(objVitesse, 1, 0));
+        "217";
+        for (var ρσ_Index2 = 0; ρσ_Index2["<"](n["+"](1)); ρσ_Index2++) {
+            i = ρσ_Index2;
+            "218";
+            t = i["/"](n);
+            "219";
+            point = p1["*"](1["-"](1["*"](t)))["+"](p2["*"](t));
+            "220";
+            cyl = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: point, axis: direction["*"](20), radius: .8, color: color.magenta, opacity: .15})]);
+            "221";
+            objetsMagenta.append(cyl);
+        }
+        "225";
+        ligne = ρσ_interpolate_kwargs.call(this, curve, [ρσ_desugar_kwargs({radius: .05, color: color.magenta})]);
+        "226";
+        objetsMagenta.append(ligne);
+        "228";
+        n = 5;
+        "229";
+        for (var ρσ_Index3 = 0; ρσ_Index3["<"](n["+"](1)); ρσ_Index3++) {
+            i = ρσ_Index3;
+            "230";
+            t = i["/"](n);
+            "231";
+            point = p1["*"](1["-"](1["*"](t)))["+"](p2["*"](t));
+            "232";
+            ρσ_interpolate_kwargs.call(ligne, ligne.append, [ρσ_desugar_kwargs({pos: point})]);
+            "234";
+            direction = norm(vec(objVitesse, 1, 0));
+            "235";
+            cyl = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: point, axis: direction["*"](20), radius: 1, color: color.magenta, opacity: .1})]);
+            "237";
+            objetsMagenta.append(cyl);
+        }
+    };
+    if (!ajouter_segment_manuellement.__argnames__) Object.defineProperties(ajouter_segment_manuellement, {
+        __argnames__ : {value: ["b"]},
+        __module__ : {value: null}
+    });
+
+    "239";
+    async function coord_vers_vec(x, ct) {
+        var ρσ_ls, u_xp, u_ctp;
+        "241";
+        if (modeEntree.checked) {
+            "242";
+            u_xp = norm(vec(1["/"](tempVitesse), 1, 0));
+            "243";
+            u_ctp = norm(vec(tempVitesse, 1, 0));
+            "244";
+            return x["*"](u_xp)["+"](ct["*"](u_ctp));
+            "245";
+        } else {
+            "246";
+            return vec(x, ct, 0);
+        }
+    };
+    if (!coord_vers_vec.__argnames__) Object.defineProperties(coord_vers_vec, {
+        __argnames__ : {value: ["x", "ct"]},
+        __module__ : {value: null}
+    });
+
+    "249";
+    async function ajouter_point_manuellement(b) {
+        var ρσ_ls, x, ct, u_xp, u_ctp, position, sph, direction, cyl;
+        "250";
+        try {
+            "251";
+            x = float(xInput.text);
+            "252";
+            ct = float(ctInput.text);
+            "254";
+            if (modeEntree.checked) {
+                "256";
+                u_xp = norm(vec(1["/"](tempVitesse), 1, 0));
+                "257";
+                u_ctp = norm(vec(tempVitesse, 1, 0));
+                "258";
+                position = x["*"](u_xp)["+"](ct["*"](u_ctp));
+                "259";
+            } else {
+                "260";
+                position = vec(x, ct, 0);
+            }
+            "262";
+            sph = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: position, radius: .3, color: color.magenta})]);
+            "263";
+            objetsMagenta.append(sph);
+            "265";
+            direction = norm(vec(objVitesse, 1, 0));
+            "266";
+            cyl = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: position, axis: direction["*"](18), color: color.red, radius: .07})]);
+            "267";
+            objetsMagenta.append(cyl);
+            "268";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            if (ρσ_Exception instanceof ValueError) {
+                "269";
+                print("Entrées invalides.");
+            } else {
+                throw ρσ_Exception;
+            }
+        }
+    };
+    if (!ajouter_point_manuellement.__argnames__) Object.defineProperties(ajouter_point_manuellement, {
+        __argnames__ : {value: ["b"]},
+        __module__ : {value: null}
+    });
+
+    "274";
+    async function retirerObjet(ev) {
+        var ρσ_ls, o;
+        "275";
+        if (ev.checked) {
+            "276";
+            var ρσ_Iter4 = objetsMagenta;
+            ρσ_Iter4 = ((typeof ρσ_Iter4[Symbol.iterator] === "function") ? (ρσ_Iter4 instanceof Map ? ρσ_Iter4.keys() : ρσ_Iter4) : Object.keys(ρσ_Iter4));
+            for (var ρσ_Index4 of ρσ_Iter4) {
+                o = ρσ_Index4;
+                "277";
+                o.visible = true;
+                "278";
+            }
+        } else {
+            "279";
+            var ρσ_Iter5 = objetsMagenta;
+            ρσ_Iter5 = ((typeof ρσ_Iter5[Symbol.iterator] === "function") ? (ρσ_Iter5 instanceof Map ? ρσ_Iter5.keys() : ρσ_Iter5) : Object.keys(ρσ_Iter5));
+            for (var ρσ_Index5 of ρσ_Iter5) {
+                o = ρσ_Index5;
+                "280";
+                o.visible = false;
+            }
+        }
+    };
+    if (!retirerObjet.__argnames__) Object.defineProperties(retirerObjet, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "282";
+    async function cacherRef(ev) {
+        var ρσ_ls, elem;
+        "283";
+        if ((ev.checked === false || typeof ev.checked === "object" && ρσ_equals(ev.checked, false))) {
+            "284";
+            var ρσ_Iter6 = tempDel;
+            ρσ_Iter6 = ((typeof ρσ_Iter6[Symbol.iterator] === "function") ? (ρσ_Iter6 instanceof Map ? ρσ_Iter6.keys() : ρσ_Iter6) : Object.keys(ρσ_Iter6));
+            for (var ρσ_Index6 of ρσ_Iter6) {
+                elem = ρσ_Index6;
+                "285";
+                elem.visible = false;
+                "286";
+            }
+        } else {
+            "287";
+            (await dessiner_obv(min_x, max_x, hauteur, écart));
+        }
+    };
+    if (!cacherRef.__argnames__) Object.defineProperties(cacherRef, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "289";
+    async function cacherRefBase(ev) {
+        var ρσ_ls, elem;
+        "290";
+        if ((ev.checked === false || typeof ev.checked === "object" && ρσ_equals(ev.checked, false))) {
+            "291";
+            var ρσ_Iter7 = tempDelBase;
+            ρσ_Iter7 = ((typeof ρσ_Iter7[Symbol.iterator] === "function") ? (ρσ_Iter7 instanceof Map ? ρσ_Iter7.keys() : ρσ_Iter7) : Object.keys(ρσ_Iter7));
+            for (var ρσ_Index7 of ρσ_Iter7) {
+                elem = ρσ_Index7;
+                "292";
+                elem.visible = false;
+                "293";
+            }
+        } else {
+            "294";
+            (await dessiner_plan_cartesien(min_x, max_x, hauteur, écart));
+        }
+    };
+    if (!cacherRefBase.__argnames__) Object.defineProperties(cacherRefBase, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "297";
+    async function majObjVitesse() {
+        "298";
+        "299";
+        objVitesse = sObjet.value;
+        "300";
+        txtVitesseObjet.text = " (v = "["+"](str(round(objVitesse, 2)))["+"](" c)");
+    };
+    if (!majObjVitesse.__module__) Object.defineProperties(majObjVitesse, {
+        __module__ : {value: null}
+    });
+
+    "302";
+    async function majVitesseSlider() {
+        var ρσ_ls, elem;
+        "303";
+        "304";
+        tempVitesse = sVitesse.value;
+        "305";
+        txtVitesse.text = " (v = "["+"](str(round(tempVitesse, 3)))["+"](" c)");
+        "307";
+        var ρσ_Iter8 = tempDel;
+        ρσ_Iter8 = ((typeof ρσ_Iter8[Symbol.iterator] === "function") ? (ρσ_Iter8 instanceof Map ? ρσ_Iter8.keys() : ρσ_Iter8) : Object.keys(ρσ_Iter8));
+        for (var ρσ_Index8 of ρσ_Iter8) {
+            elem = ρσ_Index8;
+            "308";
+            elem.visible = false;
+        }
+        "309";
+        (await dessiner_obv(min_x, max_x, hauteur, écart));
+    };
+    if (!majVitesseSlider.__module__) Object.defineProperties(majVitesseSlider, {
+        __module__ : {value: null}
+    });
+
+    "311";
+    async function majVitesse(ev) {
+        var ρσ_ls, elem;
+        "312";
+        "313";
+        tempVitesse = float(vInput.text);
+        "314";
+        var ρσ_Iter9 = tempDel;
+        ρσ_Iter9 = ((typeof ρσ_Iter9[Symbol.iterator] === "function") ? (ρσ_Iter9 instanceof Map ? ρσ_Iter9.keys() : ρσ_Iter9) : Object.keys(ρσ_Iter9));
+        for (var ρσ_Index9 of ρσ_Iter9) {
+            elem = ρσ_Index9;
+            "315";
+            elem.visible = false;
+        }
+        "317";
+        (await dessiner_obv(min_x, max_x, hauteur, écart));
+    };
+    if (!majVitesse.__argnames__) Object.defineProperties(majVitesse, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "319";
+    async function decomposer_position(evt) {
+        var ρσ_ls, position, temp;
+        "320";
+        "322";
+        position = ρσ_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [ρσ_desugar_kwargs({normal: vec(0, 0, 1), point: vec(0, 0, 0)})]);
+        "323";
+        if (position === null) {
+            "324";
+            return;
+        }
+        "326";
+        position.z = .2;
+        "327";
+        pointeurSouris.pos = position;
+        "328";
+        pointeurSouris.visible = true;
+        "331";
+        fleche_x.pos = vec(0, 0, 0);
+        "332";
+        fleche_x.axis = vec(position.x, 0, 0);
+        "335";
+        fleche_y.pos = vec(0, 0, 0);
+        "336";
+        fleche_y.axis = vec(0, position.y, 0);
+        "338";
+        temp = position.y["-"](1["*"](position.x)["*"](tempVitesse))["/"](1["/"](tempVitesse)["-"](1["*"](tempVitesse)));
+        "339";
+        fleche_yobv.pos = vec(0, 0, 0);
+        "340";
+        fleche_yobv.axis = vec(temp, temp["*"](1)["/"](tempVitesse), 0);
+        "344";
+        temp = position.y["-"](1["*"](position.x)["*"](1)["/"](tempVitesse))["/"](tempVitesse["-"](1["/"](tempVitesse)));
+        "345";
+        fleche_xobv.pos = vec(0, 0, 0);
+        "346";
+        fleche_xobv.axis = vec(temp, temp["*"](tempVitesse), 0);
+    };
+    if (!decomposer_position.__argnames__) Object.defineProperties(decomposer_position, {
+        __argnames__ : {value: ["evt"]},
+        __module__ : {value: null}
+    });
+
+    "352";
+    async function test() {
+        "353";
+    };
+    if (!test.__module__) Object.defineProperties(test, {
+        __module__ : {value: null}
+    });
+
+    "355";
+    async function dessiner_plan_cartesien(min_x, max_x, hauteur, écart) {
+        var ρσ_ls, x, t, y;
+        "356";
+        scene.center = vec(min_x["+"](max_x)["/"](2), hauteur["+"](profondeur)["/"](2), 0);
+        "359";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: vec(min_x, 0, 0), shaftwidth: .08, color: color.white})]);
+        "360";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: vec(max_x, 0, 0), shaftwidth: .08, color: color.white})]);
+        "361";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: vec(0, hauteur, 0), shaftwidth: .08, color: color.white})]);
+        "363";
+        ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(max_x, 0, 0), text: "x", xoffset: 10, height: 12, box: false, color: color.red})]);
+        "364";
+        ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(0, hauteur, 0), text: "ct", yoffset: 10, height: 12, box: false, color: color.green})]);
+        "368";
+        x = 0;
+        "369";
+        while (x["<"](max_x)) {
+            "370";
+            t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, 0, 0), axis: vec(0, hauteur, 0), radius: .05, color: color.gray(.8)})]);
+            "371";
+            tempDelBase.append(t);
+            "372";
+            if (profondeur["<"](0)) {
+                "373";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, 0, 0), axis: vec(0, 1["-u"]()["*"](hauteur), 0), radius: .05, color: color.gray(.8)})]);
+                "374";
+                tempDelBase.append(t);
+            }
+            "377";
+            x=x["+"](écart);
+        }
+        "378";
+        x = 1["-u"]()["*"](écart);
+        "379";
+        while (x[">"](min_x)) {
+            "380";
+            t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, 0, 0), axis: vec(0, hauteur, 0), radius: .05, color: color.gray(.8)})]);
+            "381";
+            tempDelBase.append(t);
+            "382";
+            if (profondeur["<"](0)) {
+                "383";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, 0, 0), axis: vec(0, 1["-u"]()["*"](hauteur), 0), radius: .05, color: color.gray(.8)})]);
+                "384";
+                tempDelBase.append(t);
+                "385";
+                x=x["-"](écart);
+            }
+        }
+        "387";
+        y = 0;
+        "389";
+        while (y["<="](hauteur)) {
+            "390";
+            t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(0, y, 0), axis: vec(max_x["-"](1["*"](2)), 0, 0), radius: .05, color: color.gray(.8)})]);
+            "391";
+            tempDelBase.append(t);
+            "392";
+            t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(0, y, 0), axis: vec(min_x["+"](2), 0, 0), radius: .05, color: color.gray(.8)})]);
+            "393";
+            tempDelBase.append(t);
+            "395";
+            y=y["+"](écart);
+            "397";
+        }
+        if (profondeur["<"](0)) {
+            "398";
+            y = 1["-u"]()["*"](écart);
+            "399";
+            while (y[">="](profondeur["-"](1["*"](1)))) {
+                "400";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(0, y, 0), axis: vec(max_x["-"](1["*"](2)), 0, 0), radius: .05, color: color.gray(.8)})]);
+                "401";
+                tempDelBase.append(t);
+                "402";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(0, y, 0), axis: vec(min_x["+"](2), 0, 0), radius: .05, color: color.gray(.8)})]);
+                "403";
+                tempDelBase.append(t);
+                "405";
+                y=y["-"](écart);
+            }
+        }
+    };
+    if (!dessiner_plan_cartesien.__argnames__) Object.defineProperties(dessiner_plan_cartesien, {
+        __argnames__ : {value: ["min_x", "max_x", "hauteur", "écart"]},
+        __module__ : {value: null}
+    });
+
+    "407";
+    async function getAngle(vit) {
+        "408";
+        return pi["/"](2)["-"](1["*"](atan(vit)));
+    };
+    if (!getAngle.__argnames__) Object.defineProperties(getAngle, {
+        __argnames__ : {value: ["vit"]},
+        __module__ : {value: null}
+    });
+
+    "410";
+    async function dessiner_obv(min_x, max_x, hauteur, écart) {
+        var ρσ_ls, t, x, y;
+        "411";
+        scene.center = vec(min_x["+"](max_x)["/"](2), hauteur["/"](2), 2);
+        "415";
+        t = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: norm(vec(1["/"](tempVitesse), 1, 0))["*"](max_x)["/"](cos(pi["/"](2)["-"](1["*"]((await getAngle(tempVitesse)))))), shaftwidth: .1, color: color.purple})]);
+        "416";
+        tempDel.append(t);
+        "418";
+        t = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: norm(vec(tempVitesse, 1, 0))["*"](hauteur)["/"](cos((await getAngle(1["/"](tempVitesse))))), shaftwidth: .1, color: color.purple})]);
+        "419";
+        tempDel.append(t);
+        "423";
+        if (profondeur["<"](0)) {
+            "424";
+            t = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: norm(vec(1["-u"]()["*"](1["/"](tempVitesse)), 1["-u"]()["*"](1), 0))["*"](max_x)["/"](cos(pi["/"](2)["-"](1["*"]((await getAngle(tempVitesse)))))), shaftwidth: .1, color: color.purple})]);
+            "425";
+            tempDel.append(t);
+            "426";
+            t = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: norm(vec(1["-u"]()["*"](tempVitesse), 1["-u"]()["*"](1), 0))["*"](hauteur)["/"](cos((await getAngle(1["/"](tempVitesse))))), shaftwidth: .1, color: color.purple})]);
+            "427";
+            tempDel.append(t);
+        }
+        "429";
+        t = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: norm(vec(1["/"](tempVitesse), 1, 0))["*"](max_x)["/"](cos(pi["/"](2)["-"](1["*"]((await getAngle(tempVitesse)))))), text: "x'", xoffset: 10, height: 12, box: false, color: color.red})]);
+        "430";
+        tempDel.append(t);
+        "432";
+        t = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: norm(vec(tempVitesse, 1, 0))["*"](hauteur)["/"](cos((await getAngle(1["/"](tempVitesse))))), shaftwidth: .1, color: color.purple})]);
+        "433";
+        tempDel.append(t);
+        "435";
+        if (tempVitesse[">"](0)) {
+            "436";
+            t = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: norm(vec(tempVitesse, 1, 0))["*"](hauteur)["/"](cos((await getAngle(1["/"](tempVitesse))))), text: "ct'", yoffset: 10, height: 12, box: false, color: color.green})]);
+            "437";
+            tempDel.append(t);
+            "439";
+        } else {
+            "440";
+            t = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: norm(vec(tempVitesse, 1, 0))["*"](hauteur)["/"](cos((await getAngle(1["/"](tempVitesse))))), text: "ct'", yoffset: 10, height: 12, box: false, color: color.green})]);
+            "441";
+            tempDel.append(t);
+        }
+        "445";
+        x = 0;
+        "446";
+        while (x["<"](max_x) && x["*"](tempVitesse)["<"](max_x["/"](2))) {
+            "448";
+            if (tempVitesse["<"](0)) {
+                "449";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(1["-u"]()["*"](x), 1["-u"]()["*"](x)["*"](tempVitesse), 0), axis: norm(vec(tempVitesse, 1, 0))["*"](hauteur), radius: .05, color: color.orange})]);
+                "450";
+            } else {
+                "451";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, x["*"](tempVitesse), 0), axis: norm(vec(tempVitesse, 1, 0))["*"](hauteur), radius: .05, color: color.orange})]);
+            }
+            "452";
+            tempDel.append(t);
+            "453";
+            if (profondeur["<"](0)) {
+                "455";
+                if (tempVitesse["<"](0)) {
+                    "456";
+                    t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(1["-u"]()["*"](x), 1["-u"]()["*"](x)["*"](tempVitesse), 0), axis: norm(vec(tempVitesse, 1, 0))["*"](1["-u"]())["*"](hauteur), radius: .05, color: color.orange})]);
+                    "457";
+                } else {
+                    "458";
+                    t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, x["*"](tempVitesse), 0), axis: norm(vec(tempVitesse, 1, 0))["*"](hauteur), radius: .05, color: color.orange})]);
+                }
+                "459";
+                tempDel.append(t);
+            }
+            "460";
+            x=x["+"](écart);
+        }
+        "461";
+        x = 1["-u"]()["*"](écart);
+        "466";
+        y = 0;
+        "468";
+        while (y["<="](hauteur["-"](1["*"](1))) && y["*"](tempVitesse)["<"](hauteur["/"](2))) {
+            "469";
+            t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(y["*"](tempVitesse), y, 0), axis: norm(vec(1["/"](tempVitesse), 1, 0))["*"](max_x), radius: .05, color: color.orange})]);
+            "470";
+            tempDel.append(t);
+            "471";
+            if (profondeur["<"](0)) {
+                "472";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(1["-u"]()["*"](y)["*"](tempVitesse), 1["-u"]()["*"](y), 0), axis: norm(vec(1["/"](tempVitesse), 1, 0))["*"](1["-u"]())["*"](max_x), radius: .05, color: color.orange})]);
+                "473";
+                tempDel.append(t);
+            }
+            "474";
+            y=y["+"](écart);
+        }
+    };
+    if (!dessiner_obv.__argnames__) Object.defineProperties(dessiner_obv, {
+        __argnames__ : {value: ["min_x", "max_x", "hauteur", "écart"]},
+        __module__ : {value: null}
+    });
+
+    "479";
+    async function lancer_diagramme(bouton) {
+        var ρσ_ls, w;
+        "480";
+        "481";
+        min_x = int(minInput.text);
+        "482";
+        max_x = int(maxInput.text);
+        "483";
+        hauteur = int(hInput.text);
+        "484";
+        profondeur = int(pInput.text);
+        "485";
+        écart = float(eInput.text);
+        "487";
+        (await dessiner_plan_cartesien(min_x, max_x, hauteur, écart));
+        "488";
+        (await dessiner_obv(min_x, max_x, hauteur, écart));
+        "491";
+        var ρσ_Iter10 = ρσ_list_decorate([ tempTitre, min_label, minInput, max_label, maxInput, h_label, hInput, p_label, pInput, e_label, eInput, v_label, start_button ]);
+        ρσ_Iter10 = ((typeof ρσ_Iter10[Symbol.iterator] === "function") ? (ρσ_Iter10 instanceof Map ? ρσ_Iter10.keys() : ρσ_Iter10) : Object.keys(ρσ_Iter10));
+        for (var ρσ_Index10 of ρσ_Iter10) {
+            w = ρσ_Index10;
+            "492";
+            w.remove();
+        }
+        "494";
+        scene.visible = true;
+        "495";
+        scene.caption = "<b> Diagramme de Minkowski </b>";
+        "497";
+        (await creer_ui_secondaire());
+    };
+    if (!lancer_diagramme.__argnames__) Object.defineProperties(lancer_diagramme, {
+        __argnames__ : {value: ["bouton"]},
+        __module__ : {value: null}
+    });
+
+    "503";
+    async function ajoutObjet(evt) {
+        var ρσ_ls, posObjet, t;
+        "504";
+        "505";
+        counter=counter["+"](1);
+        "506";
+        posObjet = ρσ_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [ρσ_desugar_kwargs({normal: vec(0, 0, 1), point: vec(0, 0, 0)})]);
+        "508";
+        t = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: posObjet, radius: .3, color: color.magenta})]);
+        "509";
+        objetsMagenta.append(t);
+        "510";
+        t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: posObjet, axis: norm(vec(objVitesse, 1, 0))["*"](18), color: color.red, radius: .07})]);
+        "511";
+        objetsMagenta.append(t);
+    };
+    if (!ajoutObjet.__argnames__) Object.defineProperties(ajoutObjet, {
+        __argnames__ : {value: ["evt"]},
+        __module__ : {value: null}
+    });
+
+    "512";
+    async function ajoutObjetLarge() {
+        "513";
+        print("objet large");
+    };
+    if (!ajoutObjetLarge.__module__) Object.defineProperties(ajoutObjetLarge, {
+        __module__ : {value: null}
+    });
+
+    "515";
+    async function ajoutCheck(ev) {
+        "516";
+        "517";
+        modeAjout = ev.checked;
+    };
+    if (!ajoutCheck.__argnames__) Object.defineProperties(ajoutCheck, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "519";
+    async function redirection() {
+        "520";
+        if (modeAjout) {
+            "521";
+            (await ajoutObjetLarge());
+            "522";
+        } else {
+            "523";
+            (await decomposer_position());
+        }
+    };
+    if (!redirection.__module__) Object.defineProperties(redirection, {
+        __module__ : {value: null}
+    });
+
+    "525";
+    async function redirection2() {
+        "526";
+        "527";
+        if (modeAjout) {
+            "528";
+            debutLigne = ρσ_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [ρσ_desugar_kwargs({normal: vec(0, 0, 1), point: vec(0, 0, 0)})]);
+            "529";
+            clicEnCours = true;
+            "530";
+        } else {
+            "531";
+            (await decomposer_position());
+        }
+    };
+    if (!redirection2.__module__) Object.defineProperties(redirection2, {
+        __module__ : {value: null}
+    });
+
+    "535";
+    async function relacherSouris(evt) {
+        var ρσ_ls, finLigne, distance, ligne, n, t, point, direction, cyl, i;
+        "536";
+        "537";
+        if (modeAjout && clicEnCours && debutLigne !== null) {
+            "538";
+            finLigne = ρσ_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [ρσ_desugar_kwargs({normal: vec(0, 0, 1), point: vec(0, 0, 0)})]);
+            "539";
+            if (finLigne !== null) {
+                "540";
+                distance = mag(finLigne["-"](1["*"](debutLigne)));
+                "541";
+                if (distance["<"](.2)) {
+                    "543";
+                    (await ajoutObjet(evt));
+                    "544";
+                } else {
+                    "546";
+                    ligne = ρσ_interpolate_kwargs.call(this, curve, [ρσ_desugar_kwargs({radius: .05, color: color.magenta})]);
+                    "547";
+                    objetsMagenta.append(ligne);
+                    "549";
+                    n = 5;
+                    "550";
+                    for (var ρσ_Index11 = 0; ρσ_Index11["<"](n["+"](1)); ρσ_Index11++) {
+                        i = ρσ_Index11;
+                        "551";
+                        t = i["/"](n);
+                        "552";
+                        point = debutLigne["*"](1["-"](1["*"](t)))["+"](finLigne["*"](t));
+                        "553";
+                        ρσ_interpolate_kwargs.call(ligne, ligne.append, [ρσ_desugar_kwargs({pos: point})]);
+                        "554";
+                        direction = norm(vec(objVitesse, 1, 0));
+                        "555";
+                        cyl = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: point, axis: direction["*"](20), radius: 1, color: color.magenta, opacity: .1})]);
+                        "556";
+                        objetsMagenta.append(cyl);
+                    }
+                }
+            }
+        }
+        "558";
+        debutLigne = null;
+        "559";
+        clicEnCours = false;
+    };
+    if (!relacherSouris.__argnames__) Object.defineProperties(relacherSouris, {
+        __argnames__ : {value: ["evt"]},
+        __module__ : {value: null}
+    });
+
+    "564";
+    pointeurSouris = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), radius: .25, color: color.yellow, shininess: 0, visible: false})]);
+    "573";
+    scene.bind("mousemove", redirection);
+    "574";
+    scene.bind("mousedown", redirection2);
+    "575";
+    scene.bind("mouseup", relacherSouris);
+    "579";
+    fleche_x = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({color: color.red, shaftwidth: .15})]);
+    "580";
+    fleche_y = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({color: color.green, shaftwidth: .15})]);
+    "582";
+    fleche_xobv = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({color: color.red, shaftwidth: .15})]);
+    "583";
+    fleche_yobv = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({color: color.green, shaftwidth: .15})]);
+};
+if (!__main__.__module__) Object.defineProperties(__main__, {
+    __module__ : {value: null}
+});
+
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+// END JAVASCRIPT
+
+//--><!]]></script>
+</div>
+```
+
+<div style="clear: both;"></div>
+
+# Code en python (avec Glowscript)
+<br>Voici le code correspondant :
+
+```{python, eval=FALSE}
+Web VPython 3.2
+
+############### Variables globales
+counter = 0
+tempVitesse = 0.5
+objVitesse = tempVitesse
+min_x = 0
+max_x = 0
+hauteur = 0
+profondeur =0
+écart = 0
+modeAjout=True
+# Variables pour tracer une ligne entre clic et relâchement
+debutLigne = None
+clicEnCours = False
+###############################################
+scene.visible=False
+#scene.background = vector(0.652, 0.791, 0.966)
+scene.background = color.black
+scene.align = 'left'
+pointeurSouris = None
+
+tempDel=[]
+tempDelBase=[]
+objetsMagenta = []
+
+for obj in scene.objects:          # everything currently in the scene
+    if hasattr(obj, "shininess"):  # spheres, boxes, arrows, curves…
+        obj.shininess = 0
+
+# === Entrée utilisateur (interface initiale) ===
+scene.caption = ""
+
+
+tempTitre = wtext(text="<b>Paramètres</b><br>", pos=scene.title_anchor)
+
+#wtext(text="<br>", pos=scene.title_anchor)
+
+min_label = wtext(text=" Min x: ", pos=scene.title_anchor)
+minInput = winput(bind=test,text="0", type="numeric", pos=scene.title_anchor)
+#wtext(text="<br>", pos=scene.title_anchor) 
+
+max_label = wtext(text=" Max x: ", pos=scene.title_anchor)
+maxInput = winput(bind=test,text="20", type="numeric", pos=scene.title_anchor)
+#wtext(text="<br>", pos=scene.title_anchor)
+
+h_label = wtext(text=" Max y: ", pos=scene.title_anchor)
+hInput = winput(bind=test,text="20", type="numeric", pos=scene.title_anchor)
+#wtext(text="<br>", pos=scene.title_anchor)
+
+p_label = wtext(text=" Min y: ", pos=scene.title_anchor)
+pInput = winput(bind=test,text="0", type="numeric", pos=scene.title_anchor)
+#wtext(text="<br>", pos=scene.title_anchor)
+
+
+e_label = wtext(text=" Écart: ", pos=scene.title_anchor)
+eInput = winput(bind=test,text="2", type="numeric", pos=scene.title_anchor)
+
+wtext(text="<br><br>", pos=scene.title_anchor)
+####################################################
+
+
+tempTag = wtext(text="<b></b><br>", pos=scene.title_anchor)
+
+v_label = wtext(text="Vitesse de l'observateur : ", pos=scene.title_anchor)
+sVitesse = slider(min=-0.99, max=0.99, value=0.5, step=0.01, length=200, bind=majVitesseSlider, pos=scene.title_anchor)
+txtVitesse = wtext(text=" (v = 0.5 c)", pos=scene.title_anchor)
+
+wtext(text="<br><br>", pos=scene.title_anchor)
+
+
+
+
+start_button = button(bind=lancer_diagramme,text="Créer le diagramme", pos=scene.title_anchor)
+wtext(text="<br><br>", pos=scene.title_anchor)
+
+
+#####################################################################################################
+def br():
+    wtext(text="<br>", pos=scene.title_anchor)
+def creer_ui_secondaire():
+    global acheck, rcheck, bcheck, cMagenta
+    global sObjet, txtVitesseObjet
+    global x_label, xInput, ct_label, ctInput, x2_label, ct2_label, x2Input, ct2Input, tempTag
+    global ajoutBouton, bouton_supprimer, modeEntree
+    global boutonSegment
+
+
+    tempTag.text="<b>Vitesse de l'observateur</b><br>"
+
+    wtext(text="<b>Affichages</b>", pos=scene.title_anchor)
+    wtext(text="<br>", pos=scene.title_anchor)
+
+    acheck = checkbox(bind=ajoutCheck, text="Ajouter des objets", checked=True, pos=scene.title_anchor)
+    wtext(text="<br>", pos=scene.title_anchor)
+
+    rcheck = checkbox(bind=cacherRef, text="Afficher le référentiel en mouvement", checked=True, pos=scene.title_anchor)
+    wtext(text="<br>", pos=scene.title_anchor)
+
+    bcheck = checkbox(bind=cacherRefBase, text="Afficher le référentiel stationnaire", checked=True, pos=scene.title_anchor)
+    wtext(text="<br>", pos=scene.title_anchor)
+
+    cMagenta = checkbox(bind=retirerObjet, text="Afficher les objets", checked=True, pos=scene.title_anchor)
+    wtext(text="<br>", pos=scene.title_anchor)
+    wtext(text="<br>", pos=scene.title_anchor)
+
+    wtext(text="<b>Vitesse de l'objet</b>", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+    #wtext(text="Vitesse de l'objet à placer :", pos=scene.title_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+    sObjet = slider(min=-1, max=1, value=0.5, length=200, bind=majObjVitesse, pos=scene.caption_anchor)
+    txtVitesseObjet = wtext(text=" (v = 0.5 c)", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+    wtext(text="<b> Ajouter un point par coordonnées</b>", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+    x_label = wtext(text=" x :    ", pos=scene.caption_anchor)
+    xInput  = winput(bind=test, type="numeric", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+    ct_label = wtext(text=" ct :   ", pos=scene.caption_anchor)
+    ctInput  = winput(bind=test, type="numeric", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+    x2_label = wtext(text=" x2 :  ", pos=scene.caption_anchor)
+    x2Input  = winput(bind=test, type="numeric", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+    ct2_label = wtext(text=" ct2 : ", pos=scene.caption_anchor)
+    ct2Input  = winput(bind=test, type="numeric", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+    ajoutBouton = button(text="Ajouter le point", bind=ajouter_point_manuellement, pos=scene.caption_anchor)
+
+    wtext(text="<br>", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+    
+    boutonSegment = button(text="Tracer segment", bind=ajouter_segment_manuellement, pos=scene.caption_anchor)
+
+    wtext(text="<br>", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+    
+    bouton_supprimer = button(text="Supprimer le dernier élément", bind=supprimer_dernier_objet, pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+    modeEntree = checkbox(bind=changer_mode_entree,
+                          text="Entrée dans le référentiel en mouvement (x', ct')",
+                          checked=False,
+                          pos=scene.caption_anchor)
+    wtext(text="<br>", pos=scene.caption_anchor)
+
+
+def supprimer_dernier_objet(b):
+    if len(objetsMagenta) >= 2:
+        objetsMagenta[-1].visible = False
+        objetsMagenta[-2].visible = False
+        objetsMagenta.pop()
+        objetsMagenta.pop()
+
+def changer_mode_entree(ev):
+    global x_label,ct_label,x2_label,ct2_label
+    if ev.checked:
+        x_label.text = " x' :    "
+        ct_label.text = " ct' :   "
+        x2_label.text = " x2' :  "
+        ct2_label.text = " ct2' : "
+    else:
+        x_label.text = " x :    "
+        ct_label.text = " ct :   "
+        x2_label.text = " x2 :  "
+        ct2_label.text = " ct2 : "
+# === Initialisation des flèches ===
+def ajouter_segment_manuellementt(b):
+    global x2_label, x2Input, ct2_label, ct2Input
+
+    try:
+        # Lecture des deux points
+        x1  = float(xInput.text)
+        ct1 = float(ctInput.text)
+        x2  = float(x2Input.text)
+        ct2 = float(ct2Input.text)
+    except ValueError:
+        print("Entrées invalides.")
+        return
+
+    p1 = coord_vers_vec(x1,  ct1)
+    p2 = coord_vers_vec(x2,  ct2)
+
+def ajouter_segment_manuellement(b):
+    try:
+        x1  = float(xInput.text)
+        ct1 = float(ctInput.text)
+        x2  = float(x2Input.text)
+        ct2 = float(ct2Input.text)
+    except:
+        print("Entrées invalides.")
+        return
+
+    p1 = coord_vers_vec(x1, ct1)
+    p2 = coord_vers_vec(x2, ct2)
+
+    # tracer directement le segment (2 points suffisent)
+    seg = curve(pos=[p1, p2], radius=0.06, color=color.magenta)
+    objetsMagenta.append(seg)
+
+    # petites lignes d’univers translucides au long du segment (optionnel)
+    n = 5
+    direction = norm(vec(objVitesse, 1, 0))
+    for i in range(n + 1):
+        t = i / n
+        point = p1 * (1 - t) + p2 * t
+        cyl = cylinder(pos=point, axis=direction * 20, radius=0.8, color=color.magenta, opacity=0.15)
+        objetsMagenta.append(cyl)
+
+
+    # revoir TODO
+    ligne = curve(radius=0.05, color=color.magenta)
+    objetsMagenta.append(ligne)
+
+    n = 5
+    for i in range(n + 1):
+        t = i / n
+        point = p1 * (1 - t) + p2 * t
+        ligne.append(pos=point)
+
+        direction = norm(vec(objVitesse, 1, 0))
+        cyl = cylinder(pos=point, axis=direction * 20,
+                       radius=1, color=color.magenta, opacity=0.1)
+        objetsMagenta.append(cyl)
+
+def coord_vers_vec(x, ct):
+    """Retourne un vec(x,ct,0) ou la projection (x',ct') selon modeEntree."""
+    if modeEntree.checked:
+        u_xp  = norm(vec(1 / tempVitesse, 1, 0))
+        u_ctp = norm(vec(    tempVitesse, 1, 0))
+        return x * u_xp + ct * u_ctp
+    else:
+        return vec(x, ct, 0)
+
+
+def ajouter_point_manuellement(b):
+    try:
+        x = float(xInput.text)
+        ct = float(ctInput.text)
+
+        if modeEntree.checked:
+            # Mode (x', ct') — projection géométrique
+            u_xp = norm(vec(1 / tempVitesse, 1, 0))
+            u_ctp = norm(vec(tempVitesse, 1, 0))
+            position = x * u_xp + ct * u_ctp
+        else:
+            position = vec(x, ct, 0)
+
+        sph = sphere(pos=position, radius=0.3, color=color.magenta)
+        objetsMagenta.append(sph)
+
+        direction = norm(vec(objVitesse, 1, 0))
+        cyl = cylinder(pos=position, axis=direction * 18, color=color.red, radius=0.07)
+        objetsMagenta.append(cyl)
+    except ValueError:
+        print("Entrées invalides.")
+
+
+
+
+def retirerObjet(ev):
+    if ev.checked:
+        for o in objetsMagenta:
+            o.visible = True
+    else:
+        for o in objetsMagenta:
+            o.visible = False
+            
+def cacherRef(ev):
+    if ev.checked==False:
+        for elem in tempDel:
+            elem.visible=False
+    else:
+        dessiner_obv(min_x, max_x, hauteur, écart)
+
+def cacherRefBase(ev):
+    if ev.checked==False:
+        for elem in tempDelBase:
+            elem.visible=False
+    else:
+        dessiner_plan_cartesien(min_x, max_x, hauteur, écart)
+
+
+def majObjVitesse():
+    global objVitesse
+    objVitesse=sObjet.value
+    txtVitesseObjet.text = " (v = " + str(round(objVitesse, 2)) + " c)"
+
+def majVitesseSlider():
+    global tempVitesse
+    tempVitesse = sVitesse.value
+    txtVitesse.text = " (v = " + str(round(tempVitesse, 3)) + " c)"
+    
+    for elem in tempDel:
+        elem.visible = False
+    dessiner_obv(min_x, max_x, hauteur, écart)
+
+def majVitesse(ev):
+    global tempVitesse
+    tempVitesse =float(vInput.text)
+    for elem in tempDel:
+        elem.visible=False
+    #print(tempDel)
+    dessiner_obv(min_x, max_x, hauteur, écart)
+
+def decomposer_position(evt):
+    global pointeurSouris
+    # Projeter la position de la souris sur le plan XY
+    position = scene.mouse.project(normal=vec(0, 0, 1), point=vec(0, 0, 0))
+    if position is None:
+        return
+
+    position.z = 0.2
+    pointeurSouris.pos = position
+    pointeurSouris.visible = True
+
+    # Mettre à jour la flèche x (de (0,0) à (x,0))
+    fleche_x.pos = vec(0, 0, 0)
+    fleche_x.axis = vec(position.x, 0, 0)
+
+    # Mettre à jour la flèche y (de (0,0) à (0,y))
+    fleche_y.pos = vec(0, 0, 0)
+    fleche_y.axis = vec(0, position.y, 0)
+    
+    temp = (position.y-position.x*tempVitesse)/(1/tempVitesse-tempVitesse)
+    fleche_yobv.pos = vec(0, 0, 0)
+    fleche_yobv.axis = vec(temp,temp*1/tempVitesse , 0)
+
+    
+
+    temp = (position.y-position.x*1/tempVitesse)/(tempVitesse-1/tempVitesse)
+    fleche_xobv.pos = vec(0, 0, 0)
+    fleche_xobv.axis = vec(temp,temp*tempVitesse , 0)
+    
+
+
+# === Dessin du plan cartésien ===
+
+def test():
+    pass
+
+def dessiner_plan_cartesien(min_x, max_x, hauteur, écart):
+    scene.center = vec((min_x + max_x) / 2, (hauteur+profondeur) / 2, 0)
+    
+    #Axes
+    arrow(pos=vec(0, 0, 0), axis=vec(min_x, 0, 0), shaftwidth=0.08, color=color.white)
+    arrow(pos=vec(0, 0, 0), axis=vec(max_x, 0, 0), shaftwidth=0.08, color=color.white)
+    arrow(pos=vec(0, 0, 0), axis=vec(0, hauteur, 0), shaftwidth=0.08, color=color.white)
+
+    label(pos=vec(max_x, 0, 0), text="x", xoffset=10, height=12, box=False, color=color.red)
+    label(pos=vec(0, hauteur, 0), text="ct", yoffset=10, height=12, box=False, color=color.green)
+    
+    
+    #Lignes verticales
+    x = 0
+    while x < max_x:
+        t=cylinder(pos=vec(x, 0, 0), axis=vec(0, hauteur, 0), radius=0.05, color=color.gray(0.8))
+        tempDelBase.append(t)
+        if profondeur <0:
+            t=cylinder(pos=vec(x, 0, 0), axis=vec(0, -hauteur, 0), radius=0.05, color=color.gray(0.8))
+            tempDelBase.append(t)
+
+        
+        x += écart
+    x = -écart
+    while x > min_x:
+        t=cylinder(pos=vec(x, 0, 0), axis=vec(0, hauteur, 0), radius=0.05, color=color.gray(0.8))
+        tempDelBase.append(t)
+        if profondeur <0:
+            t=cylinder(pos=vec(x, 0, 0), axis=vec(0, -hauteur, 0), radius=0.05, color=color.gray(0.8))
+            tempDelBase.append(t)
+            x -= écart
+        
+    y = 0
+
+    while y <= hauteur:
+        t=cylinder(pos=vec(0, y, 0), axis=vec(max_x - 2, 0, 0), radius=0.05, color=color.gray(0.8))
+        tempDelBase.append(t)
+        t=cylinder(pos=vec(0, y, 0), axis=vec(min_x + 2, 0, 0), radius=0.05, color=color.gray(0.8))
+        tempDelBase.append(t)
+
+        y += écart
+    
+    if profondeur <0:
+        y = -écart
+        while y >= profondeur - 1:
+            t=cylinder(pos=vec(0, y, 0), axis=vec(max_x - 2, 0, 0), radius=0.05, color=color.gray(0.8))
+            tempDelBase.append(t)
+            t=cylinder(pos=vec(0, y, 0), axis=vec(min_x + 2, 0, 0), radius=0.05, color=color.gray(0.8))
+            tempDelBase.append(t)
+        
+            y -= écart
+
+def getAngle(vit):
+    return pi/2-atan(vit)
+
+def dessiner_obv(min_x, max_x, hauteur, écart):
+    scene.center = vec((min_x + max_x) / 2, hauteur / 2, 2)
+    
+
+    
+    t=arrow(pos=vec(0, 0, 0), axis=norm(vec((1/tempVitesse), 1, 0))*max_x/cos(pi/2-getAngle(tempVitesse)), shaftwidth=0.1, color=color.purple)
+    tempDel.append(t)
+    
+    t=arrow(pos=vec(0, 0, 0), axis=norm(vec(tempVitesse, 1, 0))*hauteur/cos(getAngle(1/tempVitesse)), shaftwidth=0.1, color=color.purple)
+    tempDel.append(t)
+    
+    
+    
+    if profondeur <0:
+        t=arrow(pos=vec(0, 0, 0), axis=norm(vec(-(1/tempVitesse), -1, 0))*max_x/cos(pi/2-getAngle(tempVitesse)), shaftwidth=0.1, color=color.purple)
+        tempDel.append(t)
+        t=arrow(pos=vec(0, 0, 0), axis=norm(vec(-tempVitesse, -1, 0))*hauteur/cos(getAngle(1/tempVitesse)), shaftwidth=0.1, color=color.purple)
+        tempDel.append(t)
+    
+    t=label(pos=norm(vec((1/tempVitesse), 1, 0))*max_x/cos(pi/2-getAngle(tempVitesse)), text="x'", xoffset=10, height=12, box=False, color=color.red)
+    tempDel.append(t)
+    
+    t=arrow(pos=vec(0, 0, 0), axis=norm(vec(tempVitesse, 1, 0))*hauteur/cos(getAngle(1/tempVitesse)), shaftwidth=0.1, color=color.purple)
+    tempDel.append(t)
+    
+    if tempVitesse>0:
+        t=label(pos=norm(vec(tempVitesse, 1, 0))*hauteur/cos(getAngle(1/tempVitesse)), text="ct'", yoffset=10, height=12, box=False, color=color.green)
+        tempDel.append(t)
+        
+    else:
+        t=label(pos=norm(vec(tempVitesse, 1, 0))*hauteur/cos(getAngle(1/tempVitesse)), text="ct'", yoffset=10, height=12, box=False, color=color.green)
+        tempDel.append(t)
+        
+    
+    #Lignes verticales
+    x = 0
+    while x < max_x and (x*tempVitesse)<max_x/2:
+
+        if tempVitesse <0:
+            t=cylinder(pos=vec(-x, -x*(tempVitesse), 0), axis=norm(vec((tempVitesse), 1, 0))*hauteur, radius=0.05, color=color.orange)
+        else:
+            t=cylinder(pos=vec(x, x*(tempVitesse), 0), axis=norm(vec((tempVitesse), 1, 0))*hauteur, radius=0.05, color=color.orange)  
+        tempDel.append(t)
+        if profondeur <0:
+            
+            if tempVitesse <0:
+                t=cylinder(pos=vec(-x, -x*(tempVitesse), 0), axis=norm(vec( (tempVitesse),1, 0))*-hauteur, radius=0.05, color=color.orange)
+            else:
+                t=cylinder(pos=vec(x, x*(tempVitesse), 0), axis=norm(vec((tempVitesse), 1, 0))*hauteur, radius=0.05, color=color.orange)    
+            tempDel.append(t)
+        x += écart
+    x = -écart
+    #while x > min_x:
+     #   cylinder(pos=vec(x, 0, 0), axis=norm(vec(-tempVitesse, 1, 0))*18, radius=0.05, color=color.gray(0.8))
+      #  x -= écart
+        
+    y = 0
+
+    while y <= hauteur - 1 and (y*tempVitesse)<hauteur/2:
+        t=cylinder(pos=vec(y*tempVitesse, y, 0), axis=norm(vec((1/tempVitesse), 1, 0))*max_x, radius=0.05, color=color.orange)
+        tempDel.append(t)
+        if profondeur <0:
+            t=cylinder(pos=vec(-y*tempVitesse, -y, 0), axis=norm(vec( (1/tempVitesse),1, 0))*-max_x, radius=0.05, color=color.orange)
+            tempDel.append(t)
+        y += écart
+        
+    
+
+# === Bouton de démarrage ===
+def lancer_diagramme(bouton):
+    global vslider,min_x,max_x,hauteur,écart,profondeur
+    min_x = int(minInput.text)
+    max_x = int(maxInput.text)
+    hauteur = int(hInput.text)
+    profondeur = int(pInput.text)
+    écart = float(eInput.text)
+
+    dessiner_plan_cartesien(min_x, max_x, hauteur, écart)
+    dessiner_obv(min_x, max_x, hauteur, écart)
+        
+    # Cacher les éléments de l'interface
+    for w in (tempTitre, min_label, minInput, max_label, maxInput,h_label, hInput, p_label, pInput, e_label, eInput,v_label, start_button):
+        w.delete()
+
+    scene.visible = True
+    scene.caption = "<b> Diagramme de Minkowski </b>"
+    #afficher nouveaux boutons
+    creer_ui_secondaire()
+
+
+
+
+# Ajoute un objet dans le plan
+def ajoutObjet(evt):
+    global counter
+    counter += 1
+    posObjet = scene.mouse.project(normal=vec(0, 0, 1), point=vec(0, 0, 0))
+
+    t =sphere(pos=posObjet, radius=0.3, color=color.magenta)
+    objetsMagenta.append(t)
+    t =cylinder(pos=posObjet, axis=norm(vec(objVitesse, 1, 0))*18, color=color.red,radius=0.07)
+    objetsMagenta.append(t)
+def ajoutObjetLarge():
+    print("objet large")
+    
+def ajoutCheck(ev):
+    global modeAjout
+    modeAjout = ev.checked
+    
+def redirection():
+    if modeAjout:
+        ajoutObjetLarge()
+    else:
+        decomposer_position()
+
+def redirection2():
+    global debutLigne, clicEnCours
+    if modeAjout:
+        debutLigne = scene.mouse.project(normal=vec(0, 0, 1), point=vec(0, 0, 0))
+        clicEnCours = True
+    else:
+        decomposer_position()
+        
+    
+    
+def relacherSouris(evt):
+    global debutLigne, clicEnCours
+    if modeAjout and clicEnCours and debutLigne is not None:
+        finLigne = scene.mouse.project(normal=vec(0, 0, 1), point=vec(0, 0, 0))
+        if finLigne is not None:
+            distance = mag(finLigne - debutLigne)
+            if distance < 0.2:
+                # Clic court → ajout d’un objet
+                ajoutObjet(evt)
+            else:
+                # Clic-glisser → tracer une ligne avec lignes d’univers
+                ligne = curve(radius=0.05, color=color.magenta)
+                objetsMagenta.append(ligne)
+
+                n = 5
+                for i in range(n + 1):
+                    t = i / n
+                    point = debutLigne * (1 - t) + finLigne * t
+                    ligne.append(pos=point)
+                    direction = norm(vec(objVitesse, 1, 0))
+                    cyl=cylinder(pos=point, axis=direction * 20, radius=1, color=color.magenta, opacity=0.1)
+                    objetsMagenta.append(cyl)
+
+    debutLigne = None
+    clicEnCours = False
+
+
+############### Programme
+
+pointeurSouris = sphere(
+    pos=vec(0, 0, 0),
+    radius=0.25,           
+    color=color.yellow,
+    shininess=0,
+    visible=False
+)
+
+
+scene.bind('mousemove', redirection)
+scene.bind('mousedown', redirection2)
+scene.bind("mouseup", relacherSouris)
+
+
+
+fleche_x = arrow(color=color.red, shaftwidth=0.15)
+fleche_y = arrow(color=color.green, shaftwidth=0.15)
+
+fleche_xobv = arrow(color=color.red, shaftwidth=0.15)
+fleche_yobv = arrow(color=color.green, shaftwidth=0.15)
+```
