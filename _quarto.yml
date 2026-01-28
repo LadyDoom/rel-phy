@@ -5,8 +5,7 @@ website:
   title: "REL-Physique"
   navbar:
     left:
-      - href: index.qmd
-        text: Accueil
+      - index.qmd
       - about.qmd
       - minkowski.qmd
       - michelsonmorley.qmd
@@ -14,9 +13,7 @@ website:
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     css: styles.css
     toc: true
 
