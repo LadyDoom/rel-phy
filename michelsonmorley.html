@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Expérience de Michelson-Morley – REL-Physique</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-60d4398d82fec002ccec76571ed06d15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">REL-Physique</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Comment utiliser ce site</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./minkowski.html"> 
+<span class="menu-text">Diagramme de Minkowski</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./michelsonmorley.html" aria-current="page"> 
+<span class="menu-text">Expérience de Michelson-Morley</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./projectile.html"> 
+<span class="menu-text">Simulation de projectile</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#contexte" id="toc-contexte" class="nav-link active" data-scroll-target="#contexte">Contexte</a></li>
+  <li><a href="#code-en-python-avec-glowscript" id="toc-code-en-python-avec-glowscript" class="nav-link" data-scroll-target="#code-en-python-avec-glowscript">Code en python (avec Glowscript)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Expérience de Michelson-Morley</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="contexte" class="level1">
+<h1>Contexte</h1>
+<p>Explications</p>
+<div id="glowscript" class="glowscript" style="display:block; width:100%; margin-bottom:2em;">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet">
+<link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet">
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/glow.3.2.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.2.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+;(function() {;
+var ρσ_modules = {};
+var vEther, orientation, deltaL, longH, particules, courbe, compteur_fig;
+ρσ_modules.pythonize = {};
+
+(function(){
+    function strings() {
+        var string_funcs, exclude, name;
+        string_funcs = set("capitalize strip lstrip rstrip islower isupper isspace lower upper swapcase center count endswith startswith find rfind index rindex format join ljust rjust partition rpartition replace split rsplit splitlines zfill".split(" "));
+        if (!arguments.length) {
+            exclude = (function(){
+                var s = ρσ_set();
+                s.jsset.add("split");
+                s.jsset.add("replace");
+                return s;
+            })();
+        } else if (arguments[0]) {
+            exclude = Array.prototype.slice.call(arguments);
+        } else {
+            exclude = null;
+        }
+        if (exclude) {
+            string_funcs = string_funcs.difference(set(exclude));
+        }
+        var ρσ_Iter0 = string_funcs;
+        ρσ_Iter0 = ((typeof ρσ_Iter0[Symbol.iterator] === "function") ? (ρσ_Iter0 instanceof Map ? ρσ_Iter0.keys() : ρσ_Iter0) : Object.keys(ρσ_Iter0));
+        for (var ρσ_Index0 of ρσ_Iter0) {
+            name = ρσ_Index0;
+            (ρσ_expr_temp = String.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name] = (ρσ_expr_temp = ρσ_str.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name];
+        }
+    };
+    if (!strings.__module__) Object.defineProperties(strings, {
+        __module__ : {value: "pythonize"}
+    });
+
+    ρσ_modules.pythonize.strings = strings;
+})();
+async function __main__() {
+"use strict";
+    var display = canvas;
+    var scene = canvas();
+
+    function input(arg) {
+        arg = arg || {}
+        if (arg.prompt !== undefined && arg.prompt != '') return prompt(arg.prompt)
+        else if (typeof arg === 'string') return prompt(arg)
+        else return prompt()
+    }
+
+    var version, print, arange, __name__, type, ρσ_ls, refEther, modifEther, orientation, lamb, c, longV, longH, deltaL, vEther, particules, posSource, posDetec, frequence, longOnde, amplitude, dt, dx, couleurs_fig, compteur_fig, suiveurs, ondes, eInput, eTexteSlider, oeInput, oeTexteSlider, bhInput, bhTexteSlider, ventEther, source, miroirH, miroirV, splitteur, detecteur, graph1, courbe;
+    version = ρσ_list_decorate([ "3.2", "glowscript" ]);
+    Array.prototype['+'] = function(r) {return this.concat(r)}
+    Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
+    window.__GSlang = "vpython";
+    print = GSprint;
+    arange = range;
+    __name__ = "__main__";
+    type = pytype;
+    var strings = ρσ_modules.pythonize.strings;
+
+    strings();
+    "5";
+    scene.width = 600;
+    "6";
+    scene.height = 600;
+    "7";
+    scene.align = "left";
+    "9";
+    refEther = false;
+    "10";
+    modifEther = 6;
+    "12";
+    orientation = 0;
+    "13";
+    lamb = 1e-8;
+    "14";
+    c = 1;
+    "15";
+    longV = 20;
+    "16";
+    longH = 20;
+    "17";
+    deltaL = 0;
+    "19";
+    vEther = 0;
+    "20";
+    particules = ρσ_list_decorate([]);
+    "22";
+    posSource = vector(1["-u"]()["*"](10), 0, 0);
+    "23";
+    posDetec = vector(0, 1["-u"]()["*"](10), 0);
+    "25";
+    frequence = .25;
+    "26";
+    longOnde = 1["/"](frequence);
+    "27";
+    amplitude = 1;
+    "29";
+    dt = .01;
+    "30";
+    dx = .05;
+    "32";
+    couleurs_fig = ρσ_list_decorate([ color.black, color.gray(.5), color.orange, color.green, color.magenta, color.cyan, color.red ]);
+    "33";
+    compteur_fig = 0;
+    "35";
+    suiveurs = ρσ_list_decorate([]);
+    "36";
+    ondes = ρσ_list_decorate([]);
+    "40";
+    function onde() {;
+    }
+    onde.prototype.__init__ = async function __init__() {
+        var self = this;
+        var debut = ( 0 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true) ? undefined : arguments[0];
+        var direction = ( 1 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true) ? undefined : arguments[1];
+        var couleur = ( 2 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true) ? undefined : arguments[2];
+        var amplitude = ( 3 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true) ? undefined : arguments[3];
+        var frequence = (arguments[4] === undefined || ( 4 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true)) ? __init__.__defaults__.frequence : arguments[4];
+        var dephasage = (arguments[5] === undefined || ( 5 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true)) ? __init__.__defaults__.dephasage : arguments[5];
+        var ρσ_kwargs_obj = arguments[arguments.length["-"](1)];
+        if (ρσ_kwargs_obj === null || typeof ρσ_kwargs_obj !== "object" || ρσ_kwargs_obj [ρσ_kwargs_symbol] !== true) ρσ_kwargs_obj = {};
+        if (Object.prototype.hasOwnProperty.call(ρσ_kwargs_obj, "frequence")){
+            frequence = ρσ_kwargs_obj.frequence;
+        }
+        if (Object.prototype.hasOwnProperty.call(ρσ_kwargs_obj, "dephasage")){
+            dephasage = ρσ_kwargs_obj.dephasage;
+        }
+        "42";
+        self.amplitude = amplitude;
+        "43";
+        self.frequence = frequence;
+        "44";
+        self.dephasage = dephasage;
+        "45";
+        self.omega = 2["*"](pi)["*"](frequence);
+        "46";
+        self.dir = direction;
+        "47";
+        self.vertical = false;
+        "48";
+        self.pos = vector(debut);
+        "49";
+        self.avance = 1;
+        "50";
+        self.sphere = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: debut, radius: .1, color: couleur, make_trail: true, trail_type: "curve", interval: 1, retain: 1e3})]);
+        "51";
+        self.k = 2["*"](pi)["*"](frequence)["/"](c);
+    };
+    if (!onde.prototype.__init__.__defaults__) Object.defineProperties(onde.prototype.__init__, {
+        __defaults__ : {value: {frequence:5, dephasage:0}},
+        __handles_kwarg_interpolation__ : {value: true},
+        __argnames__ : {value: ["debut", "direction", "couleur", "amplitude", "frequence", "dephasage"]},
+        __module__ : {value: null}
+    });
+    onde.__argnames__ = onde.prototype.__init__.__argnames__;
+    onde.__handles_kwarg_interpolation__ = onde.prototype.__init__.__handles_kwarg_interpolation__;
+    onde.prototype.updatekomega = async function updatekomega() {
+        var self = this;
+        var ρσ_ls, frequence_app;
+        "54";
+        frequence_app = self.frequence["/"](1["-"](1["*"](vEther)["*"](cos(orientation["*"](pi)))));
+        "55";
+        self.omega = 2["*"](pi)["*"](frequence_app);
+        "56";
+        self.k = 2["*"](pi)["*"](frequence_app);
+    };
+    if (!onde.prototype.updatekomega.__module__) Object.defineProperties(onde.prototype.updatekomega, {
+        __module__ : {value: null}
+    });
+    onde.prototype.get_amplitude = async function get_amplitude(t) {
+        var self = this;
+        var ρσ_ls, axis, coord;
+        "59";
+        (await self.updatekomega());
+        "60";
+        axis = (!self.vertical) ? vector(1, 0, 0) : vector(0, 1, 0);
+        "61";
+        coord = dot(self.pos, axis);
+        "62";
+        return self.amplitude["*"](sin(self.k["*"](coord)["-"](1["*"](self.avance)["*"](self.omega)["*"](t))["+"](self.dephasage)));
+    };
+    if (!onde.prototype.get_amplitude.__argnames__) Object.defineProperties(onde.prototype.get_amplitude, {
+        __argnames__ : {value: ["t"]},
+        __module__ : {value: null}
+    });
+    onde.prototype.update = async function update(t) {
+        var self = this;
+        var ρσ_ls, amp, crete;
+        "65";
+        amp = (await self.get_amplitude(t));
+        "66";
+        crete = (!self.vertical) ? vector(0, amp, 0) : vector(amp, 0, 0);
+        "67";
+        self.sphere.pos = self.pos["+"](crete);
+        "68";
+        self.pos=self.pos["+"](self.dir);
+    };
+    if (!onde.prototype.update.__argnames__) Object.defineProperties(onde.prototype.update, {
+        __argnames__ : {value: ["t"]},
+        __module__ : {value: null}
+    });
+    onde.prototype.__repr__ = async function __repr__() {
+                return "<"["+"](__name__)["+"](".")["+"](this.constructor.name)["+"](" #")["+"](this.ρσ_object_id)["+"](">");
+    };
+    onde.prototype.__str__ = async function __str__() {
+        return this.__repr__();
+    };
+    Object.defineProperty(onde.prototype, "__bases__", {value: []});
+    
+    
+    
+    
+
+    "70";
+    async function majVitesse(ev) {
+        "71";
+        "72";
+        try {
+            "73";
+            vEther = float(eInput.text);
+            "74";
+            if (vEther["<"](0)) {
+                vEther = 0;
+            }
+            "75";
+            if (vEther[">"](1)) {
+                vEther = 1;
+            }
+            "76";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            {
+                "77";
+                vEther = 0;
+            } 
+        }
+        "78";
+        eTexteSlider.text = " "["+"](ρσ_str.format("{:.1f}", vEther))["+"](" c");
+        "79";
+        ventEther.axis = modifEther["*"](vEther)["*"](vector(cos(orientation["*"](pi)), sin(orientation["*"](pi)), 0));
+        "80";
+        (await majInterference());
+        "81";
+        (await lancer_animation_onde());
+    };
+    if (!majVitesse.__argnames__) Object.defineProperties(majVitesse, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "83";
+    async function majOrientation(ev) {
+        var ρσ_ls, direction;
+        "84";
+        "85";
+        try {
+            "86";
+            orientation = float(oeInput.text);
+            "87";
+            if (orientation["<"](0)) {
+                orientation = 0;
+            }
+            "88";
+            if (orientation[">"](2)) {
+                orientation = 2;
+            }
+            "89";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            {
+                "90";
+                orientation = 0;
+            } 
+        }
+        "91";
+        oeTexteSlider.text = " "["+"](ρσ_str.format("{:.2f}", orientation))["+"](" Pi");
+        "92";
+        direction = vector(cos(orientation["*"](pi)), sin(orientation["*"](pi)), 0);
+        "93";
+        ventEther.axis = modifEther["*"](vEther)["*"](direction);
+        "94";
+        (await majInterference());
+        "95";
+        (await lancer_animation_onde());
+    };
+    if (!majOrientation.__argnames__) Object.defineProperties(majOrientation, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "97";
+    async function majDeltaL(ev) {
+        "98";
+        "99";
+        try {
+            "100";
+            deltaL = int(bhInput.text);
+            "101";
+            if (deltaL["<"](1["-u"]()["*"](5))) {
+                deltaL = 1["-u"]()["*"](5);
+            }
+            "102";
+            if (deltaL[">"](5)) {
+                deltaL = 5;
+            }
+            "103";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            {
+                "104";
+                deltaL = 0;
+            } 
+        }
+        "105";
+        longH = longV["+"](deltaL["*"](longOnde["/"](2)));
+        "106";
+        bhTexteSlider.text = " "["+"](ρσ_str.format("{}", deltaL))["+"](" λ/4 ");
+        "107";
+        miroirH.pos = vector(longH["/"](2), 0, 0);
+        "108";
+        (await majInterference());
+        "109";
+        (await lancer_animation_onde());
+    };
+    if (!majDeltaL.__argnames__) Object.defineProperties(majDeltaL, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "111";
+    async function ajoutParticules(nombre, taille) {
+        var ρσ_ls, pos, p, _;
+        "112";
+        "113";
+        particules.clear();
+        "114";
+        for (var ρσ_Index1 = 0; ρσ_Index1["<"](nombre); ρσ_Index1++) {
+            _ = ρσ_Index1;
+            "115";
+            pos = vector(random()["*"](30)["-"](1["*"](15)), random()["*"](30)["-"](1["*"](15)), random()["*"](2)["-"](1["*"](1)));
+            "116";
+            p = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: pos, radius: taille, color: color.white, opacity: .3})]);
+            "117";
+            particules.append(p);
+        }
+    };
+    if (!ajoutParticules.__argnames__) Object.defineProperties(ajoutParticules, {
+        __argnames__ : {value: ["nombre", "taille"]},
+        __module__ : {value: null}
+    });
+
+    "119";
+    async function majParticules() {
+        var ρσ_ls, vitesse, p;
+        "120";
+        vitesse = 2["*"](ventEther.axis);
+        "121";
+        var ρσ_Iter2 = particules;
+        ρσ_Iter2 = ((typeof ρσ_Iter2[Symbol.iterator] === "function") ? (ρσ_Iter2 instanceof Map ? ρσ_Iter2.keys() : ρσ_Iter2) : Object.keys(ρσ_Iter2));
+        for (var ρσ_Index2 of ρσ_Iter2) {
+            p = ρσ_Index2;
+            "122";
+            p.pos=p.pos["+"](vitesse["*"](dt));
+            "123";
+            if (p.pos.x[">"](15)) {
+                p.pos.x = 1["-u"]()["*"](15);
+            }
+            "124";
+            if (p.pos.x["<"](1["-u"]()["*"](15))) {
+                p.pos.x = 15;
+            }
+            "125";
+            if (p.pos.y[">"](15)) {
+                p.pos.y = 1["-u"]()["*"](15);
+            }
+            "126";
+            if (p.pos.y["<"](1["-u"]()["*"](15))) {
+                p.pos.y = 15;
+            }
+        }
+    };
+    if (!majParticules.__module__) Object.defineProperties(majParticules, {
+        __module__ : {value: null}
+    });
+
+    "128";
+    async function temps(L, orientation) {
+        var ρσ_ls, terme1, terme2, terme3;
+        "129";
+        terme1 = 2["*"](L)["/"](c);
+        "130";
+        terme2 = sqrt(1["-"](1["*"](Math.pow(vEther, 2))["*"](Math.pow(sin(orientation["*"](pi)), 2))));
+        "131";
+        terme3 = 1["-"](1["*"](Math.pow(vEther, 2)));
+        "132";
+        return terme1["*"](terme2["/"](terme3));
+    };
+    if (!temps.__argnames__) Object.defineProperties(temps, {
+        __argnames__ : {value: ["L", "orientation"]},
+        __module__ : {value: null}
+    });
+
+    "134";
+    async function majInterference() {
+        var ρσ_ls, d0, alpha, t1, t2, delta_phi, i;
+        "135";
+        "136";
+        courbe.remove();
+        "137";
+        d0 = abs(longH["-"](1["*"](longV)));
+        "138";
+        alpha = .1;
+        "139";
+        t1 = (await temps(longV, orientation["+"](1["/"](2))));
+        "140";
+        t2 = (await temps(longH, orientation));
+        "141";
+        delta_phi = 2["*"](pi)["*"](t1["-"](1["*"](t2)))["*"](c)["/"](lamb);
+        "142";
+        for (var ρσ_Index3 = 0; ρσ_Index3["<"](100); ρσ_Index3++) {
+            i = ρσ_Index3;
+            "143";
+            courbe.plot(i, Math.pow(cos(2["*"](pi)["/"](5)["*"](i["*"](alpha)["+"](d0))["+"](delta_phi)), 2));
+        }
+    };
+    if (!majInterference.__module__) Object.defineProperties(majInterference, {
+        __module__ : {value: null}
+    });
+
+    "146";
+    async function dupliquerCourbe() {
+        var ρσ_ls, couleur, courbe_snapshot, d0, alpha, t1, t2, delta_phi, y, i;
+        "147";
+        "148";
+        couleur = ρσ_getitem(couleurs_fig, compteur_fig["%"](len(couleurs_fig)));
+        "149";
+        compteur_fig=compteur_fig["+"](1);
+        "150";
+        courbe_snapshot = ρσ_interpolate_kwargs.call(this, gcurve, [ρσ_desugar_kwargs({color: couleur})]);
+        "151";
+        d0 = abs(longH["-"](1["*"](longV)));
+        "152";
+        alpha = .1;
+        "153";
+        t1 = (await temps(longV, orientation["+"](1["/"](2))));
+        "154";
+        t2 = (await temps(longH, orientation));
+        "155";
+        delta_phi = 2["*"](pi)["*"](t1["-"](1["*"](t2)))["*"](c)["/"](lamb);
+        "156";
+        for (var ρσ_Index4 = 0; ρσ_Index4["<"](100); ρσ_Index4++) {
+            i = ρσ_Index4;
+            "157";
+            y = Math.pow(cos(2["*"](pi)["/"](5)["*"](i["*"](alpha)["+"](d0))["+"](delta_phi)), 2);
+            "158";
+            courbe_snapshot.plot(i, y);
+        }
+    };
+    if (!dupliquerCourbe.__module__) Object.defineProperties(dupliquerCourbe, {
+        __module__ : {value: null}
+    });
+
+    "160";
+    async function animer_onde(onde1, onde2) {
+        var ρσ_ls, t;
+        "161";
+        t = 0;
+        "162";
+        while (!(((onde1.pos["-"](1["*"](posDetec))).mag["<"](1) && (onde2.pos["-"](1["*"](posDetec))).mag["<"](1)))) {
+            "163";
+            if (abs(dot(onde1.pos, vector(1, 0, 0))["-"](1["*"](longH)["/"](2)))["<="](dx)) {
+                "164";
+                onde1.dir = 1["-u"]()["*"](onde1.dir);
+                "165";
+                onde1.avance = 1["-u"]()["*"](onde1.avance);
+                "166";
+            }
+            if (abs(dot(onde1.pos, vector(1, 0, 0)))["<="](dx) && ρσ_equals(onde1.avance, 1["-u"]()["*"](1))) {
+                "167";
+                onde1.vertical = true;
+                "168";
+                onde1.dir = vector(0, 1["-u"]()["*"](dx), 0);
+                "169";
+            }
+            if (abs(dot(onde2.pos, vector(1, 0, 0)))["<="](dx) && !onde2.vertical) {
+                "170";
+                onde2.vertical = true;
+                "171";
+                onde2.dir = vector(0, dx, 0);
+                "172";
+            }
+            if (abs(dot(onde2.pos, vector(0, 1, 0))["-"](1["*"](longV)["/"](2)))["<="](dx)) {
+                "173";
+                onde2.dir = vector(0, 1["-u"]()["*"](dx), 0);
+                "174";
+                onde2.avance = 1["-u"]()["*"](onde2.avance);
+            }
+            "175";
+            t=t["+"](dt);
+            "176";
+            if ((onde1.pos["-"](1["*"](posDetec))).mag[">"](1)) {
+                "177";
+                (await onde1.update(t));
+                "178";
+            }
+            if ((onde2.pos["-"](1["*"](posDetec))).mag[">"](1)) {
+                "179";
+                (await onde2.update(t));
+            }
+        }
+    };
+    if (!animer_onde.__argnames__) Object.defineProperties(animer_onde, {
+        __argnames__ : {value: ["onde1", "onde2"]},
+        __module__ : {value: null}
+    });
+
+    "181";
+    async function lancer_animation_onde() {
+        var ρσ_ls, o, _GS_1, onde1, onde2;
+        "182";
+        var ρσ_Iter5 = ondes;
+        ρσ_Iter5 = ((typeof ρσ_Iter5[Symbol.iterator] === "function") ? (ρσ_Iter5 instanceof Map ? ρσ_Iter5.keys() : ρσ_Iter5) : Object.keys(ρσ_Iter5));
+        for (var ρσ_Index5 of ρσ_Iter5) {
+            o = ρσ_Index5;
+            "183";
+            o.sphere.clear_trail();
+            "184";
+            o.sphere.visible = false;
+        }
+        "185";
+        ondes.clear();
+        "186";
+        _GS_1 = new onde;
+        (await _GS_1.__init__(posSource, vector(dx, 0, 0), color.blue, amplitude, frequence));
+        onde1 = _GS_1;
+        "187";
+        _GS_1 = new onde;
+        (await _GS_1.__init__(posSource, vector(dx, 0, 0), color.red, amplitude, frequence));
+        onde2 = _GS_1;
+        "188";
+        ondes.append(onde1);
+        "189";
+        ondes.append(onde2);
+        "190";
+        (await animer_onde(onde1, onde2));
+    };
+    if (!lancer_animation_onde.__module__) Object.defineProperties(lancer_animation_onde, {
+        __module__ : {value: null}
+    });
+
+    "192";
+    async function boucle_particules() {
+        "193";
+        while (true) {
+            "194";
+            (await rate(100));
+            "195";
+            (await majParticules());
+        }
+    };
+    if (!boucle_particules.__module__) Object.defineProperties(boucle_particules, {
+        __module__ : {value: null}
+    });
+
+    "201";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Vitesse par rapport à l'ether (entre 0 et 1)<\/b><br>", pos: scene.caption_anchor})]);
+    (await sleep(.1));
+    "202";
+    eInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: majVitesse, text: "0.0", type: "numeric", pos: scene.caption_anchor})]);
+    "203";
+    eTexteSlider = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " c", pos: scene.caption_anchor})]);
+    "204";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.pos = scene.caption_anchor})]);
+    "206";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Orientation de l'ether (entre 0 et 2)</b><br>", pos: scene.caption_anchor})]);
+    (await sleep(.1));
+    "207";
+    oeInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: majOrientation, text: "0.0", type: "numeric", pos: scene.caption_anchor})]);
+    "208";
+    oeTexteSlider = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " Pi", pos: scene.caption_anchor})]);
+    "209";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.caption_anchor})]);
+    "211";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Différence de longueur (entre -5 et 5)</b><br>", pos: scene.caption_anchor})]);
+    (await sleep(.1));
+    "212";
+    bhInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: majDeltaL, text: "0", type: "numeric", pos: scene.caption_anchor})]);
+    "213";
+    bhTexteSlider = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " λ/4 ", pos: scene.caption_anchor})]);
+    "214";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.caption_anchor})]);
+    "219";
+    ventEther = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vector(1["-u"]()["*"](longH)["/"](2), longV["/"](2), 0), axis: vector(1, 0, 0), color: color.cyan, shaftwidth: .3})]);
+    "223";
+    source = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: posSource, color: color.red})]);
+    "224";
+    miroirH = ρσ_interpolate_kwargs.call(this, box, [ρσ_desugar_kwargs({pos: vector(longH["/"](2), 0, 0), size: vector(.1, 4, 4), axis: vector(1, 0, 0), opacity: .8})]);
+    "225";
+    miroirV = ρσ_interpolate_kwargs.call(this, box, [ρσ_desugar_kwargs({pos: vector(0, longV["/"](2), 0), size: vector(.1, 4, 4), axis: vector(0, 1, 0), opacity: .8})]);
+    "226";
+    splitteur = ρσ_interpolate_kwargs.call(this, box, [ρσ_desugar_kwargs({size: vector(.1, 4, 4), axis: vector(1, 1["-u"]()["*"](1), 0), opacity: .8})]);
+    "227";
+    detecteur = ρσ_interpolate_kwargs.call(this, box, [ρσ_desugar_kwargs({pos: posDetec, size: vector(3, 2, 2), axis: vector(0, 1, 0), color: color.white})]);
+    "231";
+    graph1 = ρσ_interpolate_kwargs.call(this, graph, [ρσ_desugar_kwargs({title: "Intensité normalisée selon la distance sur le détecteur", xtitle: "Position sur l'écran (m)", ytitle: "I/I_max", width: 600, height: 400})]);
+    "235";
+    graph1.align = "right";
+    "237";
+    courbe = ρσ_interpolate_kwargs.call(this, gcurve, [ρσ_desugar_kwargs({color: color.blue})]);
+    "238";
+    ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({bind: dupliquerCourbe, text: "Garder en mémoire", pos: scene.caption_anchor})]);
+    "242";
+    (await ajoutParticules(20, .5));
+    "243";
+    (await majInterference());
+    "244";
+    (await lancer_animation_onde());
+    "245";
+    (await boucle_particules());
+};
+if (!__main__.__module__) Object.defineProperties(__main__, {
+    __module__ : {value: null}
+});
+
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+// END JAVASCRIPT
+
+//--><!]]></script>
+</div>
+<div style="clear: both;">
+
+</div>
+</section>
+<section id="code-en-python-avec-glowscript" class="level1">
+<h1>Code en python (avec Glowscript)</h1>
+<p><br>Voici le code correspondant :</p>
+<div id="2147154c" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Web VPython <span class="fl">3.2</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># === Paramètres globaux ===</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>scene.width <span class="op">=</span> <span class="dv">600</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>scene.height <span class="op">=</span> <span class="dv">600</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>scene.align <span class="op">=</span> <span class="st">'left'</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>refEther <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>modifEther <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>orientation <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>lamb <span class="op">=</span> <span class="fl">10e-9</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>longV <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>longH <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>deltaL <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>vEther <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>particules <span class="op">=</span> []</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>posSource <span class="op">=</span> vector(<span class="op">-</span><span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>posDetec <span class="op">=</span> vector(<span class="dv">0</span>, <span class="op">-</span><span class="dv">10</span>, <span class="dv">0</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>frequence <span class="op">=</span> <span class="fl">0.25</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>longOnde <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> frequence</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>amplitude <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>dx <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>couleurs_fig <span class="op">=</span> [color.black, color.gray(<span class="fl">0.5</span>), color.orange, color.green, color.magenta, color.cyan, color.red]</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>compteur_fig <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>suiveurs <span class="op">=</span> []</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>ondes <span class="op">=</span> []</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co"># === Fonctions ===</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> onde:</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, debut, direction, couleur, amplitude, frequence<span class="op">=</span><span class="dv">5</span>, dephasage<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.amplitude <span class="op">=</span> amplitude</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.frequence <span class="op">=</span> frequence</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.dephasage <span class="op">=</span> dephasage</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.omega <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> pi <span class="op">*</span> frequence</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.<span class="bu">dir</span> <span class="op">=</span> direction</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.vertical <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.pos <span class="op">=</span> vector(debut)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.avance <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.sphere <span class="op">=</span> sphere(pos<span class="op">=</span>debut, radius<span class="op">=</span><span class="fl">0.1</span>, color<span class="op">=</span>couleur, make_trail<span class="op">=</span><span class="va">True</span>, trail_type<span class="op">=</span><span class="st">"curve"</span>, interval<span class="op">=</span><span class="dv">1</span>, retain<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.k <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> pi <span class="op">*</span> frequence <span class="op">/</span> c</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> updatekomega(<span class="va">self</span>):</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        frequence_app <span class="op">=</span> <span class="va">self</span>.frequence <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> vEther <span class="op">*</span> cos(orientation <span class="op">*</span> pi))</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.omega <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> pi <span class="op">*</span> frequence_app</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.k <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> pi <span class="op">*</span> frequence_app</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_amplitude(<span class="va">self</span>, t):</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.updatekomega()</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        axis <span class="op">=</span> vector(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>) <span class="cf">if</span> <span class="kw">not</span> <span class="va">self</span>.vertical <span class="cf">else</span> vector(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        coord <span class="op">=</span> dot(<span class="va">self</span>.pos, axis)</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.amplitude <span class="op">*</span> sin(<span class="va">self</span>.k <span class="op">*</span> coord <span class="op">-</span> <span class="va">self</span>.avance <span class="op">*</span> <span class="va">self</span>.omega <span class="op">*</span> t <span class="op">+</span> <span class="va">self</span>.dephasage)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> update(<span class="va">self</span>, t):</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>        amp <span class="op">=</span> <span class="va">self</span>.get_amplitude(t)</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        crete <span class="op">=</span> vector(<span class="dv">0</span>, amp, <span class="dv">0</span>) <span class="cf">if</span> <span class="kw">not</span> <span class="va">self</span>.vertical <span class="cf">else</span> vector(amp, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.sphere.pos <span class="op">=</span> <span class="va">self</span>.pos <span class="op">+</span> crete</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.pos <span class="op">+=</span> <span class="va">self</span>.<span class="bu">dir</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> majVitesse(ev):</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> vEther</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>        vEther <span class="op">=</span> <span class="bu">float</span>(eInput.text)</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> vEther <span class="op">&lt;</span> <span class="dv">0</span>: vEther <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> vEther <span class="op">&gt;</span> <span class="dv">1</span>: vEther <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>        vEther <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    eTexteSlider.text <span class="op">=</span> <span class="ss">f" </span><span class="sc">{</span>vEther<span class="sc">:.1f}</span><span class="ss"> c"</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    ventEther.axis <span class="op">=</span> modifEther <span class="op">*</span> vEther <span class="op">*</span> vector(cos(orientation <span class="op">*</span> pi), sin(orientation <span class="op">*</span> pi), <span class="dv">0</span>)</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    majInterference()</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    lancer_animation_onde()</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> majOrientation(ev):</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> orientation</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>        orientation <span class="op">=</span> <span class="bu">float</span>(oeInput.text)</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> orientation <span class="op">&lt;</span> <span class="dv">0</span>: orientation <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> orientation <span class="op">&gt;</span> <span class="dv">2</span>: orientation <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>        orientation <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    oeTexteSlider.text <span class="op">=</span> <span class="ss">f" </span><span class="sc">{</span>orientation<span class="sc">:.2f}</span><span class="ss"> Pi"</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    direction <span class="op">=</span> vector(cos(orientation <span class="op">*</span> pi), sin(orientation <span class="op">*</span> pi), <span class="dv">0</span>)</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    ventEther.axis <span class="op">=</span> modifEther <span class="op">*</span> vEther <span class="op">*</span> direction</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    majInterference()</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    lancer_animation_onde()</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> majDeltaL(ev):</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> deltaL, longH</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        deltaL <span class="op">=</span> <span class="bu">int</span>(bhInput.text)</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> deltaL <span class="op">&lt;</span> <span class="op">-</span><span class="dv">5</span>: deltaL <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> deltaL <span class="op">&gt;</span> <span class="dv">5</span>: deltaL <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>        deltaL <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>    longH <span class="op">=</span> longV <span class="op">+</span> deltaL <span class="op">*</span> (longOnde <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    bhTexteSlider.text <span class="op">=</span> <span class="ss">f" </span><span class="sc">{</span>deltaL<span class="sc">}</span><span class="ss"> λ/4 "</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    miroirH.pos <span class="op">=</span> vector(longH <span class="op">/</span> <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    majInterference()</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    lancer_animation_onde()</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ajoutParticules(nombre, taille):</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> particules</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    particules.clear()</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(nombre):</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>        pos <span class="op">=</span> vector(random() <span class="op">*</span> <span class="dv">30</span> <span class="op">-</span> <span class="dv">15</span>, random() <span class="op">*</span> <span class="dv">30</span> <span class="op">-</span> <span class="dv">15</span>, random() <span class="op">*</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>        p <span class="op">=</span> sphere(pos<span class="op">=</span>pos, radius<span class="op">=</span>taille, color<span class="op">=</span>color.white, opacity<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>        particules.append(p)</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> majParticules():</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    vitesse <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> ventEther.axis</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> p <span class="kw">in</span> particules:</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>        p.pos <span class="op">+=</span> vitesse <span class="op">*</span> dt</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p.pos.x <span class="op">&gt;</span> <span class="dv">15</span>: p.pos.x <span class="op">=</span> <span class="op">-</span><span class="dv">15</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p.pos.x <span class="op">&lt;</span> <span class="op">-</span><span class="dv">15</span>: p.pos.x <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p.pos.y <span class="op">&gt;</span> <span class="dv">15</span>: p.pos.y <span class="op">=</span> <span class="op">-</span><span class="dv">15</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> p.pos.y <span class="op">&lt;</span> <span class="op">-</span><span class="dv">15</span>: p.pos.y <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> temps(L, orientation):</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    terme1 <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> L <span class="op">/</span> c</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>    terme2 <span class="op">=</span> sqrt(<span class="dv">1</span> <span class="op">-</span> vEther <span class="op">**</span> <span class="dv">2</span> <span class="op">*</span> sin(orientation <span class="op">*</span> pi) <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    terme3 <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> vEther <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> terme1 <span class="op">*</span> (terme2 <span class="op">/</span> terme3)</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> majInterference():</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> courbe</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    courbe.delete()</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    d0 <span class="op">=</span> <span class="bu">abs</span>(longH <span class="op">-</span> longV)</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    t1 <span class="op">=</span> temps(longV, orientation <span class="op">+</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    t2 <span class="op">=</span> temps(longH, orientation)</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    delta_phi <span class="op">=</span> (<span class="dv">2</span> <span class="op">*</span> pi <span class="op">*</span> (t1 <span class="op">-</span> t2) <span class="op">*</span> c) <span class="op">/</span> lamb</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>):</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>        courbe.plot(i, cos((<span class="dv">2</span> <span class="op">*</span> pi <span class="op">/</span> <span class="dv">5</span>) <span class="op">*</span> (i <span class="op">*</span> alpha <span class="op">+</span> d0) <span class="op">+</span> delta_phi) <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dupliquerCourbe():</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> compteur_fig</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    couleur <span class="op">=</span> couleurs_fig[compteur_fig <span class="op">%</span> <span class="bu">len</span>(couleurs_fig)]</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    compteur_fig <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    courbe_snapshot <span class="op">=</span> gcurve(color<span class="op">=</span>couleur)</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    d0 <span class="op">=</span> <span class="bu">abs</span>(longH <span class="op">-</span> longV)</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    t1 <span class="op">=</span> temps(longV, orientation <span class="op">+</span> <span class="dv">1</span> <span class="op">/</span> <span class="dv">2</span>)</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    t2 <span class="op">=</span> temps(longH, orientation)</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    delta_phi <span class="op">=</span> (<span class="dv">2</span> <span class="op">*</span> pi <span class="op">*</span> (t1 <span class="op">-</span> t2) <span class="op">*</span> c) <span class="op">/</span> lamb</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>):</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> cos((<span class="dv">2</span> <span class="op">*</span> pi <span class="op">/</span> <span class="dv">5</span>) <span class="op">*</span> (i <span class="op">*</span> alpha <span class="op">+</span> d0) <span class="op">+</span> delta_phi) <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        courbe_snapshot.plot(i, y)</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> animer_onde(onde1, onde2):</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> ((onde1.pos <span class="op">-</span> posDetec).mag <span class="op">&lt;</span> <span class="dv">1</span> <span class="kw">and</span> (onde2.pos <span class="op">-</span> posDetec).mag <span class="op">&lt;</span> <span class="dv">1</span>):</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">abs</span>(dot(onde1.pos, vector(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>)) <span class="op">-</span> longH <span class="op">/</span> <span class="dv">2</span>) <span class="op">&lt;=</span> dx:</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>            onde1.<span class="bu">dir</span> <span class="op">=</span> <span class="op">-</span>onde1.<span class="bu">dir</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>            onde1.avance <span class="op">=</span> <span class="op">-</span>onde1.avance</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">abs</span>(dot(onde1.pos, vector(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))) <span class="op">&lt;=</span> dx <span class="kw">and</span> onde1.avance <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>:</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>            onde1.vertical <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>            onde1.<span class="bu">dir</span> <span class="op">=</span> vector(<span class="dv">0</span>, <span class="op">-</span>dx, <span class="dv">0</span>)</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">abs</span>(dot(onde2.pos, vector(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>))) <span class="op">&lt;=</span> dx <span class="kw">and</span> <span class="kw">not</span> onde2.vertical:</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>            onde2.vertical <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>            onde2.<span class="bu">dir</span> <span class="op">=</span> vector(<span class="dv">0</span>, dx, <span class="dv">0</span>)</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">abs</span>(dot(onde2.pos, vector(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">-</span> longV <span class="op">/</span> <span class="dv">2</span>) <span class="op">&lt;=</span> dx:</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>            onde2.<span class="bu">dir</span> <span class="op">=</span> vector(<span class="dv">0</span>, <span class="op">-</span>dx, <span class="dv">0</span>)</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>            onde2.avance <span class="op">=</span> <span class="op">-</span>onde2.avance</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>        t <span class="op">+=</span> dt</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (onde1.pos <span class="op">-</span> posDetec).mag <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>            onde1.update(t)</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (onde2.pos <span class="op">-</span> posDetec).mag <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>            onde2.update(t)</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lancer_animation_onde():</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> o <span class="kw">in</span> ondes:</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        o.sphere.clear_trail()</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        o.sphere.visible <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    ondes.clear()</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    onde1 <span class="op">=</span> onde(posSource, vector(dx, <span class="dv">0</span>, <span class="dv">0</span>), color.blue, amplitude, frequence)</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    onde2 <span class="op">=</span> onde(posSource, vector(dx, <span class="dv">0</span>, <span class="dv">0</span>), color.red, amplitude, frequence)</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>    ondes.append(onde1)</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    ondes.append(onde2)</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    animer_onde(onde1, onde2)</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> boucle_particules():</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>        rate(<span class="dv">100</span>)</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        majParticules()</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="co"># === Interface ===</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="co"># === Interface (Sliders au-dessus de la scène) ===</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>wtext(text<span class="op">=</span><span class="st">"&lt;b&gt;Vitesse par rapport à l'ether (entre 0 et 1)&lt;/b&gt;&lt;br&gt;"</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>eInput <span class="op">=</span> winput(bind<span class="op">=</span>majVitesse, text<span class="op">=</span><span class="st">"0.0"</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"numeric"</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>eTexteSlider <span class="op">=</span> wtext(text<span class="op">=</span><span class="st">" c"</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>wtext(text<span class="op">=</span><span class="st">"&lt;br&gt;&lt;br&gt;"</span>, pos<span class="op">=</span>scene.pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>wtext(text<span class="op">=</span><span class="st">"&lt;b&gt;Orientation de l'ether (entre 0 et 2)&lt;/b&gt;&lt;br&gt;"</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>oeInput <span class="op">=</span> winput(bind<span class="op">=</span>majOrientation, text<span class="op">=</span><span class="st">"0.0"</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"numeric"</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>oeTexteSlider <span class="op">=</span> wtext(text<span class="op">=</span><span class="st">" Pi"</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>wtext(text<span class="op">=</span><span class="st">"&lt;br&gt;&lt;br&gt;"</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>wtext(text<span class="op">=</span><span class="st">"&lt;b&gt;Différence de longueur (entre -5 et 5)&lt;/b&gt;&lt;br&gt;"</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>bhInput <span class="op">=</span> winput(bind<span class="op">=</span>majDeltaL, text<span class="op">=</span><span class="st">"0"</span>, <span class="bu">type</span><span class="op">=</span><span class="st">"numeric"</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>bhTexteSlider <span class="op">=</span> wtext(text<span class="op">=</span><span class="st">" λ/4 "</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>wtext(text<span class="op">=</span><span class="st">"&lt;br&gt;&lt;br&gt;"</span>, pos<span class="op">=</span>scene.caption_anchor )</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="co"># === Objets de la scène ===</span></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>ventEther <span class="op">=</span> arrow(pos<span class="op">=</span>vector(<span class="op">-</span>longH <span class="op">/</span> <span class="dv">2</span>, longV <span class="op">/</span> <span class="dv">2</span>, <span class="dv">0</span>),</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>                  axis<span class="op">=</span>vector(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>                  color<span class="op">=</span>color.cyan,</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>                  shaftwidth<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> sphere(pos<span class="op">=</span>posSource, color<span class="op">=</span>color.red)</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>miroirH <span class="op">=</span> box(pos<span class="op">=</span>vector(longH <span class="op">/</span> <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>), size<span class="op">=</span>vector(<span class="fl">0.1</span>, <span class="dv">4</span>, <span class="dv">4</span>), axis<span class="op">=</span>vector(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>), opacity<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>miroirV <span class="op">=</span> box(pos<span class="op">=</span>vector(<span class="dv">0</span>, longV <span class="op">/</span> <span class="dv">2</span>, <span class="dv">0</span>), size<span class="op">=</span>vector(<span class="fl">0.1</span>, <span class="dv">4</span>, <span class="dv">4</span>), axis<span class="op">=</span>vector(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>), opacity<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>splitteur <span class="op">=</span> box(size<span class="op">=</span>vector(<span class="fl">0.1</span>, <span class="dv">4</span>, <span class="dv">4</span>), axis<span class="op">=</span>vector(<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>), opacity<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>detecteur <span class="op">=</span> box(pos<span class="op">=</span>posDetec, size<span class="op">=</span>vector(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>), axis<span class="op">=</span>vector(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>), color<span class="op">=</span>color.white)</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="co"># === Franges d'interférence ===</span></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>graph1 <span class="op">=</span> graph(title<span class="op">=</span><span class="st">"Intensité normalisée selon la distance sur le détecteur"</span>,</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>               xtitle<span class="op">=</span><span class="st">"Position sur l'écran (m)"</span>, ytitle<span class="op">=</span><span class="st">"I/I_max"</span>,</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>               width<span class="op">=</span><span class="dv">600</span>, height<span class="op">=</span><span class="dv">400</span>)</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>graph1.align<span class="op">=</span><span class="st">'right'</span></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>courbe <span class="op">=</span> gcurve(color<span class="op">=</span>color.blue)</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>button(bind<span class="op">=</span>dupliquerCourbe, text<span class="op">=</span><span class="st">"Garder en mémoire"</span>,pos<span class="op">=</span>scene.caption_anchor)</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="co"># === Lancement initial ===</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>ajoutParticules(<span class="dv">20</span>, <span class="fl">0.5</span>)</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>majInterference()</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>lancer_animation_onde()</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>boucle_particules()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/LadyDoom\.github\.io\/rel-phy\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
