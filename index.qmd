@@ -1,5 +1,5 @@
 ---
-title: "REL en physique"
+title: "Accueil"
 # Choix du style de coloration (optionnel)
 format:
   html:

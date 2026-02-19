@@ -4,8 +4,10 @@ project:
 website:
   title: "REL-Physique"
   navbar:
+    title: false
     left:
-      - index.qmd
+      - href: index.qmd
+        text: Accueil
       - about.qmd
       - minkowski.qmd
       - michelsonmorley.qmd
@@ -15,7 +17,8 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    toc: true
+    toc: false
+    highlight-style: github
 
 
 

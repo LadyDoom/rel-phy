@@ -2,10 +2,7 @@
 title: "Diagramme de Minkowski"
 execute:
   enabled: false
-# Choix du style de coloration (optionnel)
-format:
-  html:
-    highlight-style: github
+  
 ---
 
 # Contexte

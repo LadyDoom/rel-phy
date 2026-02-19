@@ -2,10 +2,7 @@
 title: "Simulation de projectile"
 execute:
   enabled: false
-# Choix du style de coloration (optionnel)
-format:
-  html:
-    highlight-style: github
+
 ---
 
 # Contexte
@@ -727,7 +724,7 @@ if (!__main__.__module__) Object.defineProperties(__main__, {
 ;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
 // END JAVASCRIPT
 
-//--><!]]></script>
+</script>
 </div>
 ```
 

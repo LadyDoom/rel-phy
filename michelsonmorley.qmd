@@ -2,10 +2,7 @@
 title: "Expérience de Michelson-Morley"
 execute:
   enabled: false
-# Choix du style de coloration (optionnel)
-format:
-  html:
-    highlight-style: github
+
 ---
 
 # Contexte
