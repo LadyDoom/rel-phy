@@ -12,15 +12,17 @@ Ce repo est une REL (Ressource Éducative Libre) qui consiste en un petit site W
 
 ```jsx
 On édite les .qmd en local (c'est du markdown)
-↓
+        ↓
 quarto render → génère _site/
-↓
+        ↓
 git commit + push sur master
-↓
-GitHub détecte le push sur gh-pages
-↓
+        ↓
+On pousse le contenu de _site/ vers la branche gh-pages avec quarto publish gh-pages
+        ↓
+GitHub Action détecte le push sur gh-pages
+        ↓
 GitHub Action "pages build and deployment" se déclenche
-↓
+        ↓
 Le site est publié en ligne
 ```
 
