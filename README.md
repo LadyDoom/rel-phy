@@ -4,16 +4,18 @@ Ce repo est une REL (Ressource Éducative Libre) qui consiste en un petit site W
 
 **Sur la branche `master`**, on a les fichiers source — les `.qmd`, `_quarto.yml`, `images/`, `styles.css`. C'est là qu’on travaille et qu’on écrit le contenu.
 
-**Quand on fait un rendu Quarto** (`quarto render`), Quarto lit les fichiers `.qmd` et génère le site en HTML dans le dossier `_site/`. Ce dossier est ensuite pushé sur la branche `gh-pages` avec la commande `quarto publish gh-pages`
+**Sur la branche `gh-pages`**, on a les fichiers que Quarto a généré à partir des fichiers `.qmd` avec la commande `quarto publish gh-pages`.
+
+Cette organisation en deux branches permet de s'assurer que la branche master est "propre" (ne contient que le code source, sans les fichiers générés automatiquement).
 
 # Quel est le flux de travail
 
 ```jsx
-Tu édites les .qmd en local (c'est du markdown)
+On édite les .qmd en local (c'est du markdown)
       ↓
-git add + commit + push sur master  → sauvegarde les sources
+git add + commit + push sur master  → sauvegarde le code source
       ↓
-quarto publish gh-pages  → render + push vers gh-pages
+quarto publish gh-pages  → render + push vers gh-pages (HTML généré)
       ↓
 GitHub Action "pages build and deployment" se déclenche
       ↓
