@@ -3,3 +3,4 @@ _site/
 /.quarto/
 **/*.quarto_ipynb
 quarto-session-temp/
+*.qarto_ipynb
