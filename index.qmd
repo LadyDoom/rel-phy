@@ -11,6 +11,8 @@ Les simulations ont été réalisées par André Garcia, étudiant en physique �
 
 Merci à Samuel Poitras et à Erika le Bourdais pour leur aide dans ce projet.  
 
+Merci à Indiana Delsart, bibliothécaire, pour ses conseils et la mise en place du site.
+
 La création de cette ressource a été permise grâce au financement de la [FabriqueREL](https://fabriquerel.org/).
 
 ![](images/ccby.png){width=120 fig-align="left"}\
@@ -18,8 +20,10 @@ L'ensemble du site est sous licence [CC-BY](https://creativecommons.org/licenses
 Pour citer cette ressource :\
 Auteur/Autrice. (date). Titre. Université de Montréal. Licence [CC-BY](https://creativecommons.org/licenses/by/4.0/)
 
-::: {layout-ncol=2}
+::: {layout-ncol=3}
 ![](images/logo-UdeM-noir-bleu.png){height=100}
+
+![](images/Sceau_logo-Biblio_UdeM-RVB.svg){height=100}
 
 ![](images/F-REL_logo-coul-horiz.png){height=100}
 :::
