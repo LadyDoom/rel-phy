@@ -18,7 +18,7 @@ La création de cette ressource a été permise grâce au financement de la [Fab
 ![](images/ccby.png){width=120 fig-align="left"}\
 L'ensemble du site est sous licence [CC-BY](https://creativecommons.org/licenses/by/4.0/). 
 Pour citer cette ressource :\
-Auteur/Autrice. (date). Titre. Université de Montréal. Licence [CC-BY](https://creativecommons.org/licenses/by/4.0/)
+Delphine Bouilly, André Garcia, Érika le Bourdais, Samuel Poitras, Patrick Dufour. (2026). Simulation et visualisation de référentiels en mécanique classique et relativiste. Université de Montréal. Licence [CC-BY](https://creativecommons.org/licenses/by/4.0/)
 
 ::: {layout-ncol=3}
 ![](images/logo-UdeM-noir-bleu.png){height=100}
@@ -32,4 +32,4 @@ Ce site a été développé avec [Quarto](https://quarto.org/) et est hébergé 
 Des outils d’intelligence artificielle (ChatGPT-4.1 et Claude Sonnet 4.6) ont été utilisés comme assistance technique pour la conception Web et la mise en ligne.\
 Le contenu pédagogique et les simulations ont été réalisés sans recours à une IA générative.
 
-Une version archivée de la ressource est disponible sur Papyrus, le dépôt institutionnel de l'UdeM : <https://doi.org/10.71781/34279>
+Une version archivée de la ressource est disponible sur Papyrus, le dépôt institutionnel de l'Université de Montréal : <https://doi.org/10.71781/34279>
