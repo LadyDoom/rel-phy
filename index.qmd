@@ -18,8 +18,6 @@ Delphine Bouilly, André Garcia, Érika le Bourdais, Samuel Poitras, Patrick Duf
 ::: {layout-ncol=3}
 ![](images/logo-UdeM-noir-bleu.png){height=100}
 
-![](images/Sceau_logo-Biblio_UdeM-RVB.svg){height=100}
-
 ![](images/F-REL_logo-coul.png){height=100}
 :::
 
