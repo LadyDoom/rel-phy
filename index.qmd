@@ -28,8 +28,8 @@ Auteur/Autrice. (date). Titre. Université de Montréal. Licence [CC-BY](https:/
 ![](images/F-REL_logo-coul.png){height=100}
 :::
 
-Ce site a été développé avec [Quarto](https://quarto.org/) et est hébergé sur [GitHub](https://github.com/LadyDoom/rel-phy/tree/master).\
+Ce site a été développé avec [Quarto](https://quarto.org/) et est hébergé sur [GitHub](https://github.com/PhysiqueUdeM/rel_referentiels/).\
 Des outils d’intelligence artificielle (ChatGPT-4.1 et Claude Sonnet 4.6) ont été utilisés comme assistance technique pour la conception Web et la mise en ligne.\
 Le contenu pédagogique et les simulations ont été réalisés sans recours à une IA générative.
 
-Une version archivée de la ressource est disponible sur Papyrus, le dépôt institutionnel de l'UdeM : https://doi.org/10.71781/34279
+Une version archivée de la ressource est disponible sur Papyrus, le dépôt institutionnel de l'UdeM : <https://doi.org/10.71781/34279>
