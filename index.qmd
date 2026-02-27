@@ -6,12 +6,7 @@ format:
     highlight-style: github
 ---
 
-Ce site est une ressource éducative libre (REL) créée par Delphine Bouilly et Patrick Dufour, professeurs au département de physique de l'Université de Montréal.
-Les simulations ont été réalisées par André Garcia, étudiant en physique à l'Université de Montréal.
-
-Merci à Samuel Poitras et à Erika le Bourdais pour leur aide dans ce projet.  
-
-Merci à Indiana Delsart, bibliothécaire, pour ses conseils et la mise en place du site.
+Ce site est une ressource éducative libre (REL) créée par Delphine Bouilly, André Garcia, Érika Le Bourdais, Samuel Poitras et Patrick Dufour, du département de physique de l’Université de Montréal. Merci également à Indiana Delsart, bibliothécaire, pour ses conseils et la mise en place du site. 
 
 La création de cette ressource a été permise grâce au financement de la [FabriqueREL](https://fabriquerel.org/).
 
