@@ -1,8 +1,5 @@
 project:
   type: website
-  output-dir: docs
-  resources:
-    - .nojekyll
 
 website:
   title: "REL_referentiels"
