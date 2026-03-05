@@ -1,7 +1,7 @@
 project:
   type: website
   render:
-    - "site/*.qmd"
+    - "*.qmd"
     - "!codes/"
 
 website:
@@ -9,12 +9,12 @@ website:
   navbar:
     title: false
     left:
-      - href: site/index.qmd
+      - href: index.qmd
         text: Accueil
-      - site/about.qmd
-      - site/minkowski.qmd
-      - site/michelsonmorley.qmd
-      - site/projectile.qmd
+      - about.qmd
+      - minkowski.qmd
+      - michelsonmorley.qmd
+      - projectile.qmd
   page-footer: "Version 1.0 (mars 2026)"
 
 format:
