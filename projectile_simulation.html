@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.29">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Projectile dans un référentiel en rotation – REL_referentiels</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4928aee9384e66cb359dd8efc1d1e04a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9b1ba7478f6dc5e457e90ef2df19e95b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Guide d’utilisation</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projectile" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">(1) Projectile</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-projectile">    
+        <li>
+    <a class="dropdown-item" href="./projectile_guide.html">
+ <span class="dropdown-text">Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./projectile_v1p0.html">
+ <span class="dropdown-text">Simulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./projectile_code.html">
+ <span class="dropdown-text">Code source</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-michelson-morley" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">(2) Michelson-Morley</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-michelson-morley">    
+        <li>
+    <a class="dropdown-item" href="./michelson_guide.html">
+ <span class="dropdown-text">Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./michelson_v1p0.html">
+ <span class="dropdown-text">Simulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./michelson_code.html">
+ <span class="dropdown-text">Code source</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-minkowski" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">(3) Minkowski</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-minkowski">    
+        <li>
+    <a class="dropdown-item" href="./minkowski_guide.html">
+ <span class="dropdown-text">Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./minkowski_v1p0.html">
+ <span class="dropdown-text">Simulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./minkowski_code.html">
+ <span class="dropdown-text">Code source</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Projectile dans un référentiel en rotation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="simulation" class="level2">
+<h2 class="anchored" data-anchor-id="simulation">Simulation</h2>
+<!-- Voici la simulation -->
+<div id="glowscript" class="glowscript" style="display:block; width:100%; clear: both; height:500px;">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet">
+<link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet">
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/glow.3.2.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.2.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+;(function() {;
+var ρσ_modules = {};
+var boules_ind, balle, forceAzimutale, forceCoriolis, forceCentrifuge, plancher, cible, cibleRouge, tabCoriolis, courbeCoriolis, courbeAzimutal, courbeCentrifuge, m, R, w, g, r_planete, cibleRougePos, positionInitiale, impulsionInitiale, trajFin, grille_dessinee, t, vectAzimutal, vectCoriolis, vectCentrifuge, r, r_avant, w_avant;
+ρσ_modules.pythonize = {};
+
+(function(){
+    function strings() {
+        var string_funcs, exclude, name;
+        string_funcs = set("capitalize strip lstrip rstrip islower isupper isspace lower upper swapcase center count endswith startswith find rfind index rindex format join ljust rjust partition rpartition replace split rsplit splitlines zfill".split(" "));
+        if (!arguments.length) {
+            exclude = (function(){
+                var s = ρσ_set();
+                s.jsset.add("split");
+                s.jsset.add("replace");
+                return s;
+            })();
+        } else if (arguments[0]) {
+            exclude = Array.prototype.slice.call(arguments);
+        } else {
+            exclude = null;
+        }
+        if (exclude) {
+            string_funcs = string_funcs.difference(set(exclude));
+        }
+        var ρσ_Iter0 = string_funcs;
+        ρσ_Iter0 = ((typeof ρσ_Iter0[Symbol.iterator] === "function") ? (ρσ_Iter0 instanceof Map ? ρσ_Iter0.keys() : ρσ_Iter0) : Object.keys(ρσ_Iter0));
+        for (var ρσ_Index0 of ρσ_Iter0) {
+            name = ρσ_Index0;
+            (ρσ_expr_temp = String.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name] = (ρσ_expr_temp = ρσ_str.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name];
+        }
+    };
+    if (!strings.__module__) Object.defineProperties(strings, {
+        __module__ : {value: "pythonize"}
+    });
+
+    ρσ_modules.pythonize.strings = strings;
+})();
+async function __main__() {
+"use strict";
+    var display = canvas;
+    var scene = canvas();
+
+    function input(arg) {
+        arg = arg || {}
+        if (arg.prompt !== undefined && arg.prompt != '') return prompt(arg.prompt)
+        else if (typeof arg === 'string') return prompt(arg)
+        else return prompt()
+    }
+
+    var version, print, arange, __name__, type, ρσ_ls, grille_dessinee, scalaireFleche, dt, tailleSol, trajFin, pas, G, r_planete, boules_ind, balle, forceAzimutale, forceCoriolis, forceCentrifuge, plancher, cible, cibleRouge, couleurs_force, tempAzimutal, tempCoriolis, tempCentrifuge, tabCoriolis, courbeCoriolis, courbeAzimutal, courbeCentrifuge, vectAzimutal, vectCoriolis, vectCentrifuge, cibleRougePos, t, m, R, w, w_avant, r, r_avant, g, RInput, MInput, omegaInput, latInput, posInput, impInput, cibleInput, startButton, cbCentrifuge, cbCoriolis, cbAzimutal, objet, obj;
+    version = ρσ_list_decorate([ "3.2", "glowscript" ]);
+    Array.prototype['+'] = function(r) {return this.concat(r)}
+    Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
+    window.__GSlang = "vpython";
+    print = GSprint;
+    arange = range;
+    __name__ = "__main__";
+    type = pytype;
+    var strings = ρσ_modules.pythonize.strings;
+
+    strings();
+    "3";
+    grille_dessinee = false;
+    "6";
+    scalaireFleche = 50;
+    "7";
+    dt = .01;
+    "8";
+    tailleSol = 1e3;
+    "9";
+    trajFin = false;
+    "10";
+    pas = 100;
+    "11";
+    G = 6.6743e-11;
+    "12";
+    r_planete = vec(0, 0, 0);
+    "14";
+    boules_ind = ρσ_list_decorate([]);
+    "17";
+    scene.width = 600;
+    "18";
+    scene.height = 600;
+    "19";
+    scene.align = "left";
+    "22";
+    balle = forceAzimutale = forceCoriolis = forceCentrifuge = plancher = cible = cibleRouge = null;
+    "26";
+    couleurs_force = (function(){
+        var ρσ_d = ρσ_dict();
+        ρσ_d.set("coriolis", color.green);
+        ρσ_d.set("azimutal", color.orange);
+        ρσ_d.set("centrifuge", color.red);
+        return ρσ_d;
+    }).call(this);
+    "28";
+    scene.up = vector(0, 0, 1);
+    "29";
+    scene.forward = vector(0, 1["-u"]()["*"](1), 1["-u"]()["*"](.3));
+    "32";
+    tempAzimutal = 0;
+    "33";
+    tempCoriolis = 0;
+    "34";
+    tempCentrifuge = 0;
+    "36";
+    tabCoriolis = null;
+    "37";
+    courbeCoriolis = null;
+    "38";
+    courbeAzimutal = null;
+    "39";
+    courbeCentrifuge = null;
+    "41";
+    vectAzimutal = vec(0, 0, 0);
+    "42";
+    vectCoriolis = vec(0, 0, 0);
+    "43";
+    vectCentrifuge = vec(0, 0, 0);
+    "44";
+    cibleRougePos = 0;
+    "46";
+    t = 0;
+    "47";
+    m = 1;
+    "48";
+    R = 2;
+    "49";
+    w = vec(0, 0, .005);
+    "50";
+    w_avant = w;
+    "51";
+    r = vec(1, 0, 0)["*"](R);
+    "52";
+    r_avant = r;
+    "53";
+    g = vec(0, 0, 1["-u"]()["*"](10));
+    "60";
+    scene.caption = "";
+    (await sleep(.1));
+    "62";
+    RInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, prompt: " Rayon planète R (m) : ", text: "6.371e6"})]);
+    scene.append_to_caption("\n");
+    (await sleep(.1));
+    "63";
+    MInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, prompt: " Masse planète M (kg) : ", text: "5.972e24"})]);
+    scene.append_to_caption("\n");
+    (await sleep(.1));
+    "64";
+    omegaInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, prompt: " Vitesse ang. Ω (rad/s) : ", text: "7.292e-5"})]);
+    scene.append_to_caption("\n");
+    "66";
+    scene.append_to_caption("\n");
+    (await sleep(.1));
+    "68";
+    latInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, prompt: " Colatitude labo φ (deg) : ", text: "45"})]);
+    scene.append_to_caption("\n");
+    (await sleep(.1));
+    "70";
+    posInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, prompt: " Position init. (x,y,z) : ", text: "10,10,0"})]);
+    scene.append_to_caption("\n");
+    (await sleep(.1));
+    "71";
+    impInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, prompt: " Vitesse init. (u,ϕ,θ) : ", text: "52, 0, 45"})]);
+    scene.append_to_caption("\n");
+    "73";
+    scene.append_to_caption("\n");
+    (await sleep(.1));
+    "75";
+    cibleInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, prompt: " Position cible (x,y,z) : ", text: "20,20,0"})]);
+    scene.append_to_caption("\n");
+    "77";
+    startButton = ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({text: "Commencer", bind: start})]);
+    "80";
+    scene.append_to_caption("\n\n<b>Forces à inclure :<\/b>\n");
+    "81";
+    cbCentrifuge = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: test, text: "Centrifuge", checked: true})]);
+    scene.append_to_caption("  ");
+    "82";
+    cbCoriolis = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: test, text: "Coriolis", checked: true})]);
+    scene.append_to_caption("   ");
+    "83";
+    cbAzimutal = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: test, text: "Azimutale", checked: true})]);
+    scene.append_to_caption("   ");
+    "86";
+    var ρσ_Iter1 = ρσ_list_decorate([ RInput, MInput, latInput, omegaInput, posInput, impInput, cibleInput, startButton ]);
+    ρσ_Iter1 = ((typeof ρσ_Iter1[Symbol.iterator] === "function") ? (ρσ_Iter1 instanceof Map ? ρσ_Iter1.keys() : ρσ_Iter1) : Object.keys(ρσ_Iter1));
+    for (var ρσ_Index1 of ρσ_Iter1) {
+        objet = ρσ_Index1;
+        "87";
+        objet.display = scene;
+    }
+    "90";
+    var ρσ_Iter2 = scene.objects;
+    ρσ_Iter2 = ((typeof ρσ_Iter2[Symbol.iterator] === "function") ? (ρσ_Iter2 instanceof Map ? ρσ_Iter2.keys() : ρσ_Iter2) : Object.keys(ρσ_Iter2));
+    for (var ρσ_Index2 of ρσ_Iter2) {
+        obj = ρσ_Index2;
+        "91";
+        if ((await hasattr(obj, "shininess"))) {
+            "92";
+            obj.shininess = 0;
+        }
+    }
+    "94";
+    async function effacer() {
+        var ρσ_ls, ρσ_unpack, b, _, c, obj;
+        "95";
+        "96";
+        "99";
+        if (balle !== null) {
+            "100";
+            balle.clear_trail();
+            "101";
+            balle.visible = false;
+        }
+        "104";
+        var ρσ_Iter3 = boules_ind;
+        ρσ_Iter3 = ((typeof ρσ_Iter3[Symbol.iterator] === "function") ? (ρσ_Iter3 instanceof Map ? ρσ_Iter3.keys() : ρσ_Iter3) : Object.keys(ρσ_Iter3));
+        for (var ρσ_Index3 of ρσ_Iter3) {
+            ρσ_unpack = ρσ_Index3;
+            b = ρσ_unpack[0];
+            _ = ρσ_unpack[1];
+            "105";
+            b.clear_trail();
+            "106";
+            b.visible = false;
+        }
+        "107";
+        boules_ind.clear();
+        "109";
+        var ρσ_Iter4 = ρσ_list_decorate([ courbeCoriolis, courbeAzimutal, courbeCentrifuge ]);
+        ρσ_Iter4 = ((typeof ρσ_Iter4[Symbol.iterator] === "function") ? (ρσ_Iter4 instanceof Map ? ρσ_Iter4.keys() : ρσ_Iter4) : Object.keys(ρσ_Iter4));
+        for (var ρσ_Index4 of ρσ_Iter4) {
+            c = ρσ_Index4;
+            "110";
+            if (c !== null) {
+                "111";
+                c.remove();
+            }
+        }
+        "112";
+        courbeCoriolis = courbeAzimutal = courbeCentrifuge = null;
+        "115";
+        var ρσ_Iter5 = ρσ_list_decorate([ forceAzimutale, forceCoriolis, forceCentrifuge, plancher, cible, cibleRouge ]);
+        ρσ_Iter5 = ((typeof ρσ_Iter5[Symbol.iterator] === "function") ? (ρσ_Iter5 instanceof Map ? ρσ_Iter5.keys() : ρσ_Iter5) : Object.keys(ρσ_Iter5));
+        for (var ρσ_Index5 of ρσ_Iter5) {
+            obj = ρσ_Index5;
+            "116";
+            if (obj !== null) {
+                "117";
+                obj.visible = false;
+                "119";
+            }
+        }
+        if (tabCoriolis !== null) {
+            "120";
+            tabCoriolis.remove();
+            "121";
+            tabCoriolis = null;
+        }
+    };
+    if (!effacer.__module__) Object.defineProperties(effacer, {
+        __module__ : {value: null}
+    });
+
+    "124";
+    async function spheACartOld(spherique) {
+        var ρσ_ls, r, phi, theta, x, y, z;
+        "126";
+        r = spherique.z;
+        "127";
+        phi = spherique.y;
+        "128";
+        theta = spherique.x;
+        "130";
+        x = r["*"](sin(theta))["*"](cos(phi));
+        "131";
+        y = r["*"](sin(theta))["*"](sin(phi));
+        "132";
+        z = r["*"](cos(theta));
+        "133";
+        return vec(x, y, z);
+    };
+    if (!spheACartOld.__argnames__) Object.defineProperties(spheACartOld, {
+        __argnames__ : {value: ["spherique"]},
+        __module__ : {value: null}
+    });
+
+    "135";
+    async function spheACart(spherique) {
+        var ρσ_ls, u, phi, theta, x, y, z;
+        "137";
+        u = spherique.x;
+        "138";
+        phi = spherique.y;
+        "139";
+        theta = spherique.z;
+        "140";
+        x = u["*"](sin(theta))["*"](cos(phi));
+        "141";
+        y = u["*"](sin(theta))["*"](sin(phi));
+        "142";
+        z = u["*"](cos(theta));
+        "143";
+        return vec(x, y, z);
+    };
+    if (!spheACart.__argnames__) Object.defineProperties(spheACart, {
+        __argnames__ : {value: ["spherique"]},
+        __module__ : {value: null}
+    });
+
+    "146";
+    async function dessinerGrille(pas) {
+        var ρσ_ls, demi, zlvl, Laxe, epais, k;
+        "147";
+        demi = tailleSol["/"](2);
+        "148";
+        zlvl = .51;
+        "149";
+        Laxe = demi;
+        "150";
+        epais = .2;
+        "154";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, zlvl), axis: vec(Laxe, 0, 0), shaftwidth: epais, color: color.red})]);
+        "155";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, zlvl), axis: vec(1["-u"]()["*"](Laxe), 0, 0), shaftwidth: epais, color: color.red})]);
+        "156";
+        ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(Laxe["+"](1), 0, zlvl), text: "E", box: false, height: 12, color: color.red})]);
+        "157";
+        ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(1["-u"]()["*"](Laxe)["-"](2), 0, zlvl), text: "O", box: false, height: 12, color: color.red})]);
+        "160";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, zlvl), axis: vec(0, Laxe, 0), shaftwidth: epais, color: color.green})]);
+        "161";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, zlvl), axis: vec(0, 1["-u"]()["*"](Laxe), 0), shaftwidth: epais, color: color.green})]);
+        "162";
+        ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(0, Laxe["+"](1), zlvl), text: "N", box: false, height: 12, color: color.green})]);
+        "163";
+        ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(0, 1["-u"]()["*"](Laxe)["-"](2), zlvl), text: "S", box: false, height: 12, color: color.green})]);
+        "166";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: vec(0, 0, Laxe), shaftwidth: epais["*"](10), color: color.blue})]);
+        "167";
+        ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(0, 0, Laxe["+"](1)), text: "Haut", box: false, height: 12, color: color.blue})]);
+        "170";
+        k = 0;
+        "171";
+        while (k["<="](demi["+"](1e-6))) {
+            "173";
+            ρσ_interpolate_kwargs.call(this, curve, [ρσ_desugar_kwargs({pos: ρσ_list_decorate([ vec(k, 1["-u"]()["*"](demi), zlvl), vec(k, demi, zlvl) ]), color: color.gray(.7)})]);
+            "174";
+            if (k[">"](1e-6)) {
+                "175";
+                ρσ_interpolate_kwargs.call(this, curve, [ρσ_desugar_kwargs({pos: ρσ_list_decorate([ vec(1["-u"]()["*"](k), 1["-u"]()["*"](demi), zlvl), vec(1["-u"]()["*"](k), demi, zlvl) ]), color: color.gray(.7)})]);
+            }
+            "178";
+            ρσ_interpolate_kwargs.call(this, curve, [ρσ_desugar_kwargs({pos: ρσ_list_decorate([ vec(1["-u"]()["*"](demi), k, zlvl), vec(demi, k, zlvl) ]), color: color.gray(.7)})]);
+            "179";
+            if (k[">"](1e-6)) {
+                "180";
+                ρσ_interpolate_kwargs.call(this, curve, [ρσ_desugar_kwargs({pos: ρσ_list_decorate([ vec(1["-u"]()["*"](demi), 1["-u"]()["*"](k), zlvl), vec(demi, 1["-u"]()["*"](k), zlvl) ]), color: color.gray(.7)})]);
+            }
+            "182";
+            k=k["+"](pas);
+        }
+    };
+    if (!dessinerGrille.__argnames__) Object.defineProperties(dessinerGrille, {
+        __argnames__ : {value: ["pas"]},
+        __module__ : {value: null}
+    });
+
+    "186";
+    async function test() {
+        "187";
+    };
+    if (!test.__module__) Object.defineProperties(test, {
+        __module__ : {value: null}
+    });
+
+    "189";
+    async function parseVec(s) {
+        "190";
+        return vec.apply(this, (function() {
+            var ρσ_Iter = s.split(","), ρσ_Result = [], x;
+            ρσ_Iter = ((typeof ρσ_Iter[Symbol.iterator] === "function") ? (ρσ_Iter instanceof Map ? ρσ_Iter.keys() : ρσ_Iter) : Object.keys(ρσ_Iter));
+            for (var ρσ_Index of ρσ_Iter) {
+                x = ρσ_Index;
+                ρσ_Result.push(float(x.strip()));
+            }
+            ρσ_Result = ρσ_list_constructor(ρσ_Result);
+            return ρσ_Result;
+        })());
+    };
+    if (!parseVec.__argnames__) Object.defineProperties(parseVec, {
+        __argnames__ : {value: ["s"]},
+        __module__ : {value: null}
+    });
+
+    "192";
+    async function afficherFleche(F) {
+        "193";
+        if (mag(F)["<"](1e-9)) {
+            "194";
+            return vec(0, 0, 0);
+        }
+        "195";
+        return norm(F)["*"](scalaireFleche);
+    };
+    if (!afficherFleche.__argnames__) Object.defineProperties(afficherFleche, {
+        __argnames__ : {value: ["F"]},
+        __module__ : {value: null}
+    });
+
+"197";
+    async function ajouter_boule_force(force) {
+        var ρσ_ls, b;
+        "198";
+        b = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: positionInitiale, radius: .06, color: ρσ_getitem(couleurs_force, force), make_trail: true, trail_color: ρσ_getitem(couleurs_force, force)})]);
+        "199";
+        b.vitesse = impulsionInitiale;
+        "200";
+        boules_ind.append([b, (function(){
+            var s = ρσ_set();
+            s.jsset.add(force);
+            return s;
+        })()]);
+    };
+    if (!ajouter_boule_force.__argnames__) Object.defineProperties(ajouter_boule_force, {
+        __argnames__ : {value: ["force"]},
+        __module__ : {value: null}
+    });
+
+    "202";
+    async function start(b) {
+        var ρσ_ls, M, lat_deg, omega, lat_rad, w_avant, g_mag, temp, ρσ_unpack, x0, y0, z0, vx0, vy0, vz0, grav, temps, xf, yf, distance;
+        "203";
+        "204";
+        "205";
+        "206";
+        "207";
+        "208";
+        "209";
+        "212";
+        (await effacer());
+        "213";
+        t = 0;
+        "219";
+        tabCoriolis = ρσ_interpolate_kwargs.call(this, graph, [ρσ_desugar_kwargs({title: "Magnitude de la force coriolis", xtitle: "t", ytitle: "N", align: "right"})]);
+        "221";
+        courbeCentrifuge = ρσ_interpolate_kwargs.call(this, gcurve, [ρσ_desugar_kwargs({graph: tabCoriolis, label: "|F_centri|", color: ρσ_getitem(couleurs_force, "centrifuge")})]);
+        "223";
+        courbeCoriolis = ρσ_interpolate_kwargs.call(this, gcurve, [ρσ_desugar_kwargs({graph: tabCoriolis, label: "|F_cor|", color: ρσ_getitem(couleurs_force, "coriolis")})]);
+        "228";
+        courbeAzimutal = ρσ_interpolate_kwargs.call(this, gcurve, [ρσ_desugar_kwargs({graph: tabCoriolis, label: "|F_azi|", color: ρσ_getitem(couleurs_force, "azimutal")})]);
+        "234";
+        R = float(RInput.text);
+        "235";
+        M = float(MInput.text);
+        "236";
+        lat_deg = 90["-"](1["*"](float(latInput.text)));
+        "237";
+        omega = float(omegaInput.text);
+        "239";
+        lat_rad = (await radians(lat_deg));
+        "242";
+        w = vec(0, omega["*"](cos(lat_rad)), omega["*"](sin(lat_rad)));
+        "243";
+        w_avant = w;
+        "244";
+        w = (await majW(w));
+        "246";
+        g_mag = G["*"](M)["/"](Math.pow(R, 2));
+        "247";
+        g = vec(0, 0, 1["-u"]()["*"](g_mag));
+        "251";
+        r_planete = vec(0, 0, R);
+        "257";
+        positionInitiale = (await parseVec(posInput.text));
+        "258";
+        temp = (await parseVec(impInput.text));
+        "260";
+        impulsionInitiale = (await spheACart(vec(temp.x, (await radians(temp.y)), (await radians(temp.z)))));
+        "264";
+        plancher = ρσ_interpolate_kwargs.call(this, box, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), length: tailleSol, height: tailleSol, width: 1, color: color.white, opacity: .4})]);
+        "266";
+        if (!grille_dessinee) {
+            "267";
+            (await dessinerGrille(pas));
+            "268";
+            grille_dessinee = true;
+        }
+        "271";
+        balle = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: positionInitiale, radius: .1, color: color.magenta, make_trail: true})]);
+        "276";
+        if (cbCentrifuge.checked) {
+            "277";
+            (await ajouter_boule_force("centrifuge"));
+            "278";
+        }
+        if (cbCoriolis.checked) {
+            "279";
+            (await ajouter_boule_force("coriolis"));
+            "280";
+        }
+        if (cbAzimutal.checked) {
+            "281";
+            (await ajouter_boule_force("azimutal"));
+        }
+        "285";
+        balle.vitesse = impulsionInitiale;
+        "287";
+        forceAzimutale = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({shaftwidth: 1, color: color.orange})]);
+        "288";
+        forceCoriolis = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({shaftwidth: 1, color: color.green})]);
+        "289";
+        forceCentrifuge = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({shaftwidth: 1, color: color.red})]);
+        "294";
+        ρσ_unpack = [balle.pos.x, balle.pos.y, balle.pos.z];
+        x0 = ρσ_unpack[0];
+        y0 = ρσ_unpack[1];
+        z0 = ρσ_unpack[2];
+        "295";
+        ρσ_unpack = [balle.vitesse.x, balle.vitesse.y, balle.vitesse.z];
+        vx0 = ρσ_unpack[0];
+        vy0 = ρσ_unpack[1];
+        vz0 = ρσ_unpack[2];
+        "296";
+        grav = abs(g.z);
+        "297";
+        temps = vz0["+"](sqrt(Math.pow(vz0, 2)["+"](2["*"](grav)["*"](z0))))["/"](grav);
+        "298";
+        ρσ_unpack = [vx0["*"](temps), vy0["*"](temps)];
+        xf = ρσ_unpack[0];
+        yf = ρσ_unpack[1];
+        "299";
+        cible = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(x0["+"](xf), y0["+"](yf), 0), radius: 5, color: color.blue})]);
+        "302";
+        cibleRougePos = (await parseVec(cibleInput.text));
+        "303";
+        cibleRouge = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: cibleRougePos, radius: 5, color: color.red})]);
+        "307";
+        scene.center = balle.pos["+"](cible.pos)["/"](2);
+        "308";
+        scene.range = mag(balle.pos["+"](cible.pos));
+        "311";
+        trajFin = false;
+        "312";
+        while (!trajFin) {
+            "313";
+            (await rate(150));
+            "314";
+            (await majVariables());
+            "315";
+            (await majVisuel());
+            "316";
+            t=t["+"](dt);
+        }
+        "317";
+        print("Le projectile a touché le sol au point "["+"](ρσ_str.format("{}", balle.pos))["+"](""));
+        "318";
+        print("La cible était au point "["+"](ρσ_str.format("{}", cibleRougePos))["+"](""));
+        "319";
+        distance = mag(balle.pos["-"](1["*"](cibleRougePos)));
+        "320";
+        print("Vous l'avez manqué de "["+"](ρσ_str.format("{:.2f}", distance))["+"](" m"));
+    };
+    if (!start.__argnames__) Object.defineProperties(start, {
+        __argnames__ : {value: ["b"]},
+        __module__ : {value: null}
+    });
+
+    "322";
+    async function majW(w) {
+        "324";
+        return w;
+    };
+    if (!majW.__argnames__) Object.defineProperties(majW, {
+        __argnames__ : {value: ["w"]},
+        __module__ : {value: null}
+    });
+
+    "326";
+    async function majVariables() {
+        var ρσ_ls, v, dw, a, r_i, v_i, dw_i, az_i, cor_i, cen_i, a_i, ρσ_unpack, b, ens;
+        "327";
+        "328";
+        "330";
+        r = r_planete["+"](balle.pos);
+        "331";
+        v = balle.vitesse;
+        "332";
+        dw = w["-"](1["*"](w_avant))["/"](dt);
+        "334";
+        vectAzimutal = 0["*"](m)["*"](cross(r, dw));
+        "335";
+        vectCoriolis = 2["*"](m)["*"](cross(v, w));
+        "336";
+        vectCentrifuge = m["*"](cross(cross(w, r), w));
+        "338";
+        a = g["+"](vectCoriolis)["+"](vectCentrifuge)["+"](vectAzimutal);
+        "339";
+        balle.vitesse=balle.vitesse["+"](a["*"](dt));
+        "340";
+        balle.pos=balle.pos["+"](balle.vitesse["*"](dt));
+        "344";
+        var ρσ_Iter6 = boules_ind;
+        ρσ_Iter6 = ((typeof ρσ_Iter6[Symbol.iterator] === "function") ? (ρσ_Iter6 instanceof Map ? ρσ_Iter6.keys() : ρσ_Iter6) : Object.keys(ρσ_Iter6));
+        for (var ρσ_Index6 of ρσ_Iter6) {
+            ρσ_unpack = ρσ_Index6;
+            b = ρσ_unpack[0];
+            ens = ρσ_unpack[1];
+            "345";
+            r_i = r_planete["+"](b.pos);
+            "346";
+            v_i = b.vitesse;
+            "347";
+            dw_i = w["-"](1["*"](w_avant))["/"](dt);
+            "349";
+            az_i = 0["*"](m)["*"](cross(r_i, dw_i));
+            "350";
+            cor_i = 2["*"](m)["*"](cross(v_i, w));
+            "351";
+            cen_i = m["*"](cross(cross(w, r_i), w));
+            "353";
+            a_i = g;
+            "354";
+            if (ρσ_in("azimutal", ens)) {
+                "355";
+                a_i=a_i["+"](az_i);
+                "356";
+            }
+            if (ρσ_in("coriolis", ens)) {
+                "357";
+                a_i=a_i["+"](cor_i);
+                "358";
+            }
+            if (ρσ_in("centrifuge", ens)) {
+                "359";
+                a_i=a_i["+"](cen_i);
+            }
+            "361";
+            b.vitesse=b.vitesse["+"](a_i["*"](dt));
+            "362";
+            b.pos=b.pos["+"](b.vitesse["*"](dt));
+            "364";
+        }
+        if (balle.pos.z["<="](0)) {
+            "365";
+            trajFin = true;
+        }
+        "367";
+        ρσ_unpack = [r, w];
+        r_avant = ρσ_unpack[0];
+        w_avant = ρσ_unpack[1];
+    };
+    if (!majVariables.__module__) Object.defineProperties(majVariables, {
+        __module__ : {value: null}
+    });
+
+    "369";
+    async function majVisuel() {
+        var ρσ_ls, tempAzimutal, tempCoriolis, tempCentrifuge, fleche;
+        "370";
+        "371";
+        tempAzimutal = mag(vectAzimutal);
+        "372";
+        tempCoriolis = mag(vectCoriolis);
+        "373";
+        tempCentrifuge = mag(vectCentrifuge);
+        "375";
+        courbeCoriolis.plot(t, tempCoriolis);
+        "376";
+        courbeAzimutal.plot(t, tempAzimutal);
+        "377";
+        courbeCentrifuge.plot(t, tempCentrifuge);
+        "379";
+        scene.center = balle.pos["+"](cible.pos)["/"](2);
+        "380";
+        scene.range = mag(balle.pos["+"](cible.pos));
+        "382";
+        forceAzimutale.axis = (await afficherFleche(vectAzimutal));
+        "383";
+        forceCoriolis.axis = (await afficherFleche(vectCoriolis));
+        "384";
+        forceCentrifuge.axis = (await afficherFleche(vectCentrifuge));
+        "388";
+        var ρσ_Iter7 = ρσ_list_decorate([ forceAzimutale, forceCoriolis, forceCentrifuge ]);
+        ρσ_Iter7 = ((typeof ρσ_Iter7[Symbol.iterator] === "function") ? (ρσ_Iter7 instanceof Map ? ρσ_Iter7.keys() : ρσ_Iter7) : Object.keys(ρσ_Iter7));
+        for (var ρσ_Index7 of ρσ_Iter7) {
+            fleche = ρσ_Index7;
+            "389";
+            fleche.pos = balle.pos;
+        }
+    };
+    if (!majVisuel.__module__) Object.defineProperties(majVisuel, {
+        __module__ : {value: null}
+    });
+
+};
+if (!__main__.__module__) Object.defineProperties(__main__, {
+    __module__ : {value: null}
+});
+
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+// END JAVASCRIPT
+
+</script>
+</div>
+<div style="clear: both;">
+
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/PhysiqueUdeM\.github\.io\/rel_referentiels\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Version 1.0 (mars 2026)</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

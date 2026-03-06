@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Accueil – REL_referentiels</title>
+<title>Diagrammes de Minkowski – REL_referentiels</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,11 +71,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -88,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -158,10 +187,45 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./minkowski_guide.html">Documentation</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./minkowski_guide.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Documentation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./minkowski_v1p0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./minkowski_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code source</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -169,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Accueil</h1>
+<h1 class="title">Diagrammes de Minkowski</h1>
 </div>
 
 
@@ -186,26 +250,70 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Cette ressource éducative libre (REL) a été conçue par Delphine Bouilly, André Garcia, Érika Le Bourdais, Samuel Poitras et Patrick Dufour, du département de physique de l’Université de Montréal.</p>
-<p>Merci également à Indiana Delsart, bibliothécaire, pour ses conseils et la mise en place du site.</p>
-<p>La création de cette ressource a été rendue possible grâce au financement de la <a href="https://fabriquerel.org/">FabriqueREL</a>.</p>
-<div class="quarto-layout-panel" data-layout-ncol="3">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img src="images/logo-UdeM-noir-bleu.png" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img src="images/F-REL_logo-coul.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<p><img src="images/ccby.png" class="img-fluid quarto-figure quarto-figure-left" width="120"><br>
-« Simulation et visualisation de référentiels en mécanique classique et relativiste », © Delphine Bouilly, André Garcia, Érika Le Bourdais, Samuel Poitras et Patrick Dufour (2026), est sous licence <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>.</p>
-<p>La dernière version de cette ressource est disponible sur ce site, développé avec <a href="https://quarto.org/">Quarto</a> et hébergé sur <a href="https://github.com/PhysiqueUdeM/rel_referentiels/">GitHub</a>.</p>
-<p>Une version archivée (Version 1.0) de la ressource est disponible sur Papyrus, le dépôt institutionnel de l’Université de Montréal : <a href="https://doi.org/10.71781/34279" class="uri">https://doi.org/10.71781/34279</a></p>
-<p>La conceptualisation et la programmation des simulations ont été réalisées sans recours à l’intelligence artificielle générative (IAg). Des outils d’IAg (ChatGPT-4.1, Claude Sonnet 4.6 et Microsoft 365 Copilot) ont été utilisés comme assistance technique pour la conception Web et la mise en ligne, ainsi que dans la révision des textes du guide pédagogique.</p>
+<section id="contexte" class="level2">
+<h2 class="anchored" data-anchor-id="contexte">Contexte</h2>
+<p>Cette ressource a pour but de faciliter la visualisation des changements de référentiel en relativité restreinte, en s’appuyant sur la représentation graphique des diagrammes de Minkowski.</p>
+<p>En <strong>mécanique classique</strong>, changer d’observateur est une opération simple : comme l’espace et le temps sont absolus et indépendants, le passage d’un référentiel à un autre peut être obtenu par une combinaison de translations, rotations et/ou réflexions rigides, paramétrées par le temps. Les positions et les vitesses sont alors fonction du référentiel choisi, mais les longueurs et durées restent quant à elles invariantes pour tous les observateurs.</p>
+<p>La situation est très différente en <strong>relativité restreinte</strong> : l’espace et le temps y sont couplés, et leur perception relative dépend de chaque observateur. Les phénomènes de dilatation du temps, de contraction des longueurs et de relativité de la simultanéité rendent alors beaucoup plus difficile le développement d’une intuition géométrique.</p>
+<p>Les <strong>diagrammes de Minkowski</strong> permettent une représentation visuelle de l’espace-temps relativiste. L’axe vertical représente la dimension temporelle (ct), et l’axe horizontal une dimension spatiale (x). Les événements y apparaissent comme des points, et les objets comme des « lignes d’univers » qui reflètent l’évolution de leur position en fonction du temps. Un changement de référentiel en relativité restreinte est décrit algébriquement par les transformations de Lorentz, qui relient les coordonnées spatio temporelles entre deux référentiels inertiels. Dans un diagramme de Minkowski, ces transformations s’interprètent comme une <strong>rotation hyperbolique</strong> des axes autour de la ligne représentant la vitesse de la lumière (ct = x), c’est-à-dire que les axes du temps et de l’espace du second référentiel pivotent de manière symétrique autour de l’axe de lumière tout en subissant un étirement. Cette représentation géométrique est puissante pour comprendre l’effet des transformations de Lorentz, mais elle est difficile à tracer manuellement à l’échelle.</p>
+<p>En réponse à ce défi, la présente ressource offre un <strong>outil interactif</strong> permettant de tracer dynamiquement la superposition de deux référentiels inertiels en fonction de leur vitesse relative, pour y ajouter les lignes d’univers de différents objets. Cette représentation permet de visualiser simultanément les coordonnées des objets dans les deux référentiels, facilitant ainsi le développement d’une compréhension intuitive et géométrique des transformations de Lorentz dans l’espace-temps relativiste.</p>
+</section>
+<section id="guide-dutilisation-de-la-ressource" class="level2">
+<h2 class="anchored" data-anchor-id="guide-dutilisation-de-la-ressource">Guide d’utilisation de la ressource</h2>
+<section id="initialisation-de-la-simulation" class="level3">
+<h3 class="anchored" data-anchor-id="initialisation-de-la-simulation">1. Initialisation de la simulation</h3>
+<p>La première étape consiste à initialiser le diagramme de Minkowski en choisissant l’<strong>étendue</strong> de l’axe temporel (ct) et de l’axe spatial&nbsp;(x), ainsi qu’un <strong>pas de graduation</strong>. Toutes ces valeurs doivent être exprimées dans la même unité de distance de votre choix, par exemple en mètres ou, plus couramment en relativité, en unités de <em>temps-lumière</em> (années-lumière, secondes-lumière, etc.).</p>
+<p>Vous devez également préciser la <strong>vitesse du second référentiel</strong> par rapport au premier, paramètre qui pourra être modifié dynamiquement par la suite grâce au curseur prévu à cet effet.</p>
+<p>Pour une première utilisation, il est recommandé de commencer par afficher uniquement le cadran positif (ct ∈ [0, ct<sub>max</sub>] et x ∈ [0, x<sub>max</sub>]) et de choisir une vitesse positive pour le second référentiel par rapport au premier. Cette configuration est généralement plus simple à visualiser et à interpréter. Le programme permet toutefois d’explorer des vitesses négatives (c’est-à-dire un second référentiel se déplaçant dans la direction opposée à l’axe spatial du premier référentiel), ainsi que des coordonnées temporelles et spatiales négatives. Gardez néanmoins en tête qu’un diagramme trop étendu ou trop chargé peut rapidement devenir difficile à lire ; il est donc préférable de commencer par une configuration simple, avant de complexifier le diagramme progressivement au besoin.</p>
+</section>
+<section id="utiliser-la-simulation" class="level3">
+<h3 class="anchored" data-anchor-id="utiliser-la-simulation">2. Utiliser la simulation</h3>
+<p>Une fois l’initialisation complétée, cliquez sur « Créer le diagramme » pour lancer le simulateur.</p>
+<section id="affichage-des-diagrammes" class="level4">
+<h4 class="anchored" data-anchor-id="affichage-des-diagrammes">Affichage des diagrammes</h4>
+<p>Par défaut, deux diagrammes de Minkowski apparaissent dans le panneau de visualisation :</p>
+<ul>
+<li>en <strong>blanc</strong>, le référentiel initial avec ses axes (ct, x) ;</li>
+<li>en <strong>orange</strong>, le second référentiel en mouvement relatif avec ses axes (ct’, x’).</li>
+</ul>
+<p>Vous pouvez à tout moment choisir d’afficher ou de masquer chacun des deux référentiels à l’aide des deux cases à cocher prévues à cet effet. Le zoom peut être ajusté à l’aide de la roulette de la souris (ou l’équivalent sur votre dispositif).</p>
+<p>Il est également possible de modifier la vitesse du second référentiel à l’aide du même curseur que lors de l’initialisation. Cela vous permet d’observer en temps réel comment cette variation modifie la <strong>rotation</strong> et l’<strong>étirement</strong> des axes (ct’, x’) par rapport à ceux du référentiel initial.</p>
+</section>
+<section id="ajouter-des-objets" class="level4">
+<h4 class="anchored" data-anchor-id="ajouter-des-objets">Ajouter des objets</h4>
+<p>Une fois le diagramme créé, vous pouvez y ajouter des objets, représentés par leurs lignes d’univers. Pour ce faire, vous devez :</p>
+<ol type="1">
+<li>D’abord, choisir la <strong>vitesse de l’objet</strong> dans le premier référentiel à l’aide du curseur correspondant. Cette vitesse va déterminer l’orientation de la ligne d’univers dans le diagramme de l’espace-temps.</li>
+<li>Spécifier un <strong>point</strong> de la ligne d’univers en entrant ses coordonnées dans le panneau de contrôle, suivi d’un clic sur « Ajouter l’objet »</li>
+</ol>
+<p>Par défaut, les coordonnées entrées doivent être associées au premier référentiel. S’il est plus pertinent pour vous d’entrer des coordonnées liées au second référentiel, cochez alors l’option « Coordonnées dans le référentiel en mouvement (x’, ct’) » dans le panneau de contrôle. Notez toutefois que, même dans ce mode, la vitesse de l’objet doit toujours être spécifiée par rapport au référentiel initial.</p>
+<p>Une fois l’objet ajouté, sa ligne d’univers est tracée automatiquement en <strong>rouge</strong>, et le point spécifié apparaît en <strong>rose</strong>. Les coordonnées correspondantes dans le second référentiel peuvent être lues directement sur le diagramme en orange.</p>
+</section>
+<section id="gestion-des-objets-ajoutés" class="level4">
+<h4 class="anchored" data-anchor-id="gestion-des-objets-ajoutés">Gestion des objets ajoutés</h4>
+<p>Pour supprimer le dernier objet ajouté, cliquez sur « Supprimer le dernier objet ». Vous pouvez ainsi retirer un à un les objets de votre diagramme, dans l’ordre inverse de leur ajout.</p>
+<p>Vous pouvez aussi afficher ou masquer l’ensemble des objets créés à l’aide de la case à cocher correspondante.</p>
+</section>
+</section>
+</section>
+<section id="suggestions-pour-les-enseignantes" class="level2">
+<h2 class="anchored" data-anchor-id="suggestions-pour-les-enseignantes">Suggestions pour les enseignant·e·s</h2>
+<p>Cette ressource peut servir de plusieurs façons pour aider au développement d’une intuition géométrique des effets relativistes.</p>
+<p>L’outil peut d’abord être utilisé en classe pour illustrer, de manière dynamique, plusieurs concepts fondamentaux en relativité restreinte :</p>
+<ul>
+<li><strong>Relativité de la simultanéité :</strong> <br>Vous pouvez aisément montrer que deux points simultanés dans un des référentiels ne le sont pas dans l’autre, en mettant l’accent sur le rôle de la rotation des axes lors du changement de référentiel.</li>
+<li><strong>Dilatation du temps :</strong> <br>Avec deux points sur une même ligne d’univers, vous pouvez aussi montrer que l’intervalle de temps entre ces événements n’est pas le même dans chacun des référentiels. Les graduations des axes, tracées à l’échelle, permettent de comparer quantitativement la longueur de l’intervalle sur les deux axes temporels. En choisissant une ligne d’univers parallèle à l’axe temporel d’un des référentiels, vous pouvez également montrer que l’intervalle de temps dans ce référentiel (temps propre) est toujours plus court que son équivalent dans un autre référentiel.<br>
+</li>
+<li><strong>Contraction des longueurs :</strong> <br>Vous pouvez représenter un objet étendu dans la dimension spatiale x, comme un bâton ou un train, par les lignes d’univers de ses extrémités. Dans le diagramme, ajoutez deux objets ayant la même vitesse, formant ainsi deux lignes d’univers parallèles. Grâce à la représentation à l’échelle des axes, vous pouvez ainsi montrer que la distance spatiale entre deux points simultanés de ces lignes d’univers n’est pas la même dans les deux référentiels, et en particulier que cette distance est plus courte dans le référentiel où l’objet étendu est en mouvement que dans un référentiel où il est au repos (longueur propre).</li>
+<li><strong>Invariance des intervalles d’espace-temps :</strong> <br>Vous pouvez montrer que, pour toute paire d’événements, le calcul de l’intervalle d’espace-temps (<span class="math inline">\(\Delta\)</span>s<sup>2</sup> = -<span class="math inline">\(\Delta\)</span>(ct)<sup>2</sup> + <span class="math inline">\(\Delta\)</span>x<sup>2</sup>) donne le même résultat dans chacun des deux référentiels. Cette vérification graphique permet d’introduire visuellement les différents types d’intervalles (temps, espace et lumière), ainsi que les notions de temporalité et de causalité entre événements.</li>
+</ul>
+<p>Ces différentes visualisations sont ardues à tracer à la main avec précision, mais deviennent ici immédiates grâce à l’outil interactif.</p>
+<p>Pour un apprentissage plus actif, vous pouvez proposer des exercices demandant aux étudiant·e·s de (1) représenter correctement une mise en situation donnée dans le référentiel d’un observateur, puis (2) analyser la même situation du point de vue d’un autre observateur en mouvement par rapport au premier. On peut demander de comparer différentes situations en matière de <strong>simultanéité</strong>, d’<strong>ordre des événements</strong> ou de <strong>distances temporelles/spatiales</strong>. On peut également utiliser la simulation pour visualiser ou valider graphiquement des solutions calculées avec les transformations de Lorentz.</p>
+<p>En plus des objets physiques incluant les traditionnels observateurs, trains et bâtons, le simulateur permet aussi de tracer des lignes de lumière, en réglant la vitesse d’un objet ajouté à ±c.&nbsp;Ceci peut être exploité pour visualiser le <strong>cône de lumière</strong> associé à un événement, et explorer ainsi des problèmes de <strong>causalité</strong> (quels événements peuvent en influencer d’autres). En particulier, on peut ainsi représenter des problèmes assez complexes de <strong>transmission d’information</strong> par des signaux lumineux échangés entre différents observateurs en mouvement. Ces questions sont souvent ardues à interpréter intuitivement et ambiguës dans des schémas dessinés à main levée, mais deviennent nettement plus compréhensibles grâce à une représentation précise et interactive.</p>
+<p>Enfin, notez bien que ce simulateur propose une représentation de Minkowski de type 1+1 (une dimension spatiale et une temporelle), dans laquelle les deux autres dimensions spatiales ne sont pas représentées. Ceci implique qu’il faut choisir des problèmes et mises en situation où les mouvements des référentiels et des objets ne se déroulent que dans un axe spatial. On trouve fréquemment des problèmes de ce type (trains et fusées allant en ligne droite) dans les ouvrages traitant de la relativité restreinte. Par ce qui précède, on voit que cela suffit amplement pour illustrer les phénomènes essentiels de cette branche de la physique moderne.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

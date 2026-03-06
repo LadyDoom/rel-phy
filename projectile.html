@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-4928aee9384e66cb359dd8efc1d1e04a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9cdbd49fb92a4d7f9d8c4f710986121f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9b1ba7478f6dc5e457e90ef2df19e95b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -130,18 +130,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">Guide d’utilisation</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./projectile.html" aria-current="page"> 
-<span class="menu-text">Simulation de projectile</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projectile" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">(1) Projectile</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-projectile">    
+        <li>
+    <a class="dropdown-item" href="./projectile_guide.html">
+ <span class="dropdown-text">Documentation</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./michelsonmorley.html"> 
-<span class="menu-text">Expérience de Michelson-Morley</span></a>
+        <li>
+    <a class="dropdown-item" href="./projectile_v1p0.html">
+ <span class="dropdown-text">Simulation</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./minkowski.html"> 
-<span class="menu-text">Diagramme de Minkowski</span></a>
+        <li>
+    <a class="dropdown-item" href="./projectile_code.html">
+ <span class="dropdown-text">Code source</span></a>
   </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-michelson-morley" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">(2) Michelson-Morley</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-michelson-morley">    
+        <li>
+    <a class="dropdown-item" href="./michelson_guide.html">
+ <span class="dropdown-text">Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./michelson_v1p0.html">
+ <span class="dropdown-text">Simulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./michelson_code.html">
+ <span class="dropdown-text">Code source</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-minkowski" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">(3) Minkowski</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-minkowski">    
+        <li>
+    <a class="dropdown-item" href="./minkowski_guide.html">
+ <span class="dropdown-text">Documentation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./minkowski_v1p0.html">
+ <span class="dropdown-text">Simulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./minkowski_code.html">
+ <span class="dropdown-text">Code source</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -176,9 +221,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="contexte" class="level1">
-<h1>Contexte</h1>
-<p>Explications</p>
+<!-- - [Simulation](##Simulation)
+- [Contexte](##Contexte)
+- [Guide d'utilisation](##Guide-d'utilisation)
+- [Suggestions pour enseignant·e·s](##Suggestions-pour-enseignant·e·s)
+- [Code source](##Code-source) -->
+<section id="simulation" class="level2">
+<h2 class="anchored" data-anchor-id="simulation">Simulation</h2>
+<p>Voici la simulation</p>
 <div id="glowscript" class="glowscript" style="display:block; width:100%; clear: both; height:500px;">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet">
@@ -903,7 +953,7 @@ if (!__main__.__module__) Object.defineProperties(__main__, {
 <section id="code-en-python-avec-glowscript" class="level1">
 <h1>Code en python (avec Glowscript)</h1>
 <p><br>Voici le code correspondant :</p>
-<div id="717be811" class="cell">
+<div id="3fa55d00" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Web VPython <span class="fl">3.2</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Constantes</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>grille_dessinee <span class="op">=</span> <span class="va">False</span></span>

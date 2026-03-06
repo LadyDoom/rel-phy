@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Accueil – REL_referentiels</title>
+<title>Expérience de Michelson-Morley – REL_referentiels</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,11 +71,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -88,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
@@ -158,10 +187,45 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./michelson_guide.html">Documentation</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./michelson_guide.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Documentation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./michelson_v1p0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./michelson_code.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code source</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
@@ -169,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Accueil</h1>
+<h1 class="title">Expérience de Michelson-Morley</h1>
 </div>
 
 
@@ -186,26 +250,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Cette ressource éducative libre (REL) a été conçue par Delphine Bouilly, André Garcia, Érika Le Bourdais, Samuel Poitras et Patrick Dufour, du département de physique de l’Université de Montréal.</p>
-<p>Merci également à Indiana Delsart, bibliothécaire, pour ses conseils et la mise en place du site.</p>
-<p>La création de cette ressource a été rendue possible grâce au financement de la <a href="https://fabriquerel.org/">FabriqueREL</a>.</p>
-<div class="quarto-layout-panel" data-layout-ncol="3">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img src="images/logo-UdeM-noir-bleu.png" class="img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img src="images/F-REL_logo-coul.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<p><img src="images/ccby.png" class="img-fluid quarto-figure quarto-figure-left" width="120"><br>
-« Simulation et visualisation de référentiels en mécanique classique et relativiste », © Delphine Bouilly, André Garcia, Érika Le Bourdais, Samuel Poitras et Patrick Dufour (2026), est sous licence <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>.</p>
-<p>La dernière version de cette ressource est disponible sur ce site, développé avec <a href="https://quarto.org/">Quarto</a> et hébergé sur <a href="https://github.com/PhysiqueUdeM/rel_referentiels/">GitHub</a>.</p>
-<p>Une version archivée (Version 1.0) de la ressource est disponible sur Papyrus, le dépôt institutionnel de l’Université de Montréal : <a href="https://doi.org/10.71781/34279" class="uri">https://doi.org/10.71781/34279</a></p>
-<p>La conceptualisation et la programmation des simulations ont été réalisées sans recours à l’intelligence artificielle générative (IAg). Des outils d’IAg (ChatGPT-4.1, Claude Sonnet 4.6 et Microsoft 365 Copilot) ont été utilisés comme assistance technique pour la conception Web et la mise en ligne, ainsi que dans la révision des textes du guide pédagogique.</p>
+<section id="contexte" class="level2">
+<h2 class="anchored" data-anchor-id="contexte">Contexte</h2>
+<p>L’<strong>expérience de Michelson–Morley</strong> est parmi les plus significatives de l’histoire de la physique. Elle a joué un rôle clé dans la remise en question du paradigme de la physique classique et dans l’émergence de la relativité restreinte, en réfutant l’hypothèse de l’«&nbsp;éther&nbsp;».</p>
+<p>Au XIXᵉ siècle, l’<strong>éther</strong> était postulé comme le milieu de la propagation de la lumière, et de toute onde électromagnétique, afin de réconcilier l’apparente contradiction entre les équations de Maxwell pour l’électromagnétisme et les transformations de Galilée en mécanique classique. Selon cette hypothèse, la constance de la vitesse de la lumière prédite par l’électromagnétisme ne s’appliquerait que dans le référentiel de l’éther, en faisant ainsi le référentiel privilégié pour les lois de l’électromagnétisme. Tout observateur en mouvement par rapport à ce référentiel devrait alors observer une vitesse différente pour la lumière, corrigée par sa propre vitesse relative à l’éther. À l’époque, la communauté scientifique cherchait à valider expérimentalement cette théorie, ce qui représentait un défi de taille : comment mesurer la vitesse de la lumière avec assez de précision pour détecter des corrections de l’ordre de la vitesse des véhicules ou systèmes expérimentaux à l’échelle humaine ?</p>
+<p>Michelson eut l’idée d’exploiter l’interférométrie, soit l’interaction entre deux ondes lumineuses, pour détecter de très faibles différences de temps de parcours de la lumière. Son célèbre <strong>interféromètre</strong> est composé de deux longs bras perpendiculaires : un faisceau lumineux est scindé en deux, chaque portion effectuant un aller-retour dans l’un des bras de l’interféromètre avant de se recombiner. Dans le cadre classique, le mouvement de l’appareil par rapport à l’éther devrait causer une légère différence de temps de parcours de la lumière entre les deux bras, générant ainsi un patron d’interférence à la sortie. L’expérience de Michelson-Morley consistait à faire tourner l’interféromètre de façon à modifier le mouvement relatif des bras par rapport à l’éther, prédisant un décalage de la position des franges d’interférence en fonction de l’angle de rotation. Or, les mesures de Michelson et Morley, de même que leurs très nombreuses réplications, n’ont jamais révélé un tel décalage systématique dans le patron d’interférence. Ce résultat nul, un des plus célèbres de la physique, implique que la lumière se propage toujours exactement à la même vitesse quel que soit le référentiel dans lequel se trouve l’interféromètre, réfutant ainsi l’existence de l’éther comme référentiel privilégié pour l’électromagnétisme. Cette conclusion a ouvert la voie à la physique moderne, dont un des piliers est le postulat d’invariance de la vitesse de la lumière formulé par Einstein dans sa théorie de la relativité restreinte.</p>
+<p>Malgré son importance, cette expérience est souvent mal comprise, car il n’est pas évident de modéliser correctement la relation entre le mouvement de l’interféromètre dans l’éther et le décalage des franges d’interférence à sa sortie. Cette ressource vise à faciliter cette compréhension grâce à un support visuel et interactif : elle offre une <strong>représentation visuelle de l’interféromètre et de son mouvement relatif à l’éther</strong>, et permet surtout de <strong>simuler le patron d’interférence prédit</strong> en fonction de la vitesse et de l’orientation de l’interféromètre, ainsi que d’une éventuelle asymétrie dans la longueur des deux bras. Cette simulation permet d’apprécier l’hypothèse de l’expérience de Michelson-Morley, c’est-à-dire ce qu’ils s’attendaient à voir comme décalage dans le patron d’interférence. Rappelons toutefois que cette hypothèse a été réfutée par tous les résultats expérimentaux : en pratique, le patron d’interférence demeure indépendant du déplacement de l’interféromètre, conformément aux principes de la relativité restreinte.</p>
+</section>
+<section id="guide-dutilisation-de-la-ressource" class="level2">
+<h2 class="anchored" data-anchor-id="guide-dutilisation-de-la-ressource">Guide d’utilisation de la ressource</h2>
+<section id="initialiser-la-simulation" class="level3">
+<h3 class="anchored" data-anchor-id="initialiser-la-simulation"><strong>1. Initialiser la simulation</strong></h3>
+<p>La simulation permet de tester l’effet de trois paramètres sur le patron d’interférence prédit dans l’expérience de Michelson-Morley :</p>
+<ul>
+<li><strong>Vitesse</strong> de l’interféromètre dans l’éther (ou, inversement, vitesse du « vent » de l’éther par rapport à l’interféromètre). <br>Exprimez cette vitesse comme une fraction de c, la vitesse de la lumière.</li>
+<li><strong>Orientation</strong> de l’interféromètre par rapport à sa vitesse dans l’éther. <br>Exprimez cet angle en radians, comme une fraction de <span class="math inline">\(\pi\)</span> (où <span class="math inline">\(\pi\)</span> = 180°).<br>
+</li>
+<li><strong>Différence de longueur</strong> entre les deux bras de l’interféromètre. <br>Exprimez cette longueur comme un multiple du quart de la longueur d’onde du faisceau lumineux utilisé.</li>
+</ul>
+<p>La simulation est automatiquement ajustée dès que vous mettez à jour un des paramètres ci-dessus.</p>
+</section>
+<section id="interpréter-la-simulation" class="level3">
+<h3 class="anchored" data-anchor-id="interpréter-la-simulation">2. Interpréter la simulation</h3>
+<p>Cette simulation génère deux visuels complémentaires :</p>
+<p>Le premier montre une vue schématique de l’interféromètre. On peut y voir :</p>
+<ul>
+<li>le faisceau incident (en violet) ;</li>
+<li>sa séparation en deux faisceaux perpendiculaires (en rouge et bleu) ;</li>
+<li>leur parcours respectif dans les deux bras de l’interféromètre ;</li>
+<li>puis leur recombinaison, avec un léger décalage, en direction du détecteur.</li>
+</ul>
+<p>En arrière‑plan, des sphères grises sont animées en fonction de l’orientation de l’interféromètre par rapport à l’éther. Cet élément visuel aide à représenter comment, dans la théorie classique, la direction du « vent d’éther » influence le trajet de la lumière dans chaque bras de l’interféromètre.</p>
+<p>Le second visuel illustre le patron d’interférence qu’on devrait mesurer dans le détecteur placé à la sortie de l’interféromètre, dû au petit décalage entre les faisceaux rouge et bleu. On y voit un graphique modélisant l’intensité de la lumière détectée en fonction de la position, formant une série de franges d’interférence constructive (amplitude maximale) et destructive (amplitude nulle). Le simulateur permet de constater que la position des franges varie en fonction des paramètres choisis (vitesse et orientation dans l’éther, asymétrie des bras). En particulier, le bouton <strong>« Garder en mémoire »</strong> permet de conserver le tracé du patron d’interférence pour le jeu de paramètres en cours, pour ensuite observer dynamiquement le décalage prédit par la modification de ces paramètres. Cette opération peut être répétée plusieurs fois pour comparer différentes configurations dans le même graphique. Pour réinitialiser le graphique, relancez la simulation en rafraichissant la page ou en exécutant le code à nouveau.</p>
+</section>
+</section>
+<section id="suggestions-pour-les-enseignants" class="level2">
+<h2 class="anchored" data-anchor-id="suggestions-pour-les-enseignants">Suggestions pour les enseignants</h2>
+<p>Ce simulateur peut d’abord servir de <strong>support visuel</strong> lors de la présentation en classe de l’expérience de Michelson–Morley. La représentation dynamique de l’interféromètre facilite l’explication de ses différentes composantes et de son fonctionnement, tandis que le graphique du patron d’interférence permet de visualiser concrètement l’observable principal de cette expérience, soit le décalage de la position des franges d’interférence. L’animation du « vent d’éther » aide à illustrer pourquoi son impact est différent sur les deux bras de l’interféromètre, ainsi que l’évolution de cet effet lorsqu’on fait tourner l’interféromètre.</p>
+<p>Dans une <strong>démonstration</strong>, ou une <strong>activité interactive</strong>, on peut utiliser la simulation pour montrer comment les franges du patron d’interférence auraient dû se déplacer au cours de l’expérience. En particulier, on peut mettre en évidence l’importance de la rotation du référentiel, en montrant la périodicité attendue du décalage des franges avec l’angle de rotation. Pour une telle démonstration, il est recommandé d’utiliser une vitesse de l’interféromètre de l’ordre de la vitesse orbitale de la Terre (30 km/s), comme dans l’hypothèse de Michelson et Morley ; la simulation est alors calibrée pour donner des décalages d’une fraction de la période des franges, facilitant ainsi l’observation de leur dépendance angulaire. Une telle démonstration permet d’intégrer plus efficacement le contraste avec le résultat nul obtenu expérimentalement, permettant ainsi aux étudiant·e·s d’apprécier pleinement la portée de cette expérience.</p>
+<p>Pour aller plus loin, la simulation permet également de discuter de l’impact d’une différence de longueur entre les deux bras de l’interféromètre. En pratique, il est en effet impossible de construire un interféromètre dont les deux bras sont identiques avec une précision comparable à la longueur d’onde de la lumière visible (environ 400–700 nm). On peut utiliser la simulation pour montrer que cette asymétrie produit aussi un décalage des franges d’interférence, qui est en pratique indiscernable de celui attendu pour un mouvement de l’interféromètre dans l’éther, à moins de varier l’orientation de celui-ci. Ceci constitue un point important pour bien comprendre les choix de Michelson et Morley dans la conception de leur expérience, en particulier la nécessité de mesurer le décalage en fonction de la rotation de l’interféromètre.</p>
+<p>Selon le niveau de la classe, vous pouvez également concevoir un <strong>laboratoire virtuel</strong> dans lequel les étudiant·e·s découvrent l’expérience de Michelson-Morley en explorant par eux-mêmes l’effet des différents paramètres sur le patron d’interférence. Vous pouvez ensuite discuter de leurs observations et des hypothèses classiques, avant de leur présenter le résultat expérimental. Cette approche est intéressante pour amener les étudiant·e·s à apprécier la surprise vécue par la communauté scientifique de l’époque face à cette expérience, et son importance dans l’histoire de la physique.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

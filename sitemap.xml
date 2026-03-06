@@ -1,23 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/projectile.html</loc>
-    <lastmod>2026-03-05T16:30:12.462Z</lastmod>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/projectile_v1p0.html</loc>
+    <lastmod>2026-03-06T04:31:11.314Z</lastmod>
   </url>
   <url>
-    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/michelsonmorley.html</loc>
-    <lastmod>2026-03-05T16:30:12.462Z</lastmod>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/projectile_simulation.html</loc>
+    <lastmod>2026-03-06T03:40:15.314Z</lastmod>
   </url>
   <url>
-    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/about.html</loc>
-    <lastmod>2026-03-06T01:43:12.704Z</lastmod>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/projectile_code.html</loc>
+    <lastmod>2026-03-06T03:45:02.397Z</lastmod>
+  </url>
+  <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/minkowski_v1p0.html</loc>
+    <lastmod>2026-03-06T04:29:05.833Z</lastmod>
+  </url>
+  <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/minkowski_code.html</loc>
+    <lastmod>2026-03-06T04:26:21.161Z</lastmod>
+  </url>
+  <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/michelson_v1p0.html</loc>
+    <lastmod>2026-03-06T04:24:21.871Z</lastmod>
+  </url>
+  <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/michelson_code.html</loc>
+    <lastmod>2026-03-06T04:18:30.264Z</lastmod>
   </url>
   <url>
     <loc>https://PhysiqueUdeM.github.io/rel_referentiels/index.html</loc>
     <lastmod>2026-03-06T01:31:23.753Z</lastmod>
   </url>
   <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/about.html</loc>
+    <lastmod>2026-03-06T02:16:11.472Z</lastmod>
+  </url>
+  <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/michelsonmorley.html</loc>
+    <lastmod>2026-03-05T16:30:12.462Z</lastmod>
+  </url>
+  <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/michelson_guide.html</loc>
+    <lastmod>2026-03-06T05:43:19.321Z</lastmod>
+  </url>
+  <url>
     <loc>https://PhysiqueUdeM.github.io/rel_referentiels/minkowski.html</loc>
     <lastmod>2026-03-05T16:30:12.462Z</lastmod>
+  </url>
+  <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/minkowski_guide.html</loc>
+    <lastmod>2026-03-06T05:43:06.842Z</lastmod>
+  </url>
+  <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/projectile.html</loc>
+    <lastmod>2026-03-06T03:40:06.770Z</lastmod>
+  </url>
+  <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/projectile_guide.html</loc>
+    <lastmod>2026-03-06T05:06:14.973Z</lastmod>
+  </url>
+  <url>
+    <loc>https://PhysiqueUdeM.github.io/rel_referentiels/projectile_v1p0 - Copy.html</loc>
+    <lastmod>2026-03-06T03:52:08.301Z</lastmod>
   </url>
 </urlset>
