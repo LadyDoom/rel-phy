@@ -2,8 +2,6 @@
 title: "Guide d'utilisation"
 ---
 
-# Guide d’utilisation
-
 ## Pourquoi ces ressources ?
 
 Dans l’apprentissage de la physique, certaines situations sont particulièrement difficiles à visualiser mentalement, surtout lorsqu’elles impliquent des mouvements dans l’espace ou des changements de référentiel. Les schémas statiques dans les manuels ou les notes de cours ne suffisent alors plus pour bien représenter la physique au cœur de ces phénomènes. Pour répondre à ce besoin, nous proposons trois simulations interactives permettant d’explorer des phénomènes de mécanique classique et de relativité restreinte dont la représentation pose souvent des défis particuliers :
