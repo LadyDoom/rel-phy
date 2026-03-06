@@ -9,9 +9,9 @@ website:
       - href: index.qmd
         text: Accueil
       - about.qmd
-      - minkowski.qmd
-      - michelsonmorley.qmd
       - projectile.qmd
+      - michelsonmorley.qmd
+      - minkowski.qmd
   page-footer: "Version 1.0 (mars 2026)"
 
 format:
