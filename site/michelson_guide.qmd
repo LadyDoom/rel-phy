@@ -1,0 +1,55 @@
+---
+title: "Expérience de Michelson-Morley"
+---
+
+## Contexte
+
+L’**expérience de Michelson–Morley** est parmi les plus significatives de l’histoire de la physique. Elle a joué un rôle clé dans la remise en question du paradigme de la physique classique et dans l’émergence de la relativité restreinte, en réfutant l’hypothèse de l’«&nbsp;éther&nbsp;».
+
+Au XIXᵉ siècle, l’**éther** était postulé comme le milieu de la propagation de la lumière, et de toute onde électromagnétique, afin de réconcilier l’apparente contradiction entre les équations de Maxwell pour l’électromagnétisme et les transformations de Galilée en mécanique classique. Selon cette hypothèse, la constance de la vitesse de la lumière prédite par l’électromagnétisme ne s’appliquerait que dans le référentiel de l’éther, en faisant ainsi le référentiel privilégié pour les lois de l’électromagnétisme. Tout observateur en mouvement par rapport à ce référentiel devrait alors observer une vitesse différente pour la lumière, corrigée par sa propre vitesse relative à l’éther. À l’époque, la communauté scientifique cherchait à valider expérimentalement cette théorie, ce qui représentait un défi de taille : comment mesurer la vitesse de la lumière avec assez de précision pour détecter des corrections de l’ordre de la vitesse des véhicules ou systèmes expérimentaux à l’échelle humaine ?
+
+Michelson eut l’idée d’exploiter l’interférométrie, soit l’interaction entre deux ondes lumineuses, pour détecter de très faibles différences de temps de parcours de la lumière. Son célèbre **interféromètre** est composé de deux longs bras perpendiculaires : un faisceau lumineux est scindé en deux, chaque portion effectuant un aller-retour dans l’un des bras de l’interféromètre avant de se recombiner. Dans le cadre classique, le mouvement de l’appareil par rapport à l’éther devrait causer une légère différence de temps de parcours de la lumière entre les deux bras, générant ainsi un patron d’interférence à la sortie. L’expérience de Michelson-Morley consistait à faire tourner l’interféromètre de façon à modifier le mouvement relatif des bras par rapport à l’éther, prédisant un décalage de la position des franges d’interférence en fonction de l’angle de rotation. Or, les mesures de Michelson et Morley, de même que leurs très nombreuses réplications, n’ont jamais révélé un tel décalage systématique dans le patron d’interférence. Ce résultat nul, un des plus célèbres de la physique, implique que la lumière se propage toujours exactement à la même vitesse quel que soit le référentiel dans lequel se trouve l’interféromètre, réfutant ainsi l’existence de l’éther comme référentiel privilégié pour l’électromagnétisme. Cette conclusion a ouvert la voie à la physique moderne, dont un des piliers est le postulat d’invariance de la vitesse de la lumière formulé par Einstein dans sa théorie de la relativité restreinte. 
+
+Malgré son importance, cette expérience est souvent mal comprise, car il n’est pas évident de modéliser correctement la relation entre le mouvement de l’interféromètre dans l’éther et le décalage des franges d’interférence à sa sortie. Cette ressource vise à faciliter cette compréhension grâce à un support visuel et interactif : elle offre une **représentation visuelle de l’interféromètre et de son mouvement relatif à l’éther**, et permet surtout de **simuler le patron d’interférence prédit** en fonction de la vitesse et de l’orientation de l’interféromètre, ainsi que d’une éventuelle asymétrie dans la longueur des deux bras. Cette simulation permet d’apprécier l’hypothèse de l’expérience de Michelson-Morley, c’est-à-dire ce qu’ils s’attendaient à voir comme décalage dans le patron d’interférence. Rappelons toutefois que cette hypothèse a été réfutée par tous les résultats expérimentaux : en pratique, le patron d’interférence demeure indépendant du déplacement de l’interféromètre, conformément aux principes de la relativité restreinte. 
+
+## Guide d’utilisation de la ressource
+
+### **1. Initialiser la simulation**
+
+La simulation permet de tester l’effet de trois paramètres sur le patron d’interférence prédit dans l’expérience de Michelson-Morley :
+
+- **Vitesse** de l’interféromètre dans l’éther (ou, inversement, vitesse du « vent » de l’éther par rapport à l’interféromètre). 
+<br>Exprimez cette vitesse comme une fraction de c, la vitesse de la lumière.
+- **Orientation** de l’interféromètre par rapport à sa vitesse dans l’éther. 
+<br>Exprimez cet angle en radians, comme une fraction de $\pi$ (où $\pi$ = 180°).  
+- **Différence de longueur** entre les deux bras de l’interféromètre. 
+<br>Exprimez cette longueur comme un multiple du quart de la longueur d’onde du faisceau lumineux utilisé. 
+
+La simulation est automatiquement ajustée dès que vous mettez à jour un des paramètres ci-dessus. 
+
+### 2. Interpréter la simulation
+
+Cette simulation génère deux visuels complémentaires :
+
+Le premier montre une vue schématique de l’interféromètre. On peut y voir :
+
+- le faisceau incident (en violet) ;
+- sa séparation en deux faisceaux perpendiculaires (en rouge et bleu) ;
+- leur parcours respectif dans les deux bras de l’interféromètre ;
+- puis leur recombinaison, avec un léger décalage, en direction du détecteur.
+
+En arrière‑plan, des sphères grises sont animées en fonction de l’orientation de l’interféromètre par rapport à l’éther. Cet élément visuel aide à représenter comment, dans la théorie classique, la direction du « vent d’éther » influence le trajet de la lumière dans chaque bras de l’interféromètre.
+
+Le second visuel illustre le patron d’interférence qu’on devrait mesurer dans le détecteur placé à la sortie de l’interféromètre, dû au petit décalage entre les faisceaux rouge et bleu. On y voit un graphique modélisant l’intensité de la lumière détectée en fonction de la position, formant une série de franges d’interférence constructive (amplitude maximale) et destructive (amplitude nulle). Le simulateur permet de constater que la position des franges varie en fonction des paramètres choisis (vitesse et orientation dans l’éther, asymétrie des bras). En particulier, le bouton **« Garder en mémoire »** permet de conserver le tracé du patron d’interférence pour le jeu de paramètres en cours, pour ensuite observer dynamiquement le décalage prédit par la modification de ces paramètres. Cette opération peut être répétée plusieurs fois pour comparer différentes configurations dans le même graphique. Pour réinitialiser le graphique, relancez la simulation en rafraichissant la page ou en exécutant le code à nouveau. 
+
+## Suggestions pour les enseignants
+
+Ce simulateur peut d’abord servir de **support visuel** lors de la présentation en classe de l’expérience de Michelson–Morley. La représentation dynamique de l’interféromètre facilite l’explication de ses différentes composantes et de son fonctionnement, tandis que le graphique du patron d’interférence permet de visualiser concrètement l’observable principal de cette expérience, soit le décalage de la position des franges d’interférence. L’animation du « vent d’éther » aide à illustrer pourquoi son impact est différent sur les deux bras de l’interféromètre, ainsi que l’évolution de cet effet lorsqu’on fait tourner l’interféromètre.
+
+Dans une **démonstration**, ou une **activité interactive**, on peut utiliser la simulation pour montrer comment les franges du patron d’interférence auraient dû se déplacer au cours de l’expérience. En particulier, on peut mettre en évidence l’importance de la rotation du référentiel, en montrant la périodicité attendue du décalage des franges avec l’angle de rotation. Pour une telle démonstration, il est recommandé d’utiliser une vitesse de l’interféromètre de l’ordre de la vitesse orbitale de la Terre (30 km/s), comme dans l’hypothèse de Michelson et Morley ; la simulation est alors calibrée pour donner des décalages d’une fraction de la période des franges, facilitant ainsi l’observation de leur dépendance angulaire. Une telle démonstration permet d’intégrer plus efficacement le contraste avec le résultat nul obtenu expérimentalement, permettant ainsi aux étudiant·e·s d’apprécier pleinement la portée de cette expérience. 
+
+Pour aller plus loin, la simulation permet également de discuter de l’impact d’une différence de longueur entre les deux bras de l’interféromètre. En pratique, il est en effet impossible de construire un interféromètre dont les deux bras sont identiques avec une précision comparable à la longueur d’onde de la lumière visible (environ 400–700 nm). On peut utiliser la simulation pour montrer que cette asymétrie produit aussi un décalage des franges d’interférence, qui est en pratique indiscernable de celui attendu pour un mouvement de l’interféromètre dans l’éther, à moins de varier l’orientation de celui-ci. Ceci constitue un point important pour bien comprendre les choix de Michelson et Morley dans la conception de leur expérience, en particulier la nécessité de mesurer le décalage en fonction de la rotation de l’interféromètre. 
+
+Selon le niveau de la classe, vous pouvez également concevoir un **laboratoire virtuel** dans lequel les étudiant·e·s découvrent l’expérience de Michelson-Morley en explorant par eux-mêmes l’effet des différents paramètres sur le patron d’interférence. Vous pouvez ensuite discuter de leurs observations et des hypothèses classiques, avant de leur présenter le résultat expérimental. Cette approche est intéressante pour amener les étudiant·e·s à apprécier la surprise vécue par la communauté scientifique de l’époque face à cette expérience, et son importance dans l’histoire de la physique. 
+
+

@@ -1,0 +1,1116 @@
+---
+title: "Diagrammes de Minkowski"
+execute:
+  enabled: false
+format:
+  html:
+    highlight-style: github
+
+---
+
+## Simulation
+
+```{=html}
+<div id="glowscript" class="glowscript">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet" />
+<link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/glow.3.2.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.2.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+;(function() {;
+var ρσ_modules = {};
+var acheck, rcheck, bcheck, cMagenta, sObjet, txtVitesseObjet, x_label, xInput, ct_label, ctInput, x2_label, ct2_label, x2Input, ct2Input, tempTag, ajoutBouton, bouton_supprimer, modeEntree, boutonSegment, objVitesse, tempVitesse, tempGamma, pointeurSouris, vslider, min_x, max_x, hauteur, écart, profondeur, counter, modeAjout, debutLigne, clicEnCours;
+ρσ_modules.pythonize = {};
+
+(function(){
+    function strings() {
+        var string_funcs, exclude, name;
+        string_funcs = set("capitalize strip lstrip rstrip islower isupper isspace lower upper swapcase center count endswith startswith find rfind index rindex format join ljust rjust partition rpartition replace split rsplit splitlines zfill".split(" "));
+        if (!arguments.length) {
+            exclude = (function(){
+                var s = ρσ_set();
+                s.jsset.add("split");
+                s.jsset.add("replace");
+                return s;
+            })();
+        } else if (arguments[0]) {
+            exclude = Array.prototype.slice.call(arguments);
+        } else {
+            exclude = null;
+        }
+        if (exclude) {
+            string_funcs = string_funcs.difference(set(exclude));
+        }
+        var ρσ_Iter0 = string_funcs;
+        ρσ_Iter0 = ((typeof ρσ_Iter0[Symbol.iterator] === "function") ? (ρσ_Iter0 instanceof Map ? ρσ_Iter0.keys() : ρσ_Iter0) : Object.keys(ρσ_Iter0));
+        for (var ρσ_Index0 of ρσ_Iter0) {
+            name = ρσ_Index0;
+            (ρσ_expr_temp = String.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name] = (ρσ_expr_temp = ρσ_str.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name];
+        }
+    };
+    if (!strings.__module__) Object.defineProperties(strings, {
+        __module__ : {value: "pythonize"}
+    });
+
+    ρσ_modules.pythonize.strings = strings;
+})();
+async function __main__() {
+"use strict";
+    var display = canvas;
+    var scene = canvas();
+
+    function round(num, n=0) {return Number(num.toFixed(n))}
+
+    function input(arg) {
+    	arg = arg || {}
+    	if (arg.prompt !== undefined && arg.prompt != '') return prompt(arg.prompt)
+    	else if (typeof arg === 'string') return prompt(arg)
+    	else return prompt()
+    }
+
+    var version, print, arange, __name__, type, ρσ_ls, counter, tempVitesse, tempGamma, objVitesse, min_x, max_x, hauteur, profondeur, écart, modeAjout, debutLigne, clicEnCours, pointeurSouris, tempDel, tempDelBase, objetsMagenta, obj, tempTitre, p_label, pInput, min_label, minInput, tempTag, h_label, hInput, max_label, maxInput, e_label, eInput, v_label, sVitesse, txtVitesse, start_button, fleche_x, fleche_y, fleche_xobv, fleche_yobv;
+    version = ρσ_list_decorate([ "3.2", "glowscript" ]);
+    Array.prototype['+'] = function(r) {return this.concat(r)}
+    Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
+    window.__GSlang = "vpython";
+    print = GSprint;
+    arange = range;
+    __name__ = "__main__";
+    type = pytype;
+    var strings = ρσ_modules.pythonize.strings;
+
+    strings();
+    "13";
+    counter = 0;
+    "14";
+    tempVitesse = .6;
+    "15";
+    tempGamma = 1["/"](sqrt(1["-"](1["*"](Math.pow(tempVitesse, 2)))));
+    "16";
+    objVitesse = .6;
+    "17";
+    min_x = 0;
+    "18";
+    max_x = 0;
+    "19";
+    hauteur = 0;
+    "20";
+    profondeur = 0;
+    "21";
+    écart = 0;
+    "22";
+    modeAjout = true;
+    "24";
+    debutLigne = null;
+    "25";
+    clicEnCours = false;
+    "27";
+    scene.visible = false;
+    "29";
+    scene.background = color.black;
+    "30";
+    scene.align = "left";
+    "31";
+    pointeurSouris = null;
+    "33";
+    tempDel = ρσ_list_decorate([]);
+    "34";
+    tempDelBase = ρσ_list_decorate([]);
+    "35";
+    objetsMagenta = ρσ_list_decorate([]);
+    "37";
+    var ρσ_Iter1 = scene.objects;
+    ρσ_Iter1 = ((typeof ρσ_Iter1[Symbol.iterator] === "function") ? (ρσ_Iter1 instanceof Map ? ρσ_Iter1.keys() : ρσ_Iter1) : Object.keys(ρσ_Iter1));
+    for (var ρσ_Index1 of ρσ_Iter1) {
+        obj = ρσ_Index1;
+        "38";
+        if ((await hasattr(obj, "shininess"))) {
+            "39";
+            obj.shininess = 0;
+        }
+    }
+    "42";
+    scene.caption = "";
+    "45";
+    tempTitre = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Paramètres<\/b><br>", pos: scene.title_anchor})]);
+    "49";
+    p_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " ct (min):  ", pos: scene.title_anchor})]);
+    (await sleep(.1));
+    "50";
+    pInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, text: "0", type: "numeric", pos: scene.title_anchor})]);
+    "53";
+    min_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " x (min):  ", pos: scene.title_anchor})]);
+    (await sleep(.1));
+    "54";
+    minInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, text: "0", type: "numeric", pos: scene.title_anchor})]);
+    "57";
+    tempTag = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b></b><br>", pos: scene.title_anchor})]);
+    "59";
+    h_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " ct (max): ", pos: scene.title_anchor})]);
+    (await sleep(.1));
+    "60";
+    hInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, text: "10", type: "numeric", pos: scene.title_anchor})]);
+    "63";
+    max_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " x (max): ", pos: scene.title_anchor})]);
+    (await sleep(.1));
+    "64";
+    maxInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, text: "10", type: "numeric", pos: scene.title_anchor})]);
+    "67";
+    e_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " Pas de graduation: ", pos: scene.title_anchor})]);
+    (await sleep(.1));
+    "68";
+    eInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, text: "1", type: "numeric", pos: scene.title_anchor})]);
+    "70";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.title_anchor})]);
+    "74";
+    tempTag = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b></b><br>", pos: scene.title_anchor})]);
+    "76";
+    v_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "Vitesse de l'observateur : ", pos: scene.title_anchor})]);
+    "77";
+    sVitesse = ρσ_interpolate_kwargs.call(this, slider, [ρσ_desugar_kwargs({min: 1["-u"]()["*"](.99), max: .99, value: .6, step: .01, length: 200, bind: majVitesseSlider, pos: scene.title_anchor})]);
+    "78";
+    txtVitesse = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " (v = 0.6 c)", pos: scene.title_anchor})]);
+    "80";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.title_anchor})]);
+    "82";
+    start_button = ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({bind: lancer_diagramme, text: "Créer le diagramme", pos: scene.title_anchor})]);
+    "83";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.title_anchor})]);
+    "87";
+    async function br() {
+        "88";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+    };
+    if (!br.__module__) Object.defineProperties(br, {
+        __module__ : {value: null}
+    });
+
+    "89";
+    async function creer_ui_secondaire() {
+        "90";
+        "91";
+        "92";
+        "93";
+        "94";
+        "97";
+        tempTag.text = "<b>Vitesse de l'observateur</b><br>";
+        "99";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Affichages</b>", pos: scene.title_anchor})]);
+        "100";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "105";
+        rcheck = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: cacherRef, text: "Afficher le référentiel en mouvement", checked: true, pos: scene.title_anchor})]);
+        "106";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "108";
+        bcheck = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: cacherRefBase, text: "Afficher le référentiel stationnaire", checked: true, pos: scene.title_anchor})]);
+        "109";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "111";
+        cMagenta = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: retirerObjet, text: "Afficher les objets", checked: true, pos: scene.title_anchor})]);
+        "112";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "113";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.title_anchor})]);
+        "115";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>  Vitesse de l'objet</b>", pos: scene.caption_anchor})]);
+        "116";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "119";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "121";
+        sObjet = ρσ_interpolate_kwargs.call(this, slider, [ρσ_desugar_kwargs({min: 1["-u"]()["*"](1), max: 1, value: .6, length: 200, bind: majObjVitesse, pos: scene.caption_anchor})]);
+        "122";
+        txtVitesseObjet = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " (v = 0.6 c)", pos: scene.caption_anchor})]);
+        "123";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "124";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "126";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "127";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>  Ajouter un objet par coordonnées</b>", pos: scene.caption_anchor})]);
+        "128";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "130";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>  ", pos: scene.caption_anchor})]);
+        "131";
+        modeEntree = ρσ_interpolate_kwargs.call(this, checkbox, [ρσ_desugar_kwargs({bind: changer_mode_entree, text: "Coordonnées dans le référentiel en mouvement (ct', x')", checked: false, pos: scene.caption_anchor})]);
+        "135";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "136";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "138";
+        ct_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "   ct :   ", pos: scene.caption_anchor})]);
+        (await sleep(.1));
+        "139";
+        ctInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, type: "numeric", pos: scene.caption_anchor})]);
+        "140";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "142";
+        x_label = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "   x :    ", pos: scene.caption_anchor})]);
+        (await sleep(.1));
+        "143";
+        xInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: test, type: "numeric", pos: scene.caption_anchor})]);
+        "144";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "145";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "157";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>  ", pos: scene.caption_anchor})]);
+        "158";
+        ajoutBouton = ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({text: "Ajouter l'objet", bind: ajouter_point_manuellement, pos: scene.caption_anchor})]);
+        "160";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "161";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "169";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>  ", pos: scene.caption_anchor})]);
+        "170";
+        bouton_supprimer = ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({text: "Supprimer le dernier objet", bind: supprimer_dernier_objet, pos: scene.caption_anchor})]);
+        "171";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+        "172";
+        ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br>", pos: scene.caption_anchor})]);
+    };
+    if (!creer_ui_secondaire.__module__) Object.defineProperties(creer_ui_secondaire, {
+        __module__ : {value: null}
+    });
+
+    "176";
+    async function supprimer_dernier_objet(b) {
+        "177";
+        if (len(objetsMagenta)[">="](2)) {
+            "178";
+            ρσ_getitem(objetsMagenta, 1["-u"]()["*"](1)).visible = false;
+            "179";
+            ρσ_getitem(objetsMagenta, 1["-u"]()["*"](2)).visible = false;
+            "180";
+            objetsMagenta.pypop();
+            "181";
+            objetsMagenta.pypop();
+        }
+    };
+    if (!supprimer_dernier_objet.__argnames__) Object.defineProperties(supprimer_dernier_objet, {
+        __argnames__ : {value: ["b"]},
+        __module__ : {value: null}
+    });
+
+    "183";
+    async function changer_mode_entree(ev) {
+        "184";
+        "185";
+        if (ev.checked) {
+            "186";
+            x_label.text = "   x' :    ";
+            "187";
+            ct_label.text = "   ct' :   ";
+            "188";
+            x2_label.text = " x2' :  ";
+            "189";
+            ct2_label.text = " ct2' : ";
+            "190";
+        } else {
+            "191";
+            x_label.text = "   x :    ";
+            "192";
+            ct_label.text = "   ct :   ";
+            "193";
+            x2_label.text = " x2 :  ";
+            "194";
+            ct2_label.text = " ct2 : ";
+        }
+    };
+    if (!changer_mode_entree.__argnames__) Object.defineProperties(changer_mode_entree, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "196";
+    async function ajouter_segment_manuellementt(b) {
+        var ρσ_ls, x1, ct1, x2, ct2, p1, p2;
+        "197";
+        "199";
+        try {
+            "201";
+            x1 = float(xInput.text);
+            "202";
+            ct1 = float(ctInput.text);
+            "203";
+            x2 = float(x2Input.text);
+            "204";
+            ct2 = float(ct2Input.text);
+            "205";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            if (ρσ_Exception instanceof ValueError) {
+                "206";
+                print("Entrées invalides.");
+                "207";
+                return;
+            } else {
+                throw ρσ_Exception;
+            }
+        }
+        "209";
+        p1 = (await coord_vers_vec(x1, ct1));
+        "210";
+        p2 = (await coord_vers_vec(x2, ct2));
+    };
+    if (!ajouter_segment_manuellementt.__argnames__) Object.defineProperties(ajouter_segment_manuellementt, {
+        __argnames__ : {value: ["b"]},
+        __module__ : {value: null}
+    });
+
+    "212";
+    async function ajouter_segment_manuellement(b) {
+        var ρσ_ls, x1, ct1, x2, ct2, p1, p2, seg, n, direction, t, point, cyl, i, ligne;
+        "213";
+        try {
+            "214";
+            x1 = float(xInput.text);
+            "215";
+            ct1 = float(ctInput.text);
+            "216";
+            x2 = float(x2Input.text);
+            "217";
+            ct2 = float(ct2Input.text);
+            "218";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            {
+                "219";
+                print("Entrées invalides.");
+                "220";
+                return;
+            } 
+        }
+        "222";
+        p1 = (await coord_vers_vec(x1, ct1));
+        "223";
+        p2 = (await coord_vers_vec(x2, ct2));
+        "226";
+        seg = ρσ_interpolate_kwargs.call(this, curve, [ρσ_desugar_kwargs({pos: ρσ_list_decorate([ p1, p2 ]), radius: .06, color: color.magenta})]);
+        "227";
+        objetsMagenta.append(seg);
+        "230";
+        n = 5;
+        "231";
+        direction = norm(vec(objVitesse, 1, 0));
+        "232";
+        for (var ρσ_Index2 = 0; ρσ_Index2["<"](n["+"](1)); ρσ_Index2++) {
+            i = ρσ_Index2;
+            "233";
+            t = i["/"](n);
+            "234";
+            point = p1["*"](1["-"](1["*"](t)))["+"](p2["*"](t));
+            "235";
+            cyl = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: point, axis: direction["*"](20), radius: .8, color: color.magenta, opacity: .15})]);
+            "236";
+            objetsMagenta.append(cyl);
+        }
+        "240";
+        ligne = ρσ_interpolate_kwargs.call(this, curve, [ρσ_desugar_kwargs({radius: .05, color: color.magenta})]);
+        "241";
+        objetsMagenta.append(ligne);
+        "243";
+        n = 5;
+        "244";
+        for (var ρσ_Index3 = 0; ρσ_Index3["<"](n["+"](1)); ρσ_Index3++) {
+            i = ρσ_Index3;
+            "245";
+            t = i["/"](n);
+            "246";
+            point = p1["*"](1["-"](1["*"](t)))["+"](p2["*"](t));
+            "247";
+            ρσ_interpolate_kwargs.call(ligne, ligne.append, [ρσ_desugar_kwargs({pos: point})]);
+            "249";
+            direction = norm(vec(objVitesse, 1, 0));
+            "250";
+            cyl = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: point, axis: direction["*"](20), radius: 1, color: color.magenta, opacity: .1})]);
+            "252";
+            objetsMagenta.append(cyl);
+        }
+    };
+    if (!ajouter_segment_manuellement.__argnames__) Object.defineProperties(ajouter_segment_manuellement, {
+        __argnames__ : {value: ["b"]},
+        __module__ : {value: null}
+    });
+
+    "254";
+    async function coord_vers_vec(x, ct) {
+        var ρσ_ls, tempL, u_xp, u_ctp;
+        "257";
+        if (modeEntree.checked) {
+            "258";
+            tempL = sqrt(Math.pow(x, 2)["+"](Math.pow(ct, 2)));
+            "261";
+            u_xp = tempGamma["*"](norm(vec(1["/"](tempVitesse), 1, 0)));
+            "262";
+            u_ctp = tempGamma["*"](norm(vec(tempVitesse, 1, 0)));
+            "265";
+            return x["*"](u_xp)["+"](ct["*"](u_ctp));
+            "267";
+        } else {
+            "268";
+            return vec(x, ct, 0);
+        }
+    };
+    if (!coord_vers_vec.__argnames__) Object.defineProperties(coord_vers_vec, {
+        __argnames__ : {value: ["x", "ct"]},
+        __module__ : {value: null}
+    });
+
+    "271";
+    async function ajouter_point_manuellement(b) {
+        var ρσ_ls, x, ct, pasprimex, pasprimect, position, sph, direction, cyl;
+        "272";
+        try {
+            "273";
+            x = float(xInput.text);
+            "274";
+            ct = float(ctInput.text);
+            "277";
+            if (modeEntree.checked) {
+                "280";
+                pasprimex = tempGamma["*"](x["+"](tempVitesse["*"](ct)));
+                "281";
+                pasprimect = tempGamma["*"](ct["+"](tempVitesse["*"](x)));
+                "293";
+                position = vec(pasprimex, pasprimect, 0);
+                "295";
+            } else {
+                "296";
+                position = vec(x, ct, 0);
+            }
+            "298";
+            sph = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: position, radius: .3, color: color.magenta})]);
+            "299";
+            objetsMagenta.append(sph);
+            "301";
+            direction = norm(vec(objVitesse, 1, 0));
+            "302";
+            cyl = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: position, axis: direction["*"](max_x)["*"](1.5), color: color.red, radius: .07})]);
+            "303";
+            objetsMagenta.append(cyl);
+            "304";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            if (ρσ_Exception instanceof ValueError) {
+                "305";
+                print("Entrées invalides.");
+            } else {
+                throw ρσ_Exception;
+            }
+        }
+    };
+    if (!ajouter_point_manuellement.__argnames__) Object.defineProperties(ajouter_point_manuellement, {
+        __argnames__ : {value: ["b"]},
+        __module__ : {value: null}
+    });
+
+    "310";
+    async function retirerObjet(ev) {
+        var ρσ_ls, o;
+        "311";
+        if (ev.checked) {
+            "312";
+            var ρσ_Iter4 = objetsMagenta;
+            ρσ_Iter4 = ((typeof ρσ_Iter4[Symbol.iterator] === "function") ? (ρσ_Iter4 instanceof Map ? ρσ_Iter4.keys() : ρσ_Iter4) : Object.keys(ρσ_Iter4));
+            for (var ρσ_Index4 of ρσ_Iter4) {
+                o = ρσ_Index4;
+                "313";
+                o.visible = true;
+                "314";
+            }
+        } else {
+            "315";
+            var ρσ_Iter5 = objetsMagenta;
+            ρσ_Iter5 = ((typeof ρσ_Iter5[Symbol.iterator] === "function") ? (ρσ_Iter5 instanceof Map ? ρσ_Iter5.keys() : ρσ_Iter5) : Object.keys(ρσ_Iter5));
+            for (var ρσ_Index5 of ρσ_Iter5) {
+                o = ρσ_Index5;
+                "316";
+                o.visible = false;
+            }
+        }
+    };
+    if (!retirerObjet.__argnames__) Object.defineProperties(retirerObjet, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "318";
+    async function cacherRef(ev) {
+        var ρσ_ls, elem;
+        "319";
+        if ((ev.checked === false || typeof ev.checked === "object" && ρσ_equals(ev.checked, false))) {
+            "320";
+            var ρσ_Iter6 = tempDel;
+            ρσ_Iter6 = ((typeof ρσ_Iter6[Symbol.iterator] === "function") ? (ρσ_Iter6 instanceof Map ? ρσ_Iter6.keys() : ρσ_Iter6) : Object.keys(ρσ_Iter6));
+            for (var ρσ_Index6 of ρσ_Iter6) {
+                elem = ρσ_Index6;
+                "321";
+                elem.visible = false;
+                "322";
+            }
+        } else {
+            "323";
+            (await dessiner_obv(min_x, max_x, profondeur, hauteur, écart));
+        }
+    };
+    if (!cacherRef.__argnames__) Object.defineProperties(cacherRef, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "325";
+    async function cacherRefBase(ev) {
+        var ρσ_ls, elem;
+        "326";
+        if ((ev.checked === false || typeof ev.checked === "object" && ρσ_equals(ev.checked, false))) {
+            "327";
+            var ρσ_Iter7 = tempDelBase;
+            ρσ_Iter7 = ((typeof ρσ_Iter7[Symbol.iterator] === "function") ? (ρσ_Iter7 instanceof Map ? ρσ_Iter7.keys() : ρσ_Iter7) : Object.keys(ρσ_Iter7));
+            for (var ρσ_Index7 of ρσ_Iter7) {
+                elem = ρσ_Index7;
+                "328";
+                elem.visible = false;
+                "329";
+            }
+        } else {
+            "330";
+            (await dessiner_plan_cartesien(min_x, max_x, hauteur, écart));
+        }
+    };
+    if (!cacherRefBase.__argnames__) Object.defineProperties(cacherRefBase, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "333";
+    async function majObjVitesse() {
+        "334";
+        "335";
+        objVitesse = sObjet.value;
+        "336";
+        txtVitesseObjet.text = " (v = "["+"](str(round(objVitesse, 2)))["+"](" c)");
+    };
+    if (!majObjVitesse.__module__) Object.defineProperties(majObjVitesse, {
+        __module__ : {value: null}
+    });
+
+    "338";
+    async function majVitesseSlider() {
+        var ρσ_ls, elem;
+        "339";
+        "340";
+        "341";
+        tempVitesse = sVitesse.value;
+        "342";
+        tempGamma = 1["/"](sqrt(1["-"](1["*"](Math.pow(tempVitesse, 2)))));
+        "343";
+        txtVitesse.text = " (v = "["+"](str(round(tempVitesse, 3)))["+"](" c)");
+        "345";
+        var ρσ_Iter8 = tempDel;
+        ρσ_Iter8 = ((typeof ρσ_Iter8[Symbol.iterator] === "function") ? (ρσ_Iter8 instanceof Map ? ρσ_Iter8.keys() : ρσ_Iter8) : Object.keys(ρσ_Iter8));
+        for (var ρσ_Index8 of ρσ_Iter8) {
+            elem = ρσ_Index8;
+            "346";
+            elem.visible = false;
+        }
+        "347";
+        (await dessiner_obv(min_x, max_x, profondeur, hauteur, écart));
+    };
+    if (!majVitesseSlider.__module__) Object.defineProperties(majVitesseSlider, {
+        __module__ : {value: null}
+    });
+
+    "349";
+    async function majVitesse(ev) {
+        var ρσ_ls, elem;
+        "350";
+        "351";
+        "352";
+        tempVitesse = float(vInput.text);
+        "353";
+        tempGamma = 1["/"](sqrt(1["-"](1["*"](Math.pow(tempVitesse, 2)))));
+        "354";
+        var ρσ_Iter9 = tempDel;
+        ρσ_Iter9 = ((typeof ρσ_Iter9[Symbol.iterator] === "function") ? (ρσ_Iter9 instanceof Map ? ρσ_Iter9.keys() : ρσ_Iter9) : Object.keys(ρσ_Iter9));
+        for (var ρσ_Index9 of ρσ_Iter9) {
+            elem = ρσ_Index9;
+            "355";
+            elem.visible = false;
+        }
+        "357";
+        (await dessiner_obv(min_x, max_x, profondeur, hauteur, écart));
+    };
+    if (!majVitesse.__argnames__) Object.defineProperties(majVitesse, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "359";
+    async function decomposer_position(evt) {
+        var ρσ_ls, position, temp;
+        "360";
+        "362";
+        position = ρσ_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [ρσ_desugar_kwargs({normal: vec(0, 0, 1), point: vec(0, 0, 0)})]);
+        "363";
+        if (position === null) {
+            "364";
+            return;
+        }
+        "366";
+        position.z = .2;
+        "367";
+        pointeurSouris.pos = position;
+        "368";
+        pointeurSouris.visible = true;
+        "371";
+        fleche_x.pos = vec(0, 0, 0);
+        "372";
+        fleche_x.axis = vec(position.x, 0, 0);
+        "375";
+        fleche_y.pos = vec(0, 0, 0);
+        "376";
+        fleche_y.axis = vec(0, position.y, 0);
+        "378";
+        temp = position.y["-"](1["*"](position.x)["*"](tempVitesse))["/"](1["/"](tempVitesse)["-"](1["*"](tempVitesse)));
+        "379";
+        fleche_yobv.pos = vec(0, 0, 0);
+        "380";
+        fleche_yobv.axis = vec(temp, temp["*"](1)["/"](tempVitesse), 0);
+        "384";
+        temp = position.y["-"](1["*"](position.x)["*"](1)["/"](tempVitesse))["/"](tempVitesse["-"](1["/"](tempVitesse)));
+        "385";
+        fleche_xobv.pos = vec(0, 0, 0);
+        "386";
+        fleche_xobv.axis = vec(temp, temp["*"](tempVitesse), 0);
+    };
+    if (!decomposer_position.__argnames__) Object.defineProperties(decomposer_position, {
+        __argnames__ : {value: ["evt"]},
+        __module__ : {value: null}
+    });
+
+    "392";
+    async function test() {
+        "393";
+    };
+    if (!test.__module__) Object.defineProperties(test, {
+        __module__ : {value: null}
+    });
+
+    "395";
+    async function dessiner_plan_cartesien(min_x, max_x, hauteur, écart) {
+        var ρσ_ls, x, t, y;
+        "396";
+        scene.center = vec(min_x["+"](max_x)["/"](2), hauteur["+"](profondeur)["/"](2), 0);
+        "399";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: vec(min_x, 0, 0), shaftwidth: .08, color: color.white})]);
+        "400";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: vec(max_x, 0, 0), shaftwidth: .08, color: color.white})]);
+        "401";
+        ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: vec(0, hauteur, 0), shaftwidth: .08, color: color.white})]);
+        "403";
+        ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(max_x, 0, 0), text: "x", xoffset: 10, height: 12, box: false, color: color.white})]);
+        "404";
+        ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: vec(0, hauteur, 0), text: "ct", yoffset: 10, height: 12, box: false, color: color.white})]);
+        "408";
+        x = 0;
+        "409";
+        while (x["<="](max_x)) {
+            "410";
+            t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, 0, 0), axis: vec(0, hauteur["-"](1["*"](0)), 0), radius: .05, color: color.gray(.8)})]);
+            "411";
+            tempDelBase.append(t);
+            "412";
+            if (profondeur["<"](0)) {
+                "413";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, 0, 0), axis: vec(0, 1["-u"]()["*"](hauteur), 0), radius: .05, color: color.gray(.8)})]);
+                "414";
+                tempDelBase.append(t);
+            }
+            "417";
+            x=x["+"](écart);
+        }
+        "418";
+        x = 1["-u"]()["*"](écart);
+        "419";
+        while (x[">="](min_x)) {
+            "420";
+            t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, 0, 0), axis: vec(0, hauteur["-"](1["*"](0)), 0), radius: .05, color: color.gray(.8)})]);
+            "421";
+            tempDelBase.append(t);
+            "422";
+            if (profondeur["<"](0)) {
+                "423";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, 0, 0), axis: vec(0, 1["-u"]()["*"](hauteur), 0), radius: .05, color: color.gray(.8)})]);
+                "424";
+                tempDelBase.append(t);
+                "425";
+                x=x["-"](écart);
+            }
+        }
+        "427";
+        y = 0;
+        "429";
+        while (y["<="](hauteur)) {
+            "430";
+            t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(0, y, 0), axis: vec(max_x["-"](1["*"](0)), 0, 0), radius: .05, color: color.gray(.8)})]);
+            "431";
+            tempDelBase.append(t);
+            "432";
+            t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(0, y, 0), axis: vec(min_x["+"](0), 0, 0), radius: .05, color: color.gray(.8)})]);
+            "433";
+            tempDelBase.append(t);
+            "435";
+            y=y["+"](écart);
+            "437";
+        }
+        if (profondeur["<"](0)) {
+            "438";
+            y = 1["-u"]()["*"](écart);
+            "439";
+            while (y[">="](profondeur["-"](1["*"](0)))) {
+                "440";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(0, y, 0), axis: vec(max_x["-"](1["*"](0)), 0, 0), radius: .05, color: color.gray(.8)})]);
+                "441";
+                tempDelBase.append(t);
+                "442";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(0, y, 0), axis: vec(min_x["+"](0), 0, 0), radius: .05, color: color.gray(.8)})]);
+                "443";
+                tempDelBase.append(t);
+                "445";
+                y=y["-"](écart);
+            }
+        }
+    };
+    if (!dessiner_plan_cartesien.__argnames__) Object.defineProperties(dessiner_plan_cartesien, {
+        __argnames__ : {value: ["min_x", "max_x", "hauteur", "écart"]},
+        __module__ : {value: null}
+    });
+
+    "447";
+    async function getAngle(vit) {
+        "448";
+        if (vit[">"](0)) {
+            "449";
+            return pi["/"](2)["-"](1["*"](atan(vit)));
+            "450";
+        } else {
+            "451";
+            return 1["-u"]()["*"](pi["/"](2)["-"](1["*"](atan(vit))));
+        }
+    };
+    if (!getAngle.__argnames__) Object.defineProperties(getAngle, {
+        __argnames__ : {value: ["vit"]},
+        __module__ : {value: null}
+    });
+
+    "453";
+    async function dessiner_obv(min_x, max_x, profondeur, hauteur, écart) {
+        var ρσ_ls, t, x, y;
+        "454";
+        scene.center = vec(min_x["+"](max_x)["/"](2), hauteur["/"](2), 2);
+        "458";
+        t = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: norm(vec(1["/"](tempVitesse), 1, 0))["*"](max_x)["*"](tempGamma)["/"](cos(pi["/"](2)["-"](1["*"]((await getAngle(tempVitesse)))))), shaftwidth: .1, color: color.orange})]);
+        "459";
+        tempDel.append(t);
+        "461";
+        t = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: norm(vec(tempVitesse, 1, 0))["*"](hauteur)["*"](tempGamma)["/"](abs(cos((await getAngle(1["/"](tempVitesse)))))), shaftwidth: .1, color: color.orange})]);
+        "462";
+        tempDel.append(t);
+        "466";
+        if (profondeur["<"](0)) {
+            "467";
+            t = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: norm(vec(1["-u"]()["*"](1["/"](tempVitesse)), 1["-u"]()["*"](1), 0))["*"](max_x)["*"](tempGamma)["/"](cos(pi["/"](2)["-"](1["*"]((await getAngle(tempVitesse)))))), shaftwidth: .1, color: color.orange})]);
+            "468";
+            tempDel.append(t);
+            "469";
+            if (tempVitesse["<"](0)) {
+                "470";
+                t = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: norm(vec(1["-u"]()["*"](tempVitesse), 1["-u"]()["*"](1), 0))["*"](hauteur)["*"](tempGamma)["/"](cos((await getAngle(1["-u"]()["*"](1)["/"](tempVitesse))))), shaftwidth: .1, color: color.orange})]);
+                "471";
+            } else {
+                "472";
+                t = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: norm(vec(1["-u"]()["*"](tempVitesse), 1["-u"]()["*"](1), 0))["*"](hauteur)["*"](tempGamma)["/"](cos((await getAngle(1["/"](tempVitesse))))), shaftwidth: .1, color: color.orange})]);
+            }
+            "473";
+            tempDel.append(t);
+        }
+        "475";
+        t = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: norm(vec(1["/"](tempVitesse), 1, 0))["*"](max_x)["*"](tempGamma)["/"](cos(pi["/"](2)["-"](1["*"]((await getAngle(tempVitesse)))))), text: "x'", xoffset: 10, height: 12, box: false, color: color.orange})]);
+        "476";
+        tempDel.append(t);
+        "479";
+        if (tempVitesse[">"](0)) {
+            "480";
+            t = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: norm(vec(tempVitesse, 1, 0))["*"](hauteur)["*"](tempGamma)["/"](cos((await getAngle(1["/"](tempVitesse))))), text: "ct'", yoffset: 10, height: 12, box: false, color: color.orange})]);
+            "481";
+            tempDel.append(t);
+            "483";
+        } else {
+            "484";
+            t = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: norm(vec(tempVitesse, 1, 0))["*"](hauteur)["*"](tempGamma)["/"](abs(cos((await getAngle(1["/"](tempVitesse)))))), text: "ct'", yoffset: 10, height: 12, box: false, color: color.orange})]);
+            "485";
+            tempDel.append(t);
+        }
+        "489";
+        x = 0;
+        "490";
+        while (x["<"](max_x["*"](tempGamma)["-"](1["*"](1))) && x["*"](tempVitesse)["<"](max_x["*"](tempGamma)["/"](2))) {
+            "492";
+            if (tempVitesse["<"](0)) {
+                "493";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, x["*"](tempVitesse), 0), axis: norm(vec(tempVitesse, 1, 0))["*"](hauteur)["*"](tempGamma), radius: .05, color: color.orange})]);
+                "494";
+            } else {
+                "495";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(x, x["*"](tempVitesse), 0), axis: norm(vec(tempVitesse, 1, 0))["*"](hauteur)["*"](tempGamma), radius: .05, color: color.orange})]);
+            }
+            "496";
+            tempDel.append(t);
+            "497";
+            if (profondeur["<"](0)) {
+                "499";
+                if (tempVitesse["<"](0)) {
+                    "500";
+                    t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(1["-u"]()["*"](x), 1["-u"]()["*"](x)["*"](tempVitesse), 0), axis: norm(vec(tempVitesse, 1, 0))["*"](1["-u"]())["*"](hauteur)["*"](tempGamma), radius: .05, color: color.orange})]);
+                    "501";
+                } else {
+                    "502";
+                    t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(1["-u"]()["*"](x), 1["-u"]()["*"](x)["*"](tempVitesse), 0), axis: norm(vec(1["-u"]()["*"](tempVitesse), 1["-u"]()["*"](1), 0))["*"](hauteur)["*"](tempGamma), radius: .05, color: color.orange})]);
+                }
+                "503";
+                tempDel.append(t);
+            }
+            "504";
+            x=x["+"](écart["*"](tempGamma));
+        }
+        "505";
+        x = 1["-u"]()["*"](écart)["*"](tempGamma);
+        "510";
+        y = 0;
+        "512";
+        while (y["<="](hauteur["*"](tempGamma)["-"](1["*"](1))) && y["*"](tempVitesse)["<"](hauteur["*"](tempGamma)["/"](2))) {
+            "513";
+            if (tempVitesse["<"](0)) {
+                "514";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(y["*"](tempVitesse), y, 0), axis: norm(vec(1["-u"]()["*"](1["/"](tempVitesse)), 1["-u"]()["*"](1), 0))["*"](max_x)["*"](tempGamma), radius: .05, color: color.orange})]);
+                "515";
+            } else {
+                "516";
+                t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(y["*"](tempVitesse), y, 0), axis: norm(vec(1["/"](tempVitesse), 1, 0))["*"](max_x)["*"](tempGamma), radius: .05, color: color.orange})]);
+            }
+            "517";
+            tempDel.append(t);
+            "518";
+            if (profondeur["<"](0)) {
+                "519";
+                if (tempVitesse["<"](0)) {
+                    "520";
+                    t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(1["-u"]()["*"](y)["*"](tempVitesse), 1["-u"]()["*"](y), 0), axis: norm(vec(1["-u"]()["*"](1["/"](tempVitesse)), 1["-u"]()["*"](1), 0))["*"](1["-u"]())["*"](max_x)["*"](tempGamma), radius: .05, color: color.orange})]);
+                    "521";
+                } else {
+                    "522";
+                    t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(1["-u"]()["*"](y)["*"](tempVitesse), 1["-u"]()["*"](y), 0), axis: norm(vec(1["/"](tempVitesse), 1, 0))["*"](1["-u"]())["*"](max_x)["*"](tempGamma), radius: .05, color: color.orange})]);
+                }
+                "523";
+                tempDel.append(t);
+            }
+            "524";
+            y=y["+"](écart["*"](tempGamma));
+        }
+    };
+    if (!dessiner_obv.__argnames__) Object.defineProperties(dessiner_obv, {
+        __argnames__ : {value: ["min_x", "max_x", "profondeur", "hauteur", "écart"]},
+        __module__ : {value: null}
+    });
+
+    "529";
+    async function lancer_diagramme(bouton) {
+        var ρσ_ls, w;
+        "530";
+        "531";
+        min_x = int(minInput.text);
+        "532";
+        max_x = int(maxInput.text);
+        "533";
+        hauteur = int(hInput.text);
+        "534";
+        profondeur = int(pInput.text);
+        "535";
+        écart = float(eInput.text);
+        "537";
+        (await dessiner_plan_cartesien(min_x, max_x, hauteur, écart));
+        "538";
+        (await dessiner_obv(min_x, max_x, profondeur, hauteur, écart));
+        "541";
+        var ρσ_Iter10 = ρσ_list_decorate([ tempTitre, min_label, minInput, max_label, maxInput, h_label, hInput, p_label, pInput, e_label, eInput, v_label, start_button ]);
+        ρσ_Iter10 = ((typeof ρσ_Iter10[Symbol.iterator] === "function") ? (ρσ_Iter10 instanceof Map ? ρσ_Iter10.keys() : ρσ_Iter10) : Object.keys(ρσ_Iter10));
+        for (var ρσ_Index10 of ρσ_Iter10) {
+            w = ρσ_Index10;
+            "542";
+            w.remove();
+        }
+        "544";
+        scene.visible = true;
+        "547";
+        (await creer_ui_secondaire());
+    };
+    if (!lancer_diagramme.__argnames__) Object.defineProperties(lancer_diagramme, {
+        __argnames__ : {value: ["bouton"]},
+        __module__ : {value: null}
+    });
+
+    "553";
+    async function ajoutObjet(evt) {
+        var ρσ_ls, posObjet, t;
+        "554";
+        "555";
+        counter=counter["+"](1);
+        "556";
+        posObjet = ρσ_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [ρσ_desugar_kwargs({normal: vec(0, 0, 1), point: vec(0, 0, 0)})]);
+        "558";
+        t = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: posObjet, radius: .3, color: color.magenta})]);
+        "559";
+        objetsMagenta.append(t);
+        "560";
+        t = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: posObjet, axis: norm(vec(objVitesse, 1, 0))["*"](max_x)["*"](1.5), color: color.red, radius: .07})]);
+        "561";
+        objetsMagenta.append(t);
+    };
+    if (!ajoutObjet.__argnames__) Object.defineProperties(ajoutObjet, {
+        __argnames__ : {value: ["evt"]},
+        __module__ : {value: null}
+    });
+
+    "564";
+    async function ajoutCheck(ev) {
+        "565";
+        "566";
+        modeAjout = ev.checked;
+    };
+    if (!ajoutCheck.__argnames__) Object.defineProperties(ajoutCheck, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "568";
+    async function redirection() {
+        "569";
+        if (!modeAjout) {
+            "571";
+            (await decomposer_position());
+        }
+    };
+    if (!redirection.__module__) Object.defineProperties(redirection, {
+        __module__ : {value: null}
+    });
+
+    "573";
+    async function redirection2() {
+        "574";
+        "575";
+        if (modeAjout) {
+            "576";
+            debutLigne = ρσ_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [ρσ_desugar_kwargs({normal: vec(0, 0, 1), point: vec(0, 0, 0)})]);
+            "577";
+            clicEnCours = true;
+            "578";
+        } else {
+            "579";
+            (await decomposer_position());
+        }
+    };
+    if (!redirection2.__module__) Object.defineProperties(redirection2, {
+        __module__ : {value: null}
+    });
+
+    "583";
+    async function relacherSouris(evt) {
+        var ρσ_ls, finLigne, distance, ligne, n, t, point, direction, cyl, i;
+        "584";
+        "585";
+        if (modeAjout && clicEnCours && debutLigne !== null) {
+            "586";
+            finLigne = ρσ_interpolate_kwargs.call(scene.mouse, scene.mouse.project, [ρσ_desugar_kwargs({normal: vec(0, 0, 1), point: vec(0, 0, 0)})]);
+            "587";
+            if (finLigne !== null) {
+                "588";
+                distance = mag(finLigne["-"](1["*"](debutLigne)));
+                "589";
+                if (distance["<"](.2)) {
+                    "591";
+                    (await ajoutObjet(evt));
+                    "592";
+                } else {
+                    "594";
+                    ligne = ρσ_interpolate_kwargs.call(this, curve, [ρσ_desugar_kwargs({radius: .05, color: color.magenta})]);
+                    "595";
+                    objetsMagenta.append(ligne);
+                    "597";
+                    n = 5;
+                    "598";
+                    for (var ρσ_Index11 = 0; ρσ_Index11["<"](n["+"](1)); ρσ_Index11++) {
+                        i = ρσ_Index11;
+                        "599";
+                        t = i["/"](n);
+                        "600";
+                        point = debutLigne["*"](1["-"](1["*"](t)))["+"](finLigne["*"](t));
+                        "601";
+                        ρσ_interpolate_kwargs.call(ligne, ligne.append, [ρσ_desugar_kwargs({pos: point})]);
+                        "602";
+                        direction = norm(vec(objVitesse, 1, 0));
+                        "603";
+                        cyl = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: point, axis: direction["*"](20), radius: 1, color: color.magenta, opacity: .1})]);
+                        "604";
+                        objetsMagenta.append(cyl);
+                    }
+                }
+            }
+        }
+        "606";
+        debutLigne = null;
+        "607";
+        clicEnCours = false;
+    };
+    if (!relacherSouris.__argnames__) Object.defineProperties(relacherSouris, {
+        __argnames__ : {value: ["evt"]},
+        __module__ : {value: null}
+    });
+
+    "612";
+    pointeurSouris = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), radius: .25, color: color.yellow, shininess: 0, visible: false})]);
+    "621";
+    scene.bind("mousemove", redirection);
+    "622";
+    scene.bind("mousedown", redirection2);
+    "623";
+    scene.bind("mouseup", relacherSouris);
+    "627";
+    fleche_x = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({color: color.red, shaftwidth: .15})]);
+    "628";
+    fleche_y = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({color: color.green, shaftwidth: .15})]);
+    "630";
+    fleche_xobv = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({color: color.red, shaftwidth: .15})]);
+    "631";
+    fleche_yobv = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({color: color.green, shaftwidth: .15})]);
+};
+if (!__main__.__module__) Object.defineProperties(__main__, {
+    __module__ : {value: null}
+});
+
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+// END JAVASCRIPT
+
+//--><!]]></script>
+</div>
+
+```

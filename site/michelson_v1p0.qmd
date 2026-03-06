@@ -1,0 +1,677 @@
+---
+title: "Expérience de Michelson-Morley"
+execute:
+  enabled: false
+format:
+  html:
+    highlight-style: github
+
+---
+
+## Simulation
+
+```{=html}
+<div id="glowscript" class="glowscript">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet" />
+<link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/glow.3.2.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.2.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+;(function() {;
+var ρσ_modules = {};
+var vEther, orientation, deltaL, longH, particules, courbe, compteur_fig;
+ρσ_modules.pythonize = {};
+
+(function(){
+    function strings() {
+        var string_funcs, exclude, name;
+        string_funcs = set("capitalize strip lstrip rstrip islower isupper isspace lower upper swapcase center count endswith startswith find rfind index rindex format join ljust rjust partition rpartition replace split rsplit splitlines zfill".split(" "));
+        if (!arguments.length) {
+            exclude = (function(){
+                var s = ρσ_set();
+                s.jsset.add("split");
+                s.jsset.add("replace");
+                return s;
+            })();
+        } else if (arguments[0]) {
+            exclude = Array.prototype.slice.call(arguments);
+        } else {
+            exclude = null;
+        }
+        if (exclude) {
+            string_funcs = string_funcs.difference(set(exclude));
+        }
+        var ρσ_Iter0 = string_funcs;
+        ρσ_Iter0 = ((typeof ρσ_Iter0[Symbol.iterator] === "function") ? (ρσ_Iter0 instanceof Map ? ρσ_Iter0.keys() : ρσ_Iter0) : Object.keys(ρσ_Iter0));
+        for (var ρσ_Index0 of ρσ_Iter0) {
+            name = ρσ_Index0;
+            (ρσ_expr_temp = String.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name] = (ρσ_expr_temp = ρσ_str.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name];
+        }
+    };
+    if (!strings.__module__) Object.defineProperties(strings, {
+        __module__ : {value: "pythonize"}
+    });
+
+    ρσ_modules.pythonize.strings = strings;
+})();
+async function __main__() {
+"use strict";
+    var display = canvas;
+    var scene = canvas();
+
+    function input(arg) {
+    	arg = arg || {}
+    	if (arg.prompt !== undefined && arg.prompt != '') return prompt(arg.prompt)
+    	else if (typeof arg === 'string') return prompt(arg)
+    	else return prompt()
+    }
+
+    var version, print, arange, __name__, type, ρσ_ls, refEther, modifEther, orientation, lamb, c, longV, longH, deltaL, vEther, particules, posSource, posDetec, frequence, longOnde, amplitude, dt, dx, couleurs_fig, compteur_fig, suiveurs, ondes, eInput, eTexteSlider, oeInput, oeTexteSlider, bhInput, bhTexteSlider, ventEther, source, miroirH, miroirV, splitteur, detecteur, graph1, courbe;
+    version = ρσ_list_decorate([ "3.2", "glowscript" ]);
+    Array.prototype['+'] = function(r) {return this.concat(r)}
+    Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
+    window.__GSlang = "vpython";
+    print = GSprint;
+    arange = range;
+    __name__ = "__main__";
+    type = pytype;
+    var strings = ρσ_modules.pythonize.strings;
+
+    strings();
+    "14";
+    scene.width = 600;
+    "15";
+    scene.height = 600;
+    "16";
+    scene.align = "left";
+    "18";
+    refEther = false;
+    "19";
+    modifEther = 1;
+    "21";
+    orientation = 0;
+    "22";
+    lamb = 2e-5;
+    "23";
+    c = 1;
+    "24";
+    longV = 20;
+    "25";
+    longH = 20;
+    "26";
+    deltaL = 0;
+    "28";
+    vEther = 0;
+    "29";
+    particules = ρσ_list_decorate([]);
+    "31";
+    posSource = vector(1["-u"]()["*"](10), 0, 0);
+    "32";
+    posDetec = vector(0, 1["-u"]()["*"](10), 0);
+    "34";
+    frequence = .25;
+    "35";
+    longOnde = 1["/"](frequence);
+    "36";
+    amplitude = 1;
+    "38";
+    dt = .01;
+    "39";
+    dx = .05;
+    "41";
+    couleurs_fig = ρσ_list_decorate([ color.black, color.gray(.5), color.orange, color.green, color.magenta, color.cyan, color.red ]);
+    "42";
+    compteur_fig = 0;
+    "44";
+    suiveurs = ρσ_list_decorate([]);
+    "45";
+    ondes = ρσ_list_decorate([]);
+    "49";
+    function onde() {;
+    }
+    onde.prototype.__init__ = async function __init__() {
+        var self = this;
+        var debut = ( 0 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true) ? undefined : arguments[0];
+        var direction = ( 1 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true) ? undefined : arguments[1];
+        var couleur = ( 2 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true) ? undefined : arguments[2];
+        var amplitude = ( 3 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true) ? undefined : arguments[3];
+        var frequence = (arguments[4] === undefined || ( 4 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true)) ? __init__.__defaults__.frequence : arguments[4];
+        var dephasage = (arguments[5] === undefined || ( 5 === arguments.length["-"](1) && arguments[arguments.length["-"](1)] !== null && typeof arguments[arguments.length["-"](1)] === "object" && arguments[arguments.length["-"](1)] [ρσ_kwargs_symbol] === true)) ? __init__.__defaults__.dephasage : arguments[5];
+        var ρσ_kwargs_obj = arguments[arguments.length["-"](1)];
+        if (ρσ_kwargs_obj === null || typeof ρσ_kwargs_obj !== "object" || ρσ_kwargs_obj [ρσ_kwargs_symbol] !== true) ρσ_kwargs_obj = {};
+        if (Object.prototype.hasOwnProperty.call(ρσ_kwargs_obj, "frequence")){
+            frequence = ρσ_kwargs_obj.frequence;
+        }
+        if (Object.prototype.hasOwnProperty.call(ρσ_kwargs_obj, "dephasage")){
+            dephasage = ρσ_kwargs_obj.dephasage;
+        }
+        "51";
+        self.amplitude = amplitude;
+        "52";
+        self.frequence = frequence;
+        "53";
+        self.dephasage = dephasage;
+        "54";
+        self.omega = 2["*"](pi)["*"](frequence);
+        "55";
+        self.dir = direction;
+        "56";
+        self.vertical = false;
+        "57";
+        self.pos = vector(debut);
+        "58";
+        self.avance = 1;
+        "59";
+        self.sphere = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: debut, radius: .1, color: couleur, make_trail: true, trail_type: "curve", interval: 1, retain: 1e3})]);
+        "60";
+        self.k = 2["*"](pi)["*"](frequence)["/"](c);
+    };
+    if (!onde.prototype.__init__.__defaults__) Object.defineProperties(onde.prototype.__init__, {
+        __defaults__ : {value: {frequence:5, dephasage:0}},
+        __handles_kwarg_interpolation__ : {value: true},
+        __argnames__ : {value: ["debut", "direction", "couleur", "amplitude", "frequence", "dephasage"]},
+        __module__ : {value: null}
+    });
+    onde.__argnames__ = onde.prototype.__init__.__argnames__;
+    onde.__handles_kwarg_interpolation__ = onde.prototype.__init__.__handles_kwarg_interpolation__;
+    onde.prototype.updatekomega = async function updatekomega() {
+        var self = this;
+        var ρσ_ls, frequence_app;
+        "63";
+        frequence_app = self.frequence["/"](1["-"](1["*"](vEther)["*"](cos(orientation["*"](pi)))));
+        "64";
+        self.omega = 2["*"](pi)["*"](frequence_app);
+        "65";
+        self.k = 2["*"](pi)["*"](frequence_app);
+    };
+    if (!onde.prototype.updatekomega.__module__) Object.defineProperties(onde.prototype.updatekomega, {
+        __module__ : {value: null}
+    });
+    onde.prototype.get_amplitude = async function get_amplitude(t) {
+        var self = this;
+        var ρσ_ls, axis, coord;
+        "68";
+        (await self.updatekomega());
+        "69";
+        axis = (!self.vertical) ? vector(1, 0, 0) : vector(0, 1, 0);
+        "70";
+        coord = dot(self.pos, axis);
+        "71";
+        return self.amplitude["*"](sin(self.k["*"](coord)["-"](1["*"](self.avance)["*"](self.omega)["*"](t))["+"](self.dephasage)));
+    };
+    if (!onde.prototype.get_amplitude.__argnames__) Object.defineProperties(onde.prototype.get_amplitude, {
+        __argnames__ : {value: ["t"]},
+        __module__ : {value: null}
+    });
+    onde.prototype.update = async function update(t) {
+        var self = this;
+        var ρσ_ls, amp, crete;
+        "74";
+        amp = (await self.get_amplitude(t));
+        "75";
+        crete = (!self.vertical) ? vector(0, amp, 0) : vector(amp, 0, 0);
+        "76";
+        self.sphere.pos = self.pos["+"](crete);
+        "77";
+        self.pos=self.pos["+"](self.dir);
+    };
+    if (!onde.prototype.update.__argnames__) Object.defineProperties(onde.prototype.update, {
+        __argnames__ : {value: ["t"]},
+        __module__ : {value: null}
+    });
+    onde.prototype.__repr__ = async function __repr__() {
+                return "<"["+"](__name__)["+"](".")["+"](this.constructor.name)["+"](" #")["+"](this.ρσ_object_id)["+"](">");
+    };
+    onde.prototype.__str__ = async function __str__() {
+        return this.__repr__();
+    };
+    Object.defineProperty(onde.prototype, "__bases__", {value: []});
+    
+    
+    
+    
+
+    "79";
+    async function majVitesse(ev) {
+        "80";
+        "81";
+        try {
+            "82";
+            vEther = float(eInput.text);
+            "83";
+            if (vEther["<"](0)) {
+                vEther = 0;
+            }
+            "84";
+            if (vEther[">"](1)) {
+                vEther = 1;
+            }
+            "85";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            {
+                "86";
+                vEther = 0;
+            } 
+        }
+        "87";
+        eTexteSlider.text = " "["+"](ρσ_str.format("{:.1f}", vEther))["+"](" c");
+        "89";
+        ventEther.axis = modifEther["*"](vector(cos(orientation["*"](pi)), sin(orientation["*"](pi)), 0));
+        "90";
+        (await majInterference());
+        "91";
+        (await lancer_animation_onde());
+    };
+    if (!majVitesse.__argnames__) Object.defineProperties(majVitesse, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "93";
+    async function majOrientation(ev) {
+        var ρσ_ls, direction;
+        "94";
+        "95";
+        try {
+            "96";
+            orientation = float(oeInput.text);
+            "97";
+            if (orientation["<"](0)) {
+                orientation = 0;
+            }
+            "98";
+            if (orientation[">"](2)) {
+                orientation = 2;
+            }
+            "99";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            {
+                "100";
+                orientation = 0;
+            } 
+        }
+        "101";
+        oeTexteSlider.text = " "["+"](ρσ_str.format("{:.2f}", orientation))["+"](" Pi");
+        "102";
+        direction = vector(cos(orientation["*"](pi)), sin(orientation["*"](pi)), 0);
+        "104";
+        ventEther.axis = modifEther["*"](direction);
+        "105";
+        (await majInterference());
+        "106";
+        (await lancer_animation_onde());
+    };
+    if (!majOrientation.__argnames__) Object.defineProperties(majOrientation, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "108";
+    async function majDeltaL(ev) {
+        "109";
+        "110";
+        try {
+            "111";
+            deltaL = int(bhInput.text);
+            "112";
+            if (deltaL["<"](1["-u"]()["*"](5))) {
+                deltaL = 1["-u"]()["*"](5);
+            }
+            "113";
+            if (deltaL[">"](5)) {
+                deltaL = 5;
+            }
+            "114";
+        } catch (ρσ_Exception) {
+            ρσ_last_exception = ρσ_Exception;
+            {
+                "115";
+                deltaL = 0;
+            } 
+        }
+        "116";
+        longH = longV["+"](deltaL["*"](longOnde["/"](2)));
+        "117";
+        bhTexteSlider.text = " "["+"](ρσ_str.format("{}", deltaL))["+"](" λ/4 ");
+        "118";
+        miroirH.pos = vector(longH["/"](2), 0, 0);
+        "119";
+        (await majInterference());
+        "120";
+        (await lancer_animation_onde());
+    };
+    if (!majDeltaL.__argnames__) Object.defineProperties(majDeltaL, {
+        __argnames__ : {value: ["ev"]},
+        __module__ : {value: null}
+    });
+
+    "122";
+    async function ajoutParticules(nombre, taille) {
+        var ρσ_ls, pos, p, _;
+        "123";
+        "124";
+        particules.clear();
+        "125";
+        for (var ρσ_Index1 = 0; ρσ_Index1["<"](nombre); ρσ_Index1++) {
+            _ = ρσ_Index1;
+            "126";
+            pos = vector(random()["*"](30)["-"](1["*"](15)), random()["*"](30)["-"](1["*"](15)), random()["*"](2)["-"](1["*"](1)));
+            "127";
+            p = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: pos, radius: taille, color: color.white, opacity: .3})]);
+            "128";
+            particules.append(p);
+        }
+    };
+    if (!ajoutParticules.__argnames__) Object.defineProperties(ajoutParticules, {
+        __argnames__ : {value: ["nombre", "taille"]},
+        __module__ : {value: null}
+    });
+
+    "130";
+    async function majParticules() {
+        var ρσ_ls, vitesse, p;
+        "131";
+        if (vEther[">"](0)) {
+            "132";
+            vitesse = 2["*"](ventEther.axis);
+            "133";
+            var ρσ_Iter2 = particules;
+            ρσ_Iter2 = ((typeof ρσ_Iter2[Symbol.iterator] === "function") ? (ρσ_Iter2 instanceof Map ? ρσ_Iter2.keys() : ρσ_Iter2) : Object.keys(ρσ_Iter2));
+            for (var ρσ_Index2 of ρσ_Iter2) {
+                p = ρσ_Index2;
+                "134";
+                p.pos=p.pos["+"](vitesse["*"](dt));
+                "135";
+                if (p.pos.x[">"](15)) {
+                    p.pos.x = 1["-u"]()["*"](15);
+                }
+                "136";
+                if (p.pos.x["<"](1["-u"]()["*"](15))) {
+                    p.pos.x = 15;
+                }
+                "137";
+                if (p.pos.y[">"](15)) {
+                    p.pos.y = 1["-u"]()["*"](15);
+                }
+                "138";
+                if (p.pos.y["<"](1["-u"]()["*"](15))) {
+                    p.pos.y = 15;
+                }
+            }
+        }
+    };
+    if (!majParticules.__module__) Object.defineProperties(majParticules, {
+        __module__ : {value: null}
+    });
+
+    "140";
+    async function temps(L, orientation) {
+        var ρσ_ls, terme1, terme2, terme3;
+        "141";
+        terme1 = 2["*"](L)["/"](c);
+        "142";
+        terme2 = sqrt(1["-"](1["*"](Math.pow(vEther, 2))["*"](Math.pow(sin(orientation["*"](pi)), 2))));
+        "143";
+        terme3 = 1["-"](1["*"](Math.pow(vEther, 2)));
+        "144";
+        return terme1["*"](terme2["/"](terme3));
+    };
+    if (!temps.__argnames__) Object.defineProperties(temps, {
+        __argnames__ : {value: ["L", "orientation"]},
+        __module__ : {value: null}
+    });
+
+    "146";
+    async function majInterference() {
+        var ρσ_ls, d0, alpha, t1, t2, delta_phi, i;
+        "147";
+        "148";
+        courbe.remove();
+        "149";
+        d0 = abs(longH["-"](1["*"](longV)));
+        "150";
+        alpha = .1;
+        "151";
+        t1 = (await temps(longV, orientation["+"](1["/"](2))));
+        "152";
+        t2 = (await temps(longH, orientation));
+        "153";
+        delta_phi = 2["*"](pi)["*"](t1["-"](1["*"](t2)))["*"](c)["/"](lamb);
+        "154";
+        for (var ρσ_Index3 = 0; ρσ_Index3["<"](100); ρσ_Index3++) {
+            i = ρσ_Index3;
+            "155";
+            courbe.plot(i, Math.pow(cos(2["*"](pi)["/"](5)["*"](i["*"](alpha)["+"](d0))["+"](delta_phi)), 2));
+        }
+    };
+    if (!majInterference.__module__) Object.defineProperties(majInterference, {
+        __module__ : {value: null}
+    });
+
+    "158";
+    async function dupliquerCourbe() {
+        var ρσ_ls, couleur, courbe_snapshot, d0, alpha, t1, t2, delta_phi, y, i;
+        "159";
+        "160";
+        couleur = ρσ_getitem(couleurs_fig, compteur_fig["%"](len(couleurs_fig)));
+        "161";
+        compteur_fig=compteur_fig["+"](1);
+        "162";
+        courbe_snapshot = ρσ_interpolate_kwargs.call(this, gcurve, [ρσ_desugar_kwargs({color: couleur})]);
+        "163";
+        d0 = abs(longH["-"](1["*"](longV)));
+        "164";
+        alpha = .1;
+        "165";
+        t1 = (await temps(longV, orientation["+"](1["/"](2))));
+        "166";
+        t2 = (await temps(longH, orientation));
+        "167";
+        delta_phi = 2["*"](pi)["*"](t1["-"](1["*"](t2)))["*"](c)["/"](lamb);
+        "168";
+        for (var ρσ_Index4 = 0; ρσ_Index4["<"](100); ρσ_Index4++) {
+            i = ρσ_Index4;
+            "169";
+            y = Math.pow(cos(2["*"](pi)["/"](5)["*"](i["*"](alpha)["+"](d0))["+"](delta_phi)), 2);
+            "170";
+            courbe_snapshot.plot(i, y);
+        }
+    };
+    if (!dupliquerCourbe.__module__) Object.defineProperties(dupliquerCourbe, {
+        __module__ : {value: null}
+    });
+
+    "172";
+    async function animer_onde(onde1, onde2, onde3) {
+        var ρσ_ls, t;
+        "173";
+        t = 0;
+        "174";
+        while (!(((onde1.pos["-"](1["*"](posDetec))).mag["<"](1) && (onde2.pos["-"](1["*"](posDetec))).mag["<"](1)))) {
+            "175";
+            if (abs(dot(onde1.pos, vector(1, 0, 0))["-"](1["*"](longH)["/"](2)))["<="](dx)) {
+                "176";
+                onde1.dir = 1["-u"]()["*"](onde1.dir);
+                "177";
+                onde1.avance = 1["-u"]()["*"](onde1.avance);
+                "178";
+            }
+            if (abs(dot(onde3.pos, vector(1, 0, 0))["-"](1["*"](longH)["/"](2)))["<="](dx)) {
+                "179";
+                onde3.dir = 1["-u"]()["*"](onde3.dir);
+                "180";
+                onde3.avance = 1["-u"]()["*"](onde3.avance);
+                "181";
+            }
+            if (abs(dot(onde1.pos, vector(1, 0, 0)))["<="](dx) && ρσ_equals(onde1.avance, 1["-u"]()["*"](1))) {
+                "182";
+                onde1.vertical = true;
+                "183";
+                onde1.dir = vector(0, 1["-u"]()["*"](dx), 0);
+                "184";
+            }
+            if (abs(dot(onde2.pos, vector(1, 0, 0)))["<="](dx) && !onde2.vertical) {
+                "185";
+                onde2.vertical = true;
+                "186";
+                onde2.dir = vector(0, dx, 0);
+                "187";
+            }
+            if (abs(dot(onde2.pos, vector(0, 1, 0))["-"](1["*"](longV)["/"](2)))["<="](dx)) {
+                "188";
+                onde2.dir = vector(0, 1["-u"]()["*"](dx), 0);
+                "189";
+                onde2.avance = 1["-u"]()["*"](onde2.avance);
+            }
+            "190";
+            t=t["+"](dt);
+            "191";
+            if ((onde1.pos["-"](1["*"](posDetec))).mag[">"](1)) {
+                "192";
+                (await onde1.update(t));
+                "193";
+            }
+            if (onde3.pos.mag[">"](1)) {
+                "194";
+                (await onde3.update(t));
+                "196";
+            }
+            if ((onde2.pos["-"](1["*"](posDetec))).mag[">"](1)) {
+                "197";
+                (await onde2.update(t));
+            }
+        }
+    };
+    if (!animer_onde.__argnames__) Object.defineProperties(animer_onde, {
+        __argnames__ : {value: ["onde1", "onde2", "onde3"]},
+        __module__ : {value: null}
+    });
+
+    "200";
+    async function lancer_animation_onde() {
+        var ρσ_ls, o, _GS_1, onde1, onde2, onde3;
+        "201";
+        var ρσ_Iter5 = ondes;
+        ρσ_Iter5 = ((typeof ρσ_Iter5[Symbol.iterator] === "function") ? (ρσ_Iter5 instanceof Map ? ρσ_Iter5.keys() : ρσ_Iter5) : Object.keys(ρσ_Iter5));
+        for (var ρσ_Index5 of ρσ_Iter5) {
+            o = ρσ_Index5;
+            "202";
+            o.sphere.clear_trail();
+            "203";
+            o.sphere.visible = false;
+        }
+        "204";
+        ondes.clear();
+        "205";
+        _GS_1 = new onde;
+        (await _GS_1.__init__(posSource, vector(dx, 0, 0), color.blue, amplitude, frequence));
+        onde1 = _GS_1;
+        "206";
+        _GS_1 = new onde;
+        (await _GS_1.__init__(posSource, vector(dx, 0, 0), color.red, amplitude, frequence));
+        onde2 = _GS_1;
+        "207";
+        _GS_1 = new onde;
+        (await _GS_1.__init__(posSource, vector(dx, 0, 0), color.magenta, amplitude, frequence));
+        onde3 = _GS_1;
+        "208";
+        ondes.append(onde1);
+        "209";
+        ondes.append(onde2);
+        "210";
+        ondes.append(onde3);
+        "211";
+        (await animer_onde(onde1, onde2, onde3));
+    };
+    if (!lancer_animation_onde.__module__) Object.defineProperties(lancer_animation_onde, {
+        __module__ : {value: null}
+    });
+
+    "213";
+    async function boucle_particules() {
+        "214";
+        while (true) {
+            "215";
+            (await rate(100));
+            "216";
+            (await majParticules());
+        }
+    };
+    if (!boucle_particules.__module__) Object.defineProperties(boucle_particules, {
+        __module__ : {value: null}
+    });
+
+    "222";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Vitesse par rapport à l'ether (entre 0 et 1)<\/b><br>", pos: scene.caption_anchor})]);
+    (await sleep(.1));
+    "223";
+    eInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: majVitesse, text: "0.0", type: "numeric", pos: scene.caption_anchor})]);
+    "224";
+    eTexteSlider = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " c", pos: scene.caption_anchor})]);
+    "225";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.pos = scene.caption_anchor})]);
+    "227";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Orientation de l'ether (entre 0 et 2)</b><br>", pos: scene.caption_anchor})]);
+    (await sleep(.1));
+    "228";
+    oeInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: majOrientation, text: "0.0", type: "numeric", pos: scene.caption_anchor})]);
+    "229";
+    oeTexteSlider = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " Pi", pos: scene.caption_anchor})]);
+    "230";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.caption_anchor})]);
+    "232";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<b>Différence de longueur (entre -5 et 5)</b><br>", pos: scene.caption_anchor})]);
+    (await sleep(.1));
+    "233";
+    bhInput = ρσ_interpolate_kwargs.call(this, winput, [ρσ_desugar_kwargs({bind: majDeltaL, text: "0", type: "numeric", pos: scene.caption_anchor})]);
+    "234";
+    bhTexteSlider = ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: " λ/4 ", pos: scene.caption_anchor})]);
+    "235";
+    ρσ_interpolate_kwargs.call(this, wtext, [ρσ_desugar_kwargs({text: "<br><br>", pos: scene.caption_anchor})]);
+    "240";
+    ventEther = ρσ_interpolate_kwargs.call(this, arrow, [ρσ_desugar_kwargs({pos: vector(1["-u"]()["*"](longH)["/"](2), longV["/"](2), 0), axis: vector(1, 0, 0), color: color.cyan, shaftwidth: .3})]);
+    "244";
+    source = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({pos: posSource, color: color.magenta})]);
+    "245";
+    miroirH = ρσ_interpolate_kwargs.call(this, box, [ρσ_desugar_kwargs({pos: vector(longH["/"](2), 0, 0), size: vector(.1, 4, 4), axis: vector(1, 0, 0), opacity: .8})]);
+    "246";
+    miroirV = ρσ_interpolate_kwargs.call(this, box, [ρσ_desugar_kwargs({pos: vector(0, longV["/"](2), 0), size: vector(.1, 4, 4), axis: vector(0, 1, 0), opacity: .8})]);
+    "247";
+    splitteur = ρσ_interpolate_kwargs.call(this, box, [ρσ_desugar_kwargs({size: vector(.1, 4, 4), axis: vector(1, 1["-u"]()["*"](1), 0), opacity: .8})]);
+    "248";
+    detecteur = ρσ_interpolate_kwargs.call(this, box, [ρσ_desugar_kwargs({pos: posDetec, size: vector(3, 2, 2), axis: vector(0, 1, 0), color: color.white})]);
+    "252";
+    graph1 = ρσ_interpolate_kwargs.call(this, graph, [ρσ_desugar_kwargs({title: "Intensité normalisée selon la distance sur le détecteur", xtitle: "Position sur l'écran (m)", ytitle: "I/I_max", width: 600, height: 400})]);
+    "256";
+    graph1.align = "right";
+    "258";
+    courbe = ρσ_interpolate_kwargs.call(this, gcurve, [ρσ_desugar_kwargs({color: color.blue})]);
+    "259";
+    ρσ_interpolate_kwargs.call(this, button, [ρσ_desugar_kwargs({bind: dupliquerCourbe, text: "Garder en mémoire", pos: scene.caption_anchor})]);
+    "263";
+    (await ajoutParticules(20, .5));
+    "264";
+    (await majInterference());
+    "265";
+    (await lancer_animation_onde());
+    "266";
+    (await boucle_particules());
+};
+if (!__main__.__module__) Object.defineProperties(__main__, {
+    __module__ : {value: null}
+});
+
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+// END JAVASCRIPT
+
+//--><!]]></script>
+</div>
+
+```

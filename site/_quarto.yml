@@ -6,12 +6,48 @@ website:
   navbar:
     title: false
     left:
-      - href: index.qmd
-        text: Accueil
-      - about.qmd
-      - projectile.qmd
-      - michelsonmorley.qmd
-      - minkowski.qmd
+      - text: Accueil
+        href: index.qmd
+      - text: Guide d'utilisation
+        href: about.qmd
+      - sidebar:projectile
+      - sidebar:michelson
+      - sidebar:minkowski
+
+  sidebar:
+    - id: projectile
+      title: "(1) Projectile"
+      style: docked
+      contents:
+        - text: Documentation
+          href: projectile_guide.qmd
+        - text: Simulation
+          href: projectile_v1p0.qmd
+        - text: Code source
+          href: projectile_code.qmd
+  
+    - id: michelson
+      title: "(2) Michelson-Morley"
+      style: docked
+      contents:
+        - text: Documentation
+          href: michelson_guide.qmd
+        - text: Simulation
+          href: michelson_v1p0.qmd
+        - text: Code source
+          href: michelson_code.qmd
+
+    - id: minkowski
+      title: "(3) Minkowski"
+      style: docked
+      contents:
+        - text: Documentation
+          href: minkowski_guide.qmd
+        - text: Simulation
+          href: minkowski_v1p0.qmd
+        - text: Code source
+          href: minkowski_code.qmd
+
   page-footer: "Version 1.0 (mars 2026)"
 
 format:

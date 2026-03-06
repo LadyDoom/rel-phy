@@ -1,0 +1,82 @@
+---
+title: "Diagrammes de Minkowski"
+---
+
+## Contexte
+
+Cette ressource a pour but de faciliter la visualisation des changements de référentiel en relativité restreinte, en s’appuyant sur la représentation graphique des diagrammes de Minkowski.
+
+En **mécanique classique**, changer d’observateur est une opération simple : comme l’espace et le temps sont absolus et indépendants, le passage d’un référentiel à un autre peut être obtenu par une combinaison de translations, rotations et/ou réflexions rigides, paramétrées par le temps. Les positions et les vitesses sont alors fonction du référentiel choisi, mais les longueurs et durées restent quant à elles invariantes pour tous les observateurs.
+
+La situation est très différente en **relativité restreinte** : l’espace et le temps y sont couplés, et leur perception relative dépend de chaque observateur. Les phénomènes de dilatation du temps, de contraction des longueurs et de relativité de la simultanéité rendent alors beaucoup plus difficile le développement d’une intuition géométrique.
+
+Les **diagrammes de Minkowski** permettent une représentation visuelle de l’espace-temps relativiste. L’axe vertical représente la dimension temporelle (ct), et l’axe horizontal une dimension spatiale (x). Les événements y apparaissent comme des points, et les objets comme des « lignes d’univers » qui reflètent l’évolution de leur position en fonction du temps. Un changement de référentiel en relativité restreinte est décrit algébriquement par les transformations de Lorentz, qui relient les coordonnées spatio temporelles entre deux référentiels inertiels. Dans un diagramme de Minkowski, ces transformations s’interprètent comme une **rotation hyperbolique** des axes autour de la ligne représentant la vitesse de la lumière (ct = x), c’est-à-dire que les axes du temps et de l’espace du second référentiel pivotent de manière symétrique autour de l’axe de lumière tout en subissant un étirement. Cette représentation géométrique est puissante pour comprendre l’effet des transformations de Lorentz, mais elle est difficile à tracer manuellement à l’échelle. 
+
+En réponse à ce défi, la présente ressource offre un **outil interactif** permettant de tracer dynamiquement la superposition de deux référentiels inertiels en fonction de leur vitesse relative, pour y ajouter les lignes d’univers de différents objets. Cette représentation permet de visualiser simultanément les coordonnées des objets dans les deux référentiels, facilitant ainsi le développement d’une compréhension intuitive et géométrique des transformations de Lorentz dans l’espace-temps relativiste.
+
+## Guide d’utilisation de la ressource
+
+### 1. Initialisation de la simulation
+
+La première étape consiste à initialiser le diagramme de Minkowski en choisissant l’**étendue** de l’axe temporel (ct) et de l’axe spatial&nbsp;(x), ainsi qu’un **pas de graduation**. Toutes ces valeurs doivent être exprimées dans la même unité de distance de votre choix, par exemple en mètres ou, plus couramment en relativité, en unités de *temps-lumière* (années-lumière, secondes-lumière, etc.).  
+
+Vous devez également préciser la **vitesse du second référentiel** par rapport au premier, paramètre qui pourra être modifié dynamiquement par la suite grâce au curseur prévu à cet effet.
+
+Pour une première utilisation, il est recommandé de commencer par afficher uniquement le cadran positif (ct ∈ [0, ct<sub>max</sub>] et x ∈ [0, x<sub>max</sub>]) et de choisir une vitesse positive pour le second référentiel par rapport au premier. Cette configuration est généralement plus simple à visualiser et à interpréter. Le programme permet toutefois d’explorer des vitesses négatives (c’est-à-dire un second référentiel se déplaçant dans la direction opposée à l’axe spatial du premier référentiel), ainsi que des coordonnées temporelles et spatiales négatives. Gardez néanmoins en tête qu’un diagramme trop étendu ou trop chargé peut rapidement devenir difficile à lire ; il est donc préférable de commencer par une configuration simple, avant de complexifier le diagramme progressivement au besoin.
+
+### 2. Utiliser la simulation
+
+Une fois l’initialisation complétée, cliquez sur « Créer le diagramme » pour lancer le simulateur. 
+
+#### Affichage des diagrammes
+
+Par défaut, deux diagrammes de Minkowski apparaissent dans le panneau de visualisation :
+
+- en **blanc**, le référentiel initial avec ses axes (ct, x) ;
+- en **orange**, le second référentiel en mouvement relatif avec ses axes (ct’, x’).
+
+Vous pouvez à tout moment choisir d’afficher ou de masquer chacun des deux référentiels à l’aide des deux cases à cocher prévues à cet effet. Le zoom peut être ajusté à l’aide de la roulette de la souris (ou l’équivalent sur votre dispositif). 
+
+Il est également possible de modifier la vitesse du second référentiel à l’aide du même curseur que lors de l’initialisation. Cela vous permet d’observer en temps réel comment cette variation modifie la **rotation** et l’**étirement** des axes (ct’, x’) par rapport à ceux du référentiel initial.
+
+#### Ajouter des objets 
+
+Une fois le diagramme créé, vous pouvez y ajouter des objets, représentés par leurs lignes d’univers. Pour ce faire, vous devez :
+
+1.	D’abord, choisir la **vitesse de l’objet** dans le premier référentiel à l’aide du curseur correspondant. Cette vitesse va déterminer l’orientation de la ligne d’univers dans le diagramme de l’espace-temps.
+2.	Spécifier un **point** de la ligne d’univers en entrant ses coordonnées dans le panneau de contrôle, suivi d’un clic sur « Ajouter l’objet »
+
+Par défaut, les coordonnées entrées doivent être associées au premier référentiel. S’il est plus pertinent pour vous d’entrer des coordonnées liées au second référentiel, cochez alors l’option « Coordonnées dans le référentiel en mouvement (x', ct') » dans le panneau de contrôle. Notez toutefois que, même dans ce mode, la vitesse de l’objet doit toujours être spécifiée par rapport au référentiel initial.
+
+Une fois l’objet ajouté, sa ligne d’univers est tracée automatiquement en **rouge**, et le point spécifié apparaît en **rose**. Les coordonnées correspondantes dans le second référentiel peuvent être lues directement sur le diagramme en orange.
+
+#### Gestion des objets ajoutés
+
+Pour supprimer le dernier objet ajouté, cliquez sur « Supprimer le dernier objet ». Vous pouvez ainsi retirer un à un les objets de votre diagramme, dans l’ordre inverse de leur ajout.
+
+Vous pouvez aussi afficher ou masquer l’ensemble des objets créés à l’aide de la case à cocher correspondante.
+
+## Suggestions pour les enseignant·e·s
+
+Cette ressource peut servir de plusieurs façons pour aider au développement d’une intuition géométrique des effets relativistes.
+
+L’outil peut d’abord être utilisé en classe pour illustrer, de manière dynamique, plusieurs concepts fondamentaux en relativité restreinte :
+
+- **Relativité de la simultanéité :**
+<br>Vous pouvez aisément montrer que deux points simultanés dans un des référentiels ne le sont pas dans l’autre, en mettant l’accent sur le rôle de la rotation des axes lors du changement de référentiel.
+- **Dilatation du temps :**
+<br>Avec deux points sur une même ligne d’univers, vous pouvez aussi montrer que l’intervalle de temps entre ces événements n’est pas le même dans chacun des référentiels. Les graduations des axes, tracées à l’échelle, permettent de comparer quantitativement la longueur de l’intervalle sur les deux axes temporels. En choisissant une ligne d’univers parallèle à l’axe temporel d’un des référentiels, vous pouvez également montrer que l’intervalle de temps dans ce référentiel (temps propre) est toujours plus court que son équivalent dans un autre référentiel.  
+- **Contraction des longueurs :**
+<br>Vous pouvez représenter un objet étendu dans la dimension spatiale x, comme un bâton ou un train, par les lignes d’univers de ses extrémités. Dans le diagramme, ajoutez deux objets ayant la même vitesse, formant ainsi deux lignes d’univers parallèles. Grâce à la représentation à l’échelle des axes, vous pouvez ainsi montrer que la distance spatiale entre deux points simultanés de ces lignes d’univers n’est pas la même dans les deux référentiels, et en particulier que cette distance est plus courte dans le référentiel où l’objet étendu est en mouvement que dans un référentiel où il est au repos (longueur propre). 
+- **Invariance des intervalles d’espace-temps :**
+<br>Vous pouvez montrer que, pour toute paire d’événements, le calcul de l’intervalle d’espace-temps ($\Delta$s<sup>2</sup> = -$\Delta$(ct)<sup>2</sup> + $\Delta$x<sup>2</sup>) donne le même résultat dans chacun des deux référentiels. Cette vérification graphique permet d’introduire visuellement les différents types d’intervalles (temps, espace et lumière), ainsi que les notions de temporalité et de causalité entre événements.
+
+Ces différentes visualisations sont ardues à tracer à la main avec précision, mais deviennent ici immédiates grâce à l’outil interactif.
+
+Pour un apprentissage plus actif, vous pouvez proposer des exercices demandant aux étudiant·e·s de (1) représenter correctement une mise en situation donnée dans le référentiel d’un observateur, puis (2) analyser la même situation du point de vue d’un autre observateur en mouvement par rapport au premier. On peut demander de comparer différentes situations en matière de **simultanéité**, d’**ordre des événements** ou de **distances temporelles/spatiales**. On peut également utiliser la simulation pour visualiser ou valider graphiquement des solutions calculées avec les transformations de Lorentz. 
+
+En plus des objets physiques incluant les traditionnels observateurs, trains et bâtons, le simulateur permet aussi de tracer des lignes de lumière, en réglant la vitesse d’un objet ajouté à ±c. Ceci peut être exploité pour visualiser le **cône de lumière** associé à un événement, et explorer ainsi des problèmes de **causalité** (quels événements peuvent en influencer d’autres). En particulier, on peut ainsi représenter des problèmes assez complexes de **transmission d’information** par des signaux lumineux échangés entre différents observateurs en mouvement. Ces questions sont souvent ardues à interpréter intuitivement et ambiguës dans des schémas dessinés à main levée, mais deviennent nettement plus compréhensibles grâce à une représentation précise et interactive.
+
+Enfin, notez bien que ce simulateur propose une représentation de Minkowski de type 1+1 (une dimension spatiale et une temporelle), dans laquelle les deux autres dimensions spatiales ne sont pas représentées. Ceci implique qu’il faut choisir des problèmes et mises en situation où les mouvements des référentiels et des objets ne se déroulent que dans un axe spatial. On trouve fréquemment des problèmes de ce type (trains et fusées allant en ligne droite) dans les ouvrages traitant de la relativité restreinte. Par ce qui précède, on voit que cela suffit amplement pour illustrer les phénomènes essentiels de cette branche de la physique moderne.
+
+

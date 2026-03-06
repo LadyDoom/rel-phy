@@ -1,0 +1,111 @@
+---
+title: "Projectile dans un référentiel en rotation"
+---
+
+<!-- [Contexte](#Contexte) | 
+[Guide d’utilisation de la ressource](#Guide-d’utilisation-de-la-ressource) | 
+[Suggestions pour les enseignant·e·s](#Suggestions-pour-les-enseignant·e·s) -->
+
+## Contexte
+
+Cette ressource vise à représenter la trajectoire d’un projectile observé dans un référentiel en rotation. Un cas courant est celui d’un projectile vu par un observateur situé à la surface d’une planète comme la Terre. Dans un tel cadre, le référentiel n’est pas inertiel : sa rotation entraîne l’apparition de **forces fictives (ou forces d’inertie)**. Ces pseudo-forces ne correspondent pas à de véritables interactions physiques, mais traduisent le fait que l’observateur se trouve lui-même dans un référentiel accéléré.
+
+Ce simulateur permet de visualiser précisément l’effet de ces forces fictives sur un projectile. Deux contributions principales apparaissent :
+
+- **La force centrifuge**, qui tend à repousser le projectile vers l’extérieur de l’axe de rotation. Son effet est nul aux pôles et maximal à l’équateur.
+- **La force de Coriolis**, qui dévie la trajectoire des objets en mouvement dans le référentiel, avec une tendance vers la droite dans l’hémisphère Nord et à gauche dans l’hémisphère Sud. Cette force agit perpendiculairement à la fois à la vitesse du projectile et à l’axe de rotation de la planète : elle varie donc continuellement durant la trajectoire du projectile, ce qui la rend particulièrement difficile à traiter analytiquement.
+
+Si la vitesse de rotation de la planète varie au cours du temps, une troisième force fictive apparaît, la force azimutale, mais ce cas n’est pas traité dans la présente ressource.
+
+La simulation permet de tracer la trajectoire d’un projectile vue par un observateur sur la planète, **avec ou sans** l’effet de ces forces fictives. L’utilisateur peut ainsi comparer directement les deux trajectoires et visualiser l’influence de la rotation du référentiel. Le programme calcule également la différence entre les positions d’impact au sol dans les deux scénarios, permettant de quantifier la correction induite par les forces fictives.
+
+## Guide d’utilisation de la ressource
+
+### **1. Initialiser la simulation** 
+
+Vous devez d’abord initialiser la configuration de la simulation, en définissant un ensemble de paramètres regroupés en trois catégories :
+
+  (a) les caractéristiques de la planète, 
+  (b) la position du référentiel d’observation,
+  (c) l’état initial du projectile (et, en option, d’une cible).
+
+#### a. Paramètres liés aux caractéristiques de la planète
+
+Trois variables définissent les caractéristiques de la planète sur laquelle se situe votre observateur (ou votre référentiel) :
+
+- **Rayon** (en mètres)
+- **Masse** (en kilogrammes)
+- **Vitesse angulaire** (en rad/s)
+
+Par défaut, ces valeurs correspondent à celles de la Terre, mais il est possible de modifier ces paramètres pour explorer d’autres planètes, réelles ou imaginaires.
+
+#### b. Paramètre lié à la position du référentiel d’observation
+
+Vous devez choisir où se situe le référentiel de l’observateur sur la planète en spécifiant sa **colatitude** (en degrés). Angle complémentaire de la plus usuelle latitude, la colatitude correspond à l’angle formé entre le pôle Nord, le centre de la planète et la position de l’observateur ; elle vaut 0° au pôle Nord, 90° à l’équateur et 180° au pôle Sud. 
+Ce paramètre permet d’orienter correctement le plan horizontal et l’axe vertical du référentiel de l’observateur par rapport à l’axe de rotation de la planète.
+
+#### c. Paramètres liés à l’état initial du projectile
+
+Dans ce simulateur, le référentiel de l’observateur est posé de la manière suivante :
+
+- **x** pointe vers l’Est,
+- **y** pointe vers le Nord,
+- **z** pointe vers le haut,
+
+avec le sol défini comme le plan xy où z = 0.
+
+Pour initier le projectile, vous devez fournir :
+
+- les coordonnées de sa **position initiale** : [x, y, z] (en mètres)
+- les coordonnées de sa **vitesse initiale**, définie par : 
+    - la **norme** de la vitesse (en mètres par seconde),
+    - l’**angle $\phi$** dans le plan horizontal, en sens horaire depuis la direction Est (en degrés),
+    - l’**angle $\theta$** par rapport à la verticale (en degrés).
+
+En option, il est possible d’ajouter les coordonnées d’une **cible** [x, y, 0] que l’on cherche à atteindre au sol, également en mètres.
+
+### **2. Lancer la simulation**
+
+Une fois tous les paramètres définis, il suffit de cliquer sur **« Commencer »** pour exécuter la simulation. Le programme génère alors l’évolution temporelle du mouvement du projectile jusqu’à son arrivée au sol, avec ou sans inclusion des forces fictives.
+
+### **3. Interpréter la simulation**
+
+#### Trajectoire du projectile
+
+Le panneau principal du simulateur présente une vue 3D du référentiel de l’observateur. Le sol y est représenté par un plan gris portant les indications des points cardinaux (N/S/E/O), tandis que l’axe vertical apparaît en bleu. Vous pouvez modifier le niveau de zoom à l’aide de la roulette de la souris (ou de l’équivalent sur votre dispositif) et faire pivoter la scène en maintenant le clic droit tout en déplaçant la souris.
+
+Différentes versions de la **trajectoire** du projectile peuvent être affichées :
+
+- **Magenta** : la trajectoire réelle incluant l’effet des forces fictives,
+- **Orange** : la trajectoire sans les forces fictives,
+- **Rouge** : la trajectoire incluant l’effet de la force centrifuge seulement,
+- **Vert** : la trajectoire incluant l’effet de la force Coriolis seulement.
+
+La trajectoire réelle (magenta) est toujours affichée, mais vous pouvez choisir d’afficher ou non les autres trajectoires à l’aide des cases à cocher situées au bas du panneau des paramètres. Par défaut, la simulation inclut la trajectoire sans les forces fictives (orange).  
+
+#### Amplitude et direction des forces fictives
+
+Le second panneau de la simulation montre un graphique de l’**amplitude** (en newtons) des forces centrifuge (rouge) et de Coriolis (vert) en fonction du temps (en secondes). L’évolution des deux forces peut aussi être visualisée dans la représentation 3D de la simulation, à l’aide des flèches rouge (centrifuge) et verte (Coriolis) qui suivent la trajectoire réelle (magenta). La longueur et l’orientation des deux flèches représentent respectivement l’**amplitude** et la **direction** des forces correspondantes. Ces flèches sont affichées par défaut, mais vous pouvez les masquer à l’aide d’une case à cocher dans le panneau des paramètres. Ces représentations permettent de visualiser comment la contribution des deux forces fictives varie le long de la trajectoire du projectile. 
+
+#### Point d’impact et comparaison avec une cible
+
+La cible apparaît comme une boule rouge dans la représentation 3D. La simulation calcule alors la **position où le projectile touche le sol**, ainsi que la **distance entre ce point d’impact et la cible**. Cette mesure permet d’évaluer quantitativement l’importance des forces fictives sur la précision d’un tir ou d’une chute.
+
+## Suggestions pour les enseignant·e·s
+
+Cette ressource peut être utilisée pour illustrer le comportement d’une variété de projectiles en mécanique classique, comme le lancer d’une balle, un tir de canon ou tout objet largué en chute libre. Toutefois, gardez en tête que l’influence des forces fictives n’est significative que pour des trajectoires à grande vitesse ou de longues distances, ou bien si vous modélisez une planète avec une vitesse angulaire assez rapide par rapport à ses dimensions. Des exemples pertinents incluent la chute d’un objet depuis une altitude élevée ou le tir d’une arme à longue portée : dans ces situations, la déviation due à la force de Coriolis pourra entraîner un décalage observable entre la trajectoire réelle et celle négligeant les forces fictives.
+
+Il est important de noter que la simulation ne tient compte ni de la résistance de l’air ni de la courbure de la Terre. Elle ne pourra donc pas bien représenter des trajectoires extrêmement longues, comme celles de missiles intercontinentaux.
+
+Du point de vue pédagogique, plusieurs activités peuvent être proposées. Par exemple, l’enseignant·e peut présenter une situation réaliste (choix de la position sur une planète donnée et initialisation des paramètres du projectile) et demander aux étudiant·e·s de calculer la trajectoire du projectile en supposant que le référentiel est inertiel, à l’aide des équations usuelles de la cinématique. La simulation permet ensuite de visualiser cette trajectoire sans forces fictives (courbe orange) et de la comparer à la trajectoire réelle, c’est-à-dire celle observée dans un référentiel en rotation (courbe magenta).
+
+En utilisant le paramètre « Cible », les étudiant·e·s peuvent également entrer les coordonnées de leur calcul pour l’atterrissage du projectile. Cela leur permet de :
+
+1.	**Vérifier l’exactitude de leur solution** : si la cible se trouve sur la courbe orange, la trajectoire est correctement calculée pour un référentiel inertiel.
+2.	**Quantifier l’écart cumulé entre leur prédiction et le mouvement réel tenant compte de la rotation** : le programme calcule automatiquement la distance entre l’impact réel et la cible.
+
+Pour un niveau plus avancé, il est possible de leur demander d’estimer la trajectoire corrigée par les forces fictives, par exemple en appliquant une méthode de perturbations ou une résolution numérique, puis de comparer cette estimation avec la trajectoire obtenue par la simulation.
+
+À l’inverse, l’enseignant·e peut fixer l’initialisation d’un projectile et demander aux étudiant·e·s d’explorer quelle vitesse de rotation de la planète permettrait d’atteindre une cible donnée, ou encore demander d’ajuster l’initialisation du projectile (position ou vitesse) pour atteindre une cible choisie en tenant compte des effets de la rotation.
+
+Dans l’ensemble, cette ressource offre aux étudiant·e·s une plateforme interactive pour mettre en relation leurs propres calculs avec une visualisation dynamique, afin de mieux comprendre comment les forces fictives liées à la rotation de la planète s’accumulent progressivement pour modifier la trajectoire d’un projectile.
